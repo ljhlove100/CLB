@@ -1,4 +1,4 @@
-package com.mycompany.clb;
+package com.mycompany.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
