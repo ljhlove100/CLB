@@ -40,7 +40,7 @@
 	<context:component-scan base-package="com.mycompany.myapp"></context:component-scan>
 
 	<context:property-placeholder location="classpath:database.properties" />
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="${jdbc.driver}"></property>
 		<property name="url" value="${jdbc.url}"></property>
 		<property name="username" value="${jdbc.username}"></property>
@@ -59,6 +59,6 @@
 	
 	<bean class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory"></constructor-arg>
-	</bean>
+	</bean> -->
 
 </beans>
