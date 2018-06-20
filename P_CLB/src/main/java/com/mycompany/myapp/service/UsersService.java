@@ -24,14 +24,14 @@ public interface UsersService {
      * @param users_pw
      * @return UsersCheck(0 or 1)
      */
-    public int UsersCheck(String users_id, String users_pw);
+    public int UsersCheck(String u_id, String pw);
     
     /**
      * @param users_id
      * @param users_pw
      * @return LoginCheck(usersinfo)
      */
-    List<Users>	LoginInfo(String users_id, String users_pw);
+    List<Users>	LoginInfo(String u_id, String pw);
 		
     /**
      * @return	UsersList
@@ -42,17 +42,17 @@ public interface UsersService {
     
     List<Users> getAllUsers(int curPage, String search, String word);
     
-    List<Users> getUsersInfo(String users_id);
+    List<Users> getUsersInfo(String u_id);
     
-    public String getUsersName(String users_id);
+    public String getUsersName(String u_id);
 
-	public String getUsersDepartment(String users_id);
+	public String getUsersDepartment(String u_id);
 
-	public String getUsersCompany(String users_id);
+	public String getUsersCompany(String u_id);
 
-	public String getUsersTeam(String users_id);
+	public String getUsersTeam(String u_id);
 
-	public String getUsersPosition(String users_id);
+	public String getUsersPosition(String u_id);
 
 	
    
