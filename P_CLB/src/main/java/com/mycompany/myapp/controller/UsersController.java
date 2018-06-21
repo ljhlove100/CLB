@@ -33,7 +33,7 @@ import org.springframework.web.context.request.SessionScope;
 import com.mycompany.myapp.service.UsersService;
 
  
-@Controller
+//@Controller
 public class UsersController {
      
 	@Autowired
