@@ -6,8 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.mycompany.products.ProductSearchVO;
-import com.mycompany.products.ProductVO;
+import com.mycompany.product.ProductSearchVO;
+import com.mycompany.product.ProductVO;
 
 @Repository
 public class ProductDAO {

@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mycompany.products.ProductSearchVO;
-import com.mycompany.products.ProductService;
-import com.mycompany.products.ProductVO;
+import com.mycompany.product.ProductSearchVO;
+import com.mycompany.product.ProductService;
+import com.mycompany.product.ProductVO;
 
 @Service("productService")
 public class ProductServiceImpl implements ProductService{

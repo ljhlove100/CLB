@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.mycompany.products.ProductSearchVO;
-import com.mycompany.products.ProductService;
-import com.mycompany.products.ProductVO;
+import com.mycompany.product.ProductSearchVO;
+import com.mycompany.product.ProductService;
+import com.mycompany.product.ProductVO;
 
 @Controller
 public class ProductController {

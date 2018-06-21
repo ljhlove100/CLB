@@ -1,4 +1,4 @@
-package com.mycompany.products;
+package com.mycompany.product;
 
 public class ProductVO {
 	private int p_no;
