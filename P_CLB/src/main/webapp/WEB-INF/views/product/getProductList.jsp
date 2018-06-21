@@ -9,7 +9,8 @@
 <body>
 	<c:forEach items="${getProductList}" var="productList">
 		물품번호 : <a href="getProduct/${productList.P_NO}">${productList.P_NO}</a><br>
-		상품이름 :  
+		상품이름 : ${productList.P_NAME}<br>
+		
 	</c:forEach>
 </body>
 </html>
