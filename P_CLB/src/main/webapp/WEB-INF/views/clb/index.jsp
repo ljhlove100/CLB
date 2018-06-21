@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>CLB</title>
-<link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+<link href=".../resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="../resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="../resources/css/prettyPhoto.css" rel="stylesheet">
 <link href="../resources/css/price-range.css" rel="stylesheet">

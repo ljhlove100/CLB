@@ -1,13 +1,13 @@
 /*******************************************************************************
  * 파일명 : UsersController.java
- * 작성자 : 이성형
- * 작성일자 : 2015. 05. 15
+ * 작성자 : 이준형
+ * 작성일자 : 2018. 06. 20
  *
  * 클래스 개요: 로그인, users info
  * =============================================================================
  * 수정내역
  * NO		수정일자		수정자		수정내역  
- * 001.	2015. 05. 15 	이성형		최초작성
+ * 001.	2018. 06. 30 	이준형		최초작성
  * =============================================================================
  */
 
@@ -45,7 +45,7 @@ public class UsersController {
 	@RequestMapping(value = "/Login", method = RequestMethod.GET)
     public String Login(){
     	    		
-    	return "/global/login/Login";
+    	return "/clb/login/Login";
     }	
 	
 	@RequestMapping(value = "/Logout", method = RequestMethod.GET)
@@ -94,7 +94,7 @@ public class UsersController {
         return ReturnUrl;
     }	
     
-    @RequestMapping(value = "/UsersList", method = RequestMethod.GET)    
+   /* @RequestMapping(value = "/UsersList", method = RequestMethod.GET)    
     public String getUsersList(@RequestParam(required=false, defaultValue="1") int page, 
     		@RequestParam(required=false) String search, 
     		@RequestParam(required=false) String word, 
@@ -115,7 +115,7 @@ public class UsersController {
 
 		return "/users/UsersList";
     }
-    
+    */
     
     @RequestMapping(value = "/UsersView/{users_id}")
 	public String showArticle(@PathVariable(value="users_id") String users_id, Model model){
