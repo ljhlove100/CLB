@@ -56,29 +56,29 @@ public class UsersController {
     	return "redirect:/";
     }	
 	
-    @RequestMapping(value = "/Logincheck", method = RequestMethod.POST)    
+  /*  @RequestMapping(value = "/Logincheck", method = RequestMethod.POST)    
     public String Logincheck(Model model, HttpServletRequest request) {
     	
     	
-    	String	users_id = request.getParameter("users_id");
-    	String	users_pw = request.getParameter("users_pw");
+    	String	u_id = request.getParameter("users_id");
+    	String	pw = request.getParameter("users_pw");
     	String 	ReturnUrl = ""; 
     	
     	//	users 정보가 있으면 1 없으면 0
-    	int LoginCheck = usersService.UsersCheck(users_id, users_pw);
+    	int LoginCheck = usersService.UsersCheck(u_id, pw);
     	
     	if(LoginCheck==1){
     		    		    		
     		Map<String, Object> map = new HashMap<String,Object>();
    			
-    		String users_name = usersService.getUsersName(users_id);
-    		String company = usersService.getUsersCompany(users_id);
-    		String department = usersService.getUsersDepartment(users_id);
-    		String team = usersService.getUsersTeam(users_id);
-    		String position = usersService.getUsersPosition(users_id);
+    		String users_name = usersService.getUsersName(u_id);
+    		String company = usersService.getUsersCompany(u_id);
+    		String department = usersService.getUsersDepartment(u_id);
+    		String team = usersService.getUsersTeam(u_id);
+    		String position = usersService.getUsersPosition(u_id);
     		
-    		request.getSession().setAttribute("users_id", users_id); 
-    		request.getSession().setAttribute("users_name", users_name); 
+    		request.getSession().setAttribute("u_id", u_id); 
+    		request.getSession().setAttribute("name", name); 
     		request.getSession().setAttribute("company", company); 
     		request.getSession().setAttribute("department", department); 
     		request.getSession().setAttribute("team", team); 
@@ -92,7 +92,7 @@ public class UsersController {
 		}
     	
         return ReturnUrl;
-    }	
+    }	*/
     
    /* @RequestMapping(value = "/UsersList", method = RequestMethod.GET)    
     public String getUsersList(@RequestParam(required=false, defaultValue="1") int page, 
@@ -116,12 +116,12 @@ public class UsersController {
 		return "/users/UsersList";
     }
     */
-    
+ /*   
     @RequestMapping(value = "/UsersView/{users_id}")
 	public String showArticle(@PathVariable(value="users_id") String users_id, Model model){
     	   	
     	model.addAttribute("users", usersService.getUsersInfo(users_id));
 		
 		return "/users/UsersView";
-	}   
+	}   */
 }

@@ -1,4 +1,4 @@
-package com.mycompany.myapp.dao;
+/*package com.mycompany.myapp.dao;
 
 import java.util.HashMap;
 import java.util.List;
@@ -14,3 +14,4 @@ public interface MemberDao {
 	public List<SignUp> getMember_detail(HashMap<String,Object> hashMap);
 
 }
+*/

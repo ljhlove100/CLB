@@ -1,4 +1,4 @@
-package com.mycompany.myapp.dao;
+/*package com.mycompany.myapp.dao;
 
 
 import java.sql.*;
@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-	/*
+	
  * DAO : Data Access Object (DB처리)
- */
+ 
 	
 public class LoginDAO {
 	Connection conn = null;
@@ -161,4 +161,4 @@ public class LoginDAO {
 
 
 
-	}
+	}*/
