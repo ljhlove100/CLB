@@ -21,7 +21,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.mycompany.myapp.model.Users;
+import com.mycompany.myapp.model.UsersVO;
 import com.mycompany.myapp.service.UsersService;
  
 //@Service("usersService")
@@ -44,7 +44,7 @@ public class UsersServiceImpl implements UsersService {
     }
     
     @Override
-    public List<Users> LoginInfo(String users_id, String users_pw){
+    public List<UsersVO> LoginInfo(String users_id, String users_pw){
     	    	
     	HashMap<String,String> hashMap = new HashMap<String,String>();
     	hashMap.put("users_id", users_id);
@@ -63,7 +63,7 @@ public class UsersServiceImpl implements UsersService {
 	}
     
     @Override
-	public List<Users> getAllUsers(int curPage, String search,
+	public List<UsersVO> getAllUsers(int curPage, String search,
 			String word) {
 		HashMap<String, Object> hashMap = new HashMap<String, Object>();
 		hashMap.put("curPage", curPage);
@@ -77,12 +77,12 @@ public class UsersServiceImpl implements UsersService {
      * @see com.spring.myapp.service.UsersService#getUsersList()
      */
     @Override
-    public List<Users> getUsersList() {
+    public List<UsersVO> getUsersList() {
         return userDao.getUsersList();
     }  
     
     @Override
-    public List<Users> getUsersInfo(String users_id){
+    public List<UsersVO> getUsersInfo(String users_id){
     	HashMap<String, Object> hashMap = new HashMap<String, Object>();
     	hashMap.put("users_id", users_id);
     	return userDao.getUsersInfo(hashMap);

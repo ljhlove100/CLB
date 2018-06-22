@@ -1,6 +1,6 @@
 package com.mycompany.myapp.model;
 
-public class Users {
+public class UsersVO {
 
 	private String u_id;
 	private String pw;
