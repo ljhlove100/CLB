@@ -54,4 +54,16 @@
 		</property>
 	</bean>
 
+	<bean
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver"
+		p:order="1"
+		p:viewClass="org.springframework.web.servlet.view.tiles3.TilesView" />
+	<!--Don't add suffix or prefix like you do with .jsp files -->
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<value>/WEB-INF/tiles/tiles.xml</value>
+		</property>
+	</bean>
+
 </beans>
