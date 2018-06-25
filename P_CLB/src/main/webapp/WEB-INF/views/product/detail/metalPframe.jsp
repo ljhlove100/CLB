@@ -75,6 +75,7 @@
 	      }
 		
 	</script>
+	<img src="../resources/images/pframe/metal.JPG">
 	<center>
 	<div>
 	<h3>상품 정보</h3>
@@ -83,7 +84,7 @@
 	${product.image}
 	
 	</div>
-	<div>
+	<div style="border: 1px solid black; padding: 30px; margin: 30px;">
 	<form name = "frm">
 	
 				<h4>Size</h4>
@@ -94,7 +95,7 @@
 				<label>size - 3<input type="radio" name="radio1" value=8000 onclick="goo()"> <span class="checkmark"></span>
 				</label>
 				<label>size - 4<input type="radio" name="radio1" value=9000 onclick="goo()"> <span class="checkmark"></span>
-				</label>
+				</label><br><br>
 				
 				<h4>Color</h4>
 				<label>color - 1<input type="radio" name="radio2" value=4000 onclick="goo()"> <span class="checkmark"></span>
@@ -104,7 +105,7 @@
 				<label>color - 3<input type="radio" name="radio2" value=6000 onclick="goo()"> <span class="checkmark"></span>
 				</label>
 				<label>color - 4<input type="radio" name="radio2" value=7000 onclick="goo()"> <span class="checkmark"></span>
-				</label>
+				</label><br><br>
 				
 				<h4>Style</h4>
 				<label>style - 1<input type="radio" name="radio3" value=7000 onclick="goo()"> <span class="checkmark"></span>
