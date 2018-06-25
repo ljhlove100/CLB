@@ -5,20 +5,20 @@
 <mapper namespace="com.mycompany.product.ProductDAO">
        
  	<!-- 단건조회 -->
-    <select id="getProduct" parameterType="string" resultType="com.mycompany.product.ProductVO">
+    <select id="getProduct" parameterType="string" resultType="com.mycompany.myapp.product.ProductVO">
       SELECT P_NO, P_NAME, PRICE, P_CONTENTS, P_GROUP, IMAGE 
       FROM PRODUCT
       WHERE P_NO = #{p_no}
     </select>
     
 	<!-- 전체조회 -->
-	<select id="getProductList" resultType="com.mycompany.product.ProductVO">
+	<select id="getProductList" resultType="com.mycompany.myapp.product.ProductVO">
       SELECT P_NO, P_NAME, PRICE, P_CONTENTS, P_GROUP, IMAGE 
        FROM PRODUCT
     </select>
     
     <!-- 추가 -->
-    <insert id="productInsert" parameterType="com.mycompany.product.ProductVO">
+    <insert id="productInsert" parameterType="com.mycompany.myapp.product.ProductVO">
 	   insert into product(P_NO,P_NAME,PRICE,P_CONTENTS,P_GROUP,IMAGE) 
   		 values (#{p_no}, 
    			  	 #{p_name}, 
@@ -30,7 +30,7 @@
    </insert>
    
    <!-- 수정 -->
-   <update id="productUpdate" parameterType="com.mycompany.product.ProductVO">
+   <update id="productUpdate" parameterType="com.mycompany.myapp.product.ProductVO">
    		UPDATE PRODUCT
    		SET P_NAME = #{p_name}
    			PRICE = #{price}
@@ -41,7 +41,7 @@
    </update>
    
    <!-- 삭제 -->
-   <delete id="productDelete" parameterType="com.mycompany.product.ProductVO">
+   <delete id="productDelete" parameterType="com.mycompany.myapp.product.ProductVO">
    	DELETE PRODUCT
    	WHERE P_NO = #{p_no}
    </delete>
