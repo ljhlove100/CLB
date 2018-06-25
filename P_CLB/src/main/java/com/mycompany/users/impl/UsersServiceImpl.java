@@ -1,17 +1,6 @@
-/*******************************************************************************
- * 파일명 : UsersServiceImpl.java
- * 작성자 : 이성형
- * 작성일자 : 2015. 05. 15
- *
- * 클래스 개요: 로그인, users info
- * =============================================================================
- * 수정내역
- * NO		수정일자		수정자		수정내역  
- * 001.	2015. 05. 15 	이성형		최초작성
- * =============================================================================
- */
 
-package com.mycompany.myapp.service.impl;
+
+package com.mycompany.users.impl;
  
 
 import java.util.HashMap;
@@ -19,20 +8,18 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.springframework.stereotype.Service;
-
-import com.mycompany.myapp.model.Users;
-import com.mycompany.myapp.service.UsersService;
- 
+import com.mycompany.users.UsersService;
+import com.mycompany.users.UsersVO;
+ /*
 //@Service("usersService")
 public class UsersServiceImpl implements UsersService {
      
     @Resource(name="userDao")
     private UsersDao userDao;
  
-    /* (non-Javadoc)
+     (non-Javadoc)
      * @see com.spring.myapp.service.UsersService#UsersCheck(java.lang.String, java.lang.String)
-     */
+     
     @Override
     public int UsersCheck(String users_id, String users_pw){
     	    	
@@ -44,7 +31,7 @@ public class UsersServiceImpl implements UsersService {
     }
     
     @Override
-    public List<Users> LoginInfo(String users_id, String users_pw){
+    public List<UsersVO> LoginInfo(String users_id, String users_pw){
     	    	
     	HashMap<String,String> hashMap = new HashMap<String,String>();
     	hashMap.put("users_id", users_id);
@@ -63,7 +50,7 @@ public class UsersServiceImpl implements UsersService {
 	}
     
     @Override
-	public List<Users> getAllUsers(int curPage, String search,
+	public List<UsersVO> getAllUsers(int curPage, String search,
 			String word) {
 		HashMap<String, Object> hashMap = new HashMap<String, Object>();
 		hashMap.put("curPage", curPage);
@@ -73,16 +60,16 @@ public class UsersServiceImpl implements UsersService {
 	}
     
     
-    /* (non-Javadoc)
+     (non-Javadoc)
      * @see com.spring.myapp.service.UsersService#getUsersList()
-     */
+     
     @Override
-    public List<Users> getUsersList() {
+    public List<UsersVO> getUsersList() {
         return userDao.getUsersList();
     }  
     
     @Override
-    public List<Users> getUsersInfo(String users_id){
+    public List<UsersVO> getUsersInfo(String users_id){
     	HashMap<String, Object> hashMap = new HashMap<String, Object>();
     	hashMap.put("users_id", users_id);
     	return userDao.getUsersInfo(hashMap);
@@ -126,3 +113,4 @@ public class UsersServiceImpl implements UsersService {
     	return userDao.getUsersPosition(hashMap);
 	}
 }
+*/
