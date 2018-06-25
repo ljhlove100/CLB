@@ -35,13 +35,13 @@ public class Product_commentsController {
 	@RequestMapping("/getProduct_commentsList")
 	public String getProduct_commentsList(HttpServletRequest request, Product_commentsVO vo) {
 		request.setAttribute("product_commentsList", product_commentsService.getProduct_commentsList());
-		return "board/getBoardList";
+		return "product_comments/getProduct_commentsList";
 	}
 	
 	//수정폼
 	@RequestMapping(value="/updateProduct_comments", method=RequestMethod.GET)
 	public String updateProduct_commentsForm() {
-		return "board/updateProduct_comments";
+		return "product_comments/updateProduct_comments";
 	}
 	
 	//수정처리
@@ -50,7 +50,7 @@ public class Product_commentsController {
 		System.out.println(vo);
 		//서비스 수정 처리
 		//product_commentsService.updateProduct_comments(vo);
-		return "board/getProduct_comments";
+		return "product_comments/getProduct_comments";
 	}
 	
 	//등록폼
