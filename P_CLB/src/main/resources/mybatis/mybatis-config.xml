@@ -9,7 +9,7 @@
 	</settings>
 
 	<typeAliases>
-		<typeAlias type="com.mycompany.product.ProductVO" alias="productVO"></typeAlias>
+		<typeAlias type="com.mycompany.myapp.product.ProductVO" alias="productVO"></typeAlias>
 	</typeAliases>
 
 

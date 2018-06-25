@@ -1,12 +1,12 @@
 package com.mycompany.myapp.product;
 
 public class ProductVO {
-	private int p_no;
-	private String p_name;
+	private int pNo;
+	private String pName;
 	private String price;
-	private String p_contents;
-	private String p_group;
-	private String business_code;
+	private String pContents;
+	private String pGroup;
+	private String businessCode;
 	private String insertid;
 	private String updateid;
 	private String insertdate;
@@ -15,17 +15,17 @@ public class ProductVO {
 	private String image;
 	
 	
-	public int getP_no() {
-		return p_no;
+	public int getpNo() {
+		return pNo;
 	}
-	public void setP_no(int p_no) {
-		this.p_no = p_no;
+	public void setpNo(int pNo) {
+		this.pNo = pNo;
 	}
-	public String getP_name() {
-		return p_name;
+	public String getpName() {
+		return pName;
 	}
-	public void setP_name(String p_name) {
-		this.p_name = p_name;
+	public void setpName(String pName) {
+		this.pName = pName;
 	}
 	public String getPrice() {
 		return price;
@@ -33,23 +33,23 @@ public class ProductVO {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	public String getP_contents() {
-		return p_contents;
+	public String getpContents() {
+		return pContents;
 	}
-	public void setP_contents(String p_contents) {
-		this.p_contents = p_contents;
+	public void setpContents(String pContents) {
+		this.pContents = pContents;
 	}
-	public String getP_group() {
-		return p_group;
+	public String getpGroup() {
+		return pGroup;
 	}
-	public void setP_group(String p_group) {
-		this.p_group = p_group;
+	public void setpGroup(String pGroup) {
+		this.pGroup = pGroup;
 	}
-	public String getBusiness_code() {
-		return business_code;
+	public String getBusinessCode() {
+		return businessCode;
 	}
-	public void setBusiness_code(String business_code) {
-		this.business_code = business_code;
+	public void setBusinessCode(String businessCode) {
+		this.businessCode = businessCode;
 	}
 	public String getInsertid() {
 		return insertid;
@@ -88,8 +88,4 @@ public class ProductVO {
 		this.image = image;
 	}
 	
-	
-	
-
-
 }

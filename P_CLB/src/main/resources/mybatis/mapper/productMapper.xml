@@ -2,20 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.mycompany.product.ProductDAO">
+<mapper namespace="com.mycompany.myapp.product.ProductDAO">
        
  	<!-- 단건조회 -->
-<<<<<<< HEAD
+    
     <select id="getProduct" parameterType="string" resultType="com.mycompany.myapp.product.ProductVO">
-      SELECT P_NO, P_NAME, PRICE, P_CONTENTS, P_GROUP, IMAGE 
-      FROM PRODUCT
-      WHERE P_NO = #{p_no}
-=======
-    <select id="getProduct" parameterType="string" resultType="com.mycompany.product.ProductVO">
       SELECT P_NO, P_NAME, PRICE, P_CONTENTS, P_GROUP, IMAGE
         FROM PRODUCT
        WHERE P_NO = #{pNo}
->>>>>>> branch 'master' of https://github.com/ljhlove100/CLB
     </select>
     
 	<!-- 전체조회 -->
