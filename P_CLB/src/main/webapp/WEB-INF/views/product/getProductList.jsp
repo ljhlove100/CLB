@@ -38,6 +38,7 @@
 </head>
 <body>
 	<h2 class="text-center">CLB Product</h2>
+	<a href="${pageContext.request.contextPath}/productInsert"><h3>상품추가</h3></a>
 	<div id="pricing" class="container-fluid">
 		<div class="text-center"></div>
 		<div class="row ">
