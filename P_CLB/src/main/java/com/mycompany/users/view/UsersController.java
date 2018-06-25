@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.mycompany.users.UsersService;
 
  
-@Controller
+//@Controller
 public class UsersController {
      
-	@Autowired
+/*	@Autowired
     UsersService usersService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(UsersController.class);
@@ -109,5 +109,5 @@ public class UsersController {
     	model.addAttribute("users", usersService.getUsersInfo(users_id));
 		
 		return "/users/UsersView";
-	}   
+	}   */
 }

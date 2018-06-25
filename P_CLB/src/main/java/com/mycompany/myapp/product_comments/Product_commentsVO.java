@@ -1,4 +1,4 @@
-package com.mycompany.product_comments;
+package com.mycompany.myapp.product_comments;
 
 public class Product_commentsVO {
 

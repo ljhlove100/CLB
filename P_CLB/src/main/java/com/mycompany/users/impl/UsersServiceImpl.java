@@ -1,15 +1,4 @@
-/*******************************************************************************
- * 파일명 : UsersServiceImpl.java
- * 작성자 : 이성형
- * 작성일자 : 2015. 05. 15
- *
- * 클래스 개요: 로그인, users info
- * =============================================================================
- * 수정내역
- * NO		수정일자		수정자		수정내역  
- * 001.	2015. 05. 15 	이성형		최초작성
- * =============================================================================
- */
+
 
 package com.mycompany.users.impl;
  
@@ -19,18 +8,18 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import com.mycompany.myapp.myapp.service.UsersService;
+import com.mycompany.users.UsersService;
 import com.mycompany.users.UsersVO;
- 
+ /*
 //@Service("usersService")
 public class UsersServiceImpl implements UsersService {
      
     @Resource(name="userDao")
     private UsersDao userDao;
  
-    /* (non-Javadoc)
+     (non-Javadoc)
      * @see com.spring.myapp.service.UsersService#UsersCheck(java.lang.String, java.lang.String)
-     */
+     
     @Override
     public int UsersCheck(String users_id, String users_pw){
     	    	
@@ -71,9 +60,9 @@ public class UsersServiceImpl implements UsersService {
 	}
     
     
-    /* (non-Javadoc)
+     (non-Javadoc)
      * @see com.spring.myapp.service.UsersService#getUsersList()
-     */
+     
     @Override
     public List<UsersVO> getUsersList() {
         return userDao.getUsersList();
@@ -124,3 +113,4 @@ public class UsersServiceImpl implements UsersService {
     	return userDao.getUsersPosition(hashMap);
 	}
 }
+*/

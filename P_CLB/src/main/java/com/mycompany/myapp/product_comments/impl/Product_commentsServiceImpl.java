@@ -1,4 +1,4 @@
-package com.mycompany.product_comments.impl;
+package com.mycompany.myapp.product_comments.impl;
 
 import java.util.List;
 import java.util.Map;
@@ -6,8 +6,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mycompany.product_comments.Product_commentsService;
-import com.mycompany.product_comments.Product_commentsVO;
+import com.mycompany.myapp.product_comments.Product_commentsService;
+import com.mycompany.myapp.product_comments.Product_commentsVO;
 
 @Service("product_commentsService")
 public class Product_commentsServiceImpl implements Product_commentsService {
