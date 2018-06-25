@@ -6,6 +6,7 @@
 <title>Product_commnetsList.jsp</title>
 </head>
 <body>
+<a href="insertProduct_comments">게시글 등록</a>
 	<h3>게시판 목록</h3>
 	<form>
 		<select>
