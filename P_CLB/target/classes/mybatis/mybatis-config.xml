@@ -8,12 +8,9 @@
 		<setting name="mapUnderscoreToCamelCase" value="true" />
 	</settings>
 
-<!-- 
 	<typeAliases>
-		<typeAlias type="com.yedam.web.emp.EmpVO" alias="empVO"></typeAlias>
-		<typeAlias type="com.yedam.web.board.BoardVO" alias="boardVO"></typeAlias>
-		<typeAlias type="com.yedam.web.board.CommentsVO" alias="CommentsVO"></typeAlias>
-	</typeAliases> -->
+		<typeAlias type="com.mycompany.product.ProductVO" alias="productVO"></typeAlias>
+	</typeAliases>
 
 
 </configuration>

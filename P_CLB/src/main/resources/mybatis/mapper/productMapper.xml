@@ -6,25 +6,26 @@
        
  	<!-- 단건조회 -->
     <select id="getProduct" parameterType="string" resultType="com.mycompany.product.ProductVO">
-      SELECT P_NO, P_NAME, PRICE, P_CONTENTS, P_GROUP, IMAGE 
-      FROM PRODUCT
-      WHERE P_NO = #{p_no}
+      SELECT P_NO, P_NAME, PRICE, P_CONTENTS, P_GROUP, IMAGE
+        FROM PRODUCT
+       WHERE P_NO = #{pNo}
     </select>
     
 	<!-- 전체조회 -->
 	<select id="getProductList" resultType="com.mycompany.product.ProductVO">
       SELECT P_NO, P_NAME, PRICE, P_CONTENTS, P_GROUP, IMAGE 
        FROM PRODUCT
+      ORDER BY P_NO
     </select>
     
     <!-- 추가 -->
     <insert id="productInsert" parameterType="com.mycompany.product.ProductVO">
 	   insert into product(P_NO,P_NAME,PRICE,P_CONTENTS,P_GROUP,IMAGE) 
-  		 values (#{p_no}, 
-   			  	 #{p_name}, 
+  		 values (#{pNo}, 
+   			  	 #{pName}, 
    			  	 #{price}, 
-   			  	 #{p_contents},
-   			  	 #{p_group},
+   			  	 #{pContents},
+   			  	 #{pGroup},
    			  	 #{image}
    			  	 )
    </insert>
@@ -32,19 +33,21 @@
    <!-- 수정 -->
    <update id="productUpdate" parameterType="com.mycompany.product.ProductVO">
    		UPDATE PRODUCT
-   		SET P_NAME = #{p_name}
-   			PRICE = #{price}
-   			P_CONTENTS = #{p_contents}
-   			P_GROUP = #{p_group}
+   		SET P_NAME = #{pName},
+   			PRICE = #{price},
+   			P_CONTENTS = #{pContents},
+   			P_GROUP = #{pGroup},
    			IMAGE = #{image}
-   	  WHERE P_NO = #{p_no}
+   	  WHERE P_NO = #{pNo}
    </update>
    
    <!-- 삭제 -->
    <delete id="productDelete" parameterType="com.mycompany.product.ProductVO">
    	DELETE PRODUCT
-   	WHERE P_NO = #{p_no}
+   	WHERE P_NO = #{pNo}
    </delete>
+   
+   
    
    
 </mapper>
