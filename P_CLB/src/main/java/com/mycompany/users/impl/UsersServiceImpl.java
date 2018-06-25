@@ -11,7 +11,7 @@
  * =============================================================================
  */
 
-package com.mycompany.myapp.service.impl;
+package com.mycompany.users.impl;
  
 
 import java.util.HashMap;
@@ -19,10 +19,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.springframework.stereotype.Service;
-
-import com.mycompany.myapp.model.UsersVO;
-import com.mycompany.myapp.service.UsersService;
+import com.mycompany.myapp.myapp.service.UsersService;
+import com.mycompany.users.UsersVO;
  
 //@Service("usersService")
 public class UsersServiceImpl implements UsersService {

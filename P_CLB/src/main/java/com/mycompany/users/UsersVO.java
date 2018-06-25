@@ -1,4 +1,4 @@
-package com.mycompany.myapp.model;
+package com.mycompany.users;
 
 public class UsersVO {
 
