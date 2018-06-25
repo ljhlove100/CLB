@@ -1,4 +1,4 @@
-package com.mycompany.product_comments;
+package com.mycompany.myapp.product_comments;
 
 import java.util.List;
 import java.util.Map;

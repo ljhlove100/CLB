@@ -1,4 +1,4 @@
-package com.mycompany.product_comments.view;
+package com.mycompany.myapp.product_comments.view;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.mycompany.product_comments.Product_commentsService;
-import com.mycompany.product_comments.Product_commentsVO;
+import com.mycompany.myapp.product_comments.Product_commentsService;
+import com.mycompany.myapp.product_comments.Product_commentsVO;
 
 @Controller
 @SessionAttributes("product_comments")
