@@ -11,103 +11,70 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.mycompany.myapp.users.UsersSearchVO;
 import com.mycompany.myapp.users.UsersService;
+import com.mycompany.myapp.users.UsersVO;
 
  
-//@Controller
+@Controller
+@SessionAttributes("users")
 public class UsersController {
-     
-/*	@Autowired
-    UsersService usersService;
-	
-	private static final Logger logger = LoggerFactory.getLogger(UsersController.class);
-    
-	
-	@RequestMapping(value = "/Login", method = RequestMethod.GET)
-    public String Login(){
-    	    		
-    	return "/global/login/Login";
-    }	
-	
-	@RequestMapping(value = "/Logout", method = RequestMethod.GET)
-    public String Logout( HttpSession session){    	
 
-		session.invalidate();
-		
-    	return "redirect:/";
-    }	
 	
-    @RequestMapping(value = "/Logincheck", method = RequestMethod.POST)    
-    public String Logincheck(Model model, HttpServletRequest request) {
-    	
-    	
-    	String	users_id = request.getParameter("u_id");
-    	String	users_pw = request.getParameter("pw");
-    	String 	ReturnUrl = ""; 
-    	
-    	//	users 정보가 있으면 1 없으면 0
-    	int LoginCheck = usersService.UsersCheck(users_id, users_pw);
-    	
-    	if(LoginCheck==1){
-    		    		    		
-    		Map<String, Object> map = new HashMap<String,Object>();
-   			
-    		String users_name = usersService.getUsersName(users_id);
-    		String company = usersService.getUsersCompany(users_id);
-    		String department = usersService.getUsersDepartment(users_id);
-    		String team = usersService.getUsersTeam(users_id);
-    		String position = usersService.getUsersPosition(users_id);
-    		
-    		request.getSession().setAttribute("users_id", users_id); 
-    		request.getSession().setAttribute("users_name", users_name); 
-    		request.getSession().setAttribute("company", company); 
-    		request.getSession().setAttribute("department", department); 
-    		request.getSession().setAttribute("team", team); 
-    		request.getSession().setAttribute("position", position); 
-   		    		
-    		ReturnUrl = "redirect:/Main";
-    	}	
-		else{			
-			model.addAttribute("message", "ID와 PW를 확인해주세요");	    	
-			ReturnUrl = "/global/login/Login";
-		}
-    	
-        return ReturnUrl;
-    }	
-    
-    @RequestMapping(value = "/UsersList", method = RequestMethod.GET)    
-    public String getUsersList(@RequestParam(required=false, defaultValue="1") int page, 
-    		@RequestParam(required=false) String search, 
-    		@RequestParam(required=false) String word, 
-    		@RequestParam(required=false) String searchFlag,
-    		Model model){
-    	
-    	int totalUsersCnt = 0;
-		Page pageVo = null;	
-						
-		totalUsersCnt = usersService.getTotalUsersCnt(search, word);		
-		pageVo = new Page(page,totalUsersCnt);
-    	
-		model.addAttribute("page",pageVo);
-		model.addAttribute("users", usersService.getAllUsers(pageVo.getCurPage(), search, word));		
-		model.addAttribute("searchFlag", searchFlag);
-		model.addAttribute("search",search);
-		model.addAttribute("word", word);
+	@Autowired
+	UsersService UsersService;
 
-		return "/users/UsersList";
-    }
-    
-    
-    @RequestMapping(value = "/UsersView/{users_id}")
-	public String showArticle(@PathVariable(value="users_id") String users_id, Model model){
-    	   	
-    	model.addAttribute("users", usersService.getUsersInfo(users_id));
-		
-		return "/users/UsersView";
-	}   */
+	@RequestMapping("/index")
+	public String indexForm(HttpServletRequest request) {
+		return "users/index";
+	}
+	
+	@RequestMapping("/getUsersList")
+	public String getUsersList(UsersSearchVO vo, HttpServletRequest request) {
+		request.setAttribute("usersList", UsersService.getUserList());
+		return "users/getUsersList";
+	}
+
+	// 등록폼
+	@RequestMapping(value = "/usersInsert", method = RequestMethod.GET)
+	public String usersInsertForm() {
+		return "users/getUsersInsert";
+	}
+
+	// 수정폼
+	@RequestMapping(value = "/UsersUpdate", method = RequestMethod.GET)
+	public String usersUpdateForm(Model model, UsersVO vo) {
+		model.addAttribute("users",UsersService.getUsers(vo.getU_id()));
+		return "users/getUsersupdate";
+	}
+
+	// 수정처리
+	@RequestMapping(value = "/UsersUpdate", method = RequestMethod.POST)
+	public String updateUsers(@ModelAttribute("users") UsersVO vo) {
+		System.out.println(vo);
+		UsersService.updateUsers(vo);
+		return "redirect:/getUsersList";
+	}
+
+	// 등록처리
+	@RequestMapping(value = "/usersInsert", method = RequestMethod.POST)
+	public String insertBoard(@ModelAttribute("users") UsersVO vo) {
+		System.out.println(vo);
+		// 서비스이용하여 등록처리하고 목록페이지로 이동
+		UsersService.insertUsers(vo);
+		return "users/UsersInsert";
+	}
+
+	@RequestMapping("/getUsers/{u_id}")
+	public String getUsers(@PathVariable String u_id, Model model) {
+		model.addAttribute("users", UsersService.getUsers(u_id));
+		return "users/getUsers";
+	}
 }

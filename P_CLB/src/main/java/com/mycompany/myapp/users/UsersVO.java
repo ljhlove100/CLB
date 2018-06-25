@@ -93,6 +93,12 @@ public class UsersVO {
 	public void setYn(String yn) {
 		this.yn = yn;
 	}
+	@Override
+	public String toString() {
+		return "UsersVO [u_id=" + u_id + ", pw=" + pw + ", name=" + name + ", email=" + email + ", tel=" + tel
+				+ ", phone=" + phone + ", addr=" + addr + ", zipcode=" + zipcode + ", business_code=" + business_code
+				+ ", power=" + power + ", inserdate=" + inserdate + ", updateday=" + updateday + ", yn=" + yn + "]";
+	}
 	
 		
 }
