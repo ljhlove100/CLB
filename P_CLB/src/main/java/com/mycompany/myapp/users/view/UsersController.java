@@ -1,4 +1,4 @@
-package com.mycompany.users.view;
+package com.mycompany.myapp.users.view;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.mycompany.users.UsersService;
+import com.mycompany.myapp.users.UsersService;
 
  
 //@Controller

@@ -1,13 +1,13 @@
-package com.mycompany.product.impl;
+package com.mycompany.myapp.product.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mycompany.product.ProductSearchVO;
-import com.mycompany.product.ProductService;
-import com.mycompany.product.ProductVO;
+import com.mycompany.myapp.product.ProductSearchVO;
+import com.mycompany.myapp.product.ProductService;
+import com.mycompany.myapp.product.ProductVO;
 
 @Service("productService")
 public class ProductServiceImpl implements ProductService{

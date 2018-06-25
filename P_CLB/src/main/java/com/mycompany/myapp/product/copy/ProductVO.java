@@ -1,4 +1,4 @@
-package com.mycompany.product.copy;
+package com.mycompany.myapp.product.copy;
 
 public class ProductVO {
 	private int p_no;

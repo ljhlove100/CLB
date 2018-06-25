@@ -1,4 +1,4 @@
-package com.mycompany.product.impl;
+package com.mycompany.myapp.product.impl;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.mycompany.product.ProductSearchVO;
-import com.mycompany.product.ProductVO;
+import com.mycompany.myapp.product.ProductSearchVO;
+import com.mycompany.myapp.product.ProductVO;
 
 @Repository
 public class ProductDAO {

@@ -1,4 +1,4 @@
-package com.mycompany.product.view;
+package com.mycompany.myapp.product.view;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.mycompany.product.ProductSearchVO;
-import com.mycompany.product.ProductService;
-import com.mycompany.product.ProductVO;
+import com.mycompany.myapp.product.ProductSearchVO;
+import com.mycompany.myapp.product.ProductService;
+import com.mycompany.myapp.product.ProductVO;
 
 @Controller
 public class ProductController {
