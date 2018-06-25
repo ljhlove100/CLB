@@ -31,10 +31,16 @@ public class UsersController {
 	@Autowired
 	UsersService UsersService;
 
-	@RequestMapping("/index")
+	@RequestMapping("/layout")
 	public String indexForm(HttpServletRequest request) {
-		return "users/index";
+		return "users/layout";
 	}
+	
+	@RequestMapping(value = "/Login", method = RequestMethod.GET)
+    public String Login(){
+    	    		
+    	return "./login";
+    }	
 	
 	@RequestMapping("/getUsersList")
 	public String getUsersList(UsersSearchVO vo, HttpServletRequest request) {
