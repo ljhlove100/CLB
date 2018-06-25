@@ -44,7 +44,7 @@ public class UsersController {
 	
 	@RequestMapping("/getUsersList")
 	public String getUsersList(UsersSearchVO vo, HttpServletRequest request) {
-		request.setAttribute("usersList", UsersService.getUserList());
+		//request.setAttribute("usersList", UsersService.getUserList());
 		return "users/getUsersList";
 	}
 
