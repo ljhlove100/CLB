@@ -47,10 +47,9 @@
 					<div style="display: inline-block">
 						<div class="panel panel-default text-center">
 							<div class="panel-heading">
-								<a href="getProduct/${product.pNo}">${product.image}</a><br>
+								<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}">${product.image}</a><br>
 							</div>
 							<div class="panel-footer">
-								물품번호 : <a href="getProduct?pNo=${product.pNo}">${product.pNo}</a><br>
 								 ${product.pName}<br>
 								 ${product.pContents}<br> 
 								 ${product.price}원<br>
