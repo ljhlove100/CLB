@@ -102,10 +102,10 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="${pageContext.request.contextPath}/getProductList" class="active">Home</a></li>
-								<li><a href="${pageContext.request.contextPath}/getProductList?&p_group=A" >명함</a></li>
-								<li><a href="${pageContext.request.contextPath}/getProductList?&p_group=A" >액자</a></li>
-								<li><a href="${pageContext.request.contextPath}/getProductList?&p_group=A" >포토북</a></li>
-								<li><a href="${pageContext.request.contextPath}/getProductList?&p_group=A" >현수막</a></li>
+								<li><a href="${pageContext.request.contextPath}/getProductList?pGroup=D" >명함</a></li>
+								<li><a href="${pageContext.request.contextPath}/getProductList?pGroup=A">액자</a></li>
+								<li><a href="${pageContext.request.contextPath}/getProductList?pGroup=B" >포토북</a></li>
+								<li><a href="${pageContext.request.contextPath}/getProductList?pGroup=C" >현수막</a></li>
 							</ul>
 						</div>
 					</div>
@@ -141,10 +141,8 @@
 									<h1>
 										<span>Come !</span>-오이소 !
 									</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt ut labore et dolore
-										magna aliqua.</p>
+									<h2>New ! / 7월 10일 ~ 13일</h2>
+									<p>여름 Hot 신상품을 Get ! 하세요~</p>
 									<button type="button" class="btn btn-default get">Get
 										it now</button>
 								</div>
@@ -159,10 +157,8 @@
 									<h1>
 										<span>Look !</span>-보이소 !
 									</h1>
-									<h2>100% Responsive Design</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt ut labore et dolore
-										magna aliqua.</p>
+									<h2>100% 창의적 디자인</h2>
+									<p>당신만의 스토리 있는 포토북을 만들어보세요</p>
 									<button type="button" class="btn btn-default get">Get
 										it now</button>
 								</div>
@@ -178,10 +174,8 @@
 									<h1>
 										<span>Buy !</span>-사이소 !
 									</h1>
-									<h2>Free Ecommerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt ut labore et dolore
-										magna aliqua.</p>
+									<h2>싸다 싸 와이레 싸노</h2>
+									<p>남들은 모르는 나만의 시크릿 쇼핑몰 CLB</p>
 									<button type="button" class="btn btn-default get">Get
 										it now</button>
 								</div>
