@@ -26,7 +26,7 @@ public class UsersDAO {
 		return mybatis.selectList("com.mycompany.myapp.UsersDAO.getUsersList", vo);
 	};
 
-	// 단건저회
+	// 단건조회
 	public UsersVO getUsers(String u_id) {
 		return mybatis.selectOne("com.mycompany.myapp.UsersDAO.getUsers", u_id);
 	}

@@ -31,6 +31,8 @@
 	href="images/ico/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed"
 	href="images/ico/apple-touch-icon-57-precomposed.png">
+	
+	
 </head>
 
 <style>
@@ -69,5 +71,6 @@
 			<tiles:insertAttribute name="footer" />
 		</footer>
 	</div>
+	
 </body>
 </html>

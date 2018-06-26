@@ -1,131 +1,86 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style>
-div.modal-dialog {
-	background-color: white;
-	text-align: center;
-	images-align: center;
-}
-
-div.modal-footer {
-	align: center;
-}
-
-
-
-th, td {
-    padding: 5px;
-    text-align: center;    
-}
-
-</style>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Tell the browser to be responsive to screen width -->
+  	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	
+	<title>clblogin</title>
+	
+	<link rel="shortcut icon" href="/resources/image/global/main_logo_img.png" type="image/x-icon"/>
+	<!-- Bootstrap 3.3.6 -->
+	<link rel="stylesheet" href="/resources/bootstrap/css/bootstrap.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="/resources/dist/css/AdminLTE.min.css">
+	<!-- iCheck -->
+	<link rel="stylesheet" href="/resources//plugins/iCheck/square/blue.css">
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+	<script type="text/javascript">
+	
+		var message = '${message}';
+		
+		if( message != ""){
+			alert(message);
+			document.location.href = "/";
+		}		
+	</script>
 </head>
-<body>
+  
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="Https://www.oceanhills.com"><b>Oceanhills</b>GMS</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Sign in to start your session</p>
 
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<img src="${pageContext.request.contextPath}/views/images/home/Logo_1.png" align="center" alt="Avatar"
-						class="avatar" width="500" height="300">
-					<!-- 	<button type="button" class="close" class="btn btn-dark" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">테스트</h4> -->
-				</div>
-				<form method="post" action="../signUp/signUp_control.jsp">
-					<div class="modal-bodyc" align=center font-size=13px>
-						<input type="hidden" name="action" value="login">
-						<table class="mainlogin">
-							<tr>
-								<th>아이디</th>
-								<td><input type="text" placeholder="이메일" name="u_id"	 required></td>
-							</tr>
-
-							<tr>
-								<th>비밀번호</th>
-								<td><input type="password" placeholder="비밀번호" name="pw" required></td>
-							</tr>
-							<br>
-							<tr >
-								<th colspan="2" align="center">
-								<button type="submit" class="btn btn-warning">로그인</button><br>
-										 <a href="../signUp/signUp.jsp">회원가입</a> 
-										 <a href="./pw_find.jsp">비밀번호</a><br>
-								<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-								</th>
-						</table>
-					</div>
-				</form>
-			</div>
-
-		</div>
-	</div>
-
-
-	<!-- The Modal -->
-	<div class="modal fade" id="myModal1" role="dialog">
-		<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<img src="${pageContext.request.contextPath}/images/home/Logo_1.png" align="center" alt="Avatar"
-						class="avatar" width="500" height="300">
-				</div>
-				<form method="post" action="../signUp/signUp_control.jsp">
-					<div class="modal-bodyd" font-size=13px>
-						<input type="hidden" name="action" value="new">
-						<table class="mainlogin">
-							<tr>
-								<th>아이디</th>
-								<td><input type="text"
-									placeholder="아이디" name="u_id" required></td>
-							</tr>
-							<!-- <tr>
-								<th>아이디확인</th>
-								<td><input type="text" placeholder="아이디 다시 입력"
-									name="u_id" required></td>
-									<input tpye ="button" value="중복확인" onclick="logincheck">
-							</tr> -->
-							<tr>
-								<th>비밀번호</th>
-								<td><input type="password" placeholder="영문·숫자·특수문자조합6~15자리"
-									name="pw" required></td>
-							</tr>
-							<tr>
-								<th>이름</th>
-								<td><input type="text" placeholder="이름" name="name"required></td>
-							</tr>
-							<tr>
-								<th colspan="2" align="center"><input type="checkbox"
-									checked="checked" name="remember" style="margin-bottom: 15px">
-									만 14세 이상이며, CLB 이용약관 및 개인정보 수집 및 이용에 대한 내용을 확인하고 동의합니다.
-								</th>
-							</tr>
-							<tr>
-								<td colspan="2" align="center">
-								<input type="submit"	value="완료" /></td>
-							</tr>
-						</table>
+    <form action="/Logincheck" method="post">
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="users_id" placeholder="ID">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" name="users_pw" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+  </div>
+  <!-- /.login-box-body -->
 </div>
-</form>
-</div>
-</div>
-</div>
+<!-- /.login-box -->
+
+<!-- jQuery 2.2.3 -->
+<script src="/resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="/resources/plugins/iCheck/icheck.min.js"></script>
 </body>
 </html>
-
