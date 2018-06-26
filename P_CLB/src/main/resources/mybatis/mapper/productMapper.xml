@@ -13,10 +13,21 @@
     </select>
     
 	<!-- 전체조회 -->
-	<select id="getProductList" resultType="com.mycompany.myapp.product.ProductVO">
+	<select id="getProductList"  parameterType="com.mycompany.myapp.product.ProductVO" resultType="com.mycompany.myapp.product.ProductVO">
       SELECT P_NO, P_NAME, PRICE, P_CONTENTS, P_GROUP, IMAGE 
        FROM PRODUCT
+	<where>
+		<if test="pGroup != null and pGroup != ''">
+			AND p_group = #{pGroup} 
+		</if>
+	</where>
       ORDER BY P_NO
+    </select>
+    
+    <select id="getProductPgroup" resultType="com.mycompany.myapp.product.ProductVO">
+      SELECT P_NO, P_NAME, PRICE, P_CONTENTS, P_GROUP, IMAGE 
+       FROM PRODUCT
+      WHERE P_GROUP = #{pGroup}
     </select>
     
     <!-- 추가 -->

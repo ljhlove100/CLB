@@ -22,8 +22,8 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 
-	@RequestMapping("/getProductList")
-	public String getBoardList(ProductSearchVO vo, HttpServletRequest request) {
+	@RequestMapping(value= "/getProductList", method = RequestMethod.GET)
+	public String getBoardList(ProductVO vo, HttpServletRequest request) {
 		request.setAttribute("productList", productService.getProductList(vo));
 		return "product/getProductList";
 	}
@@ -63,4 +63,5 @@ public class ProductController {
 		model.addAttribute("product", productService.getProduct(p_no));
 		return "product/getProduct";
 	}
+	
 }

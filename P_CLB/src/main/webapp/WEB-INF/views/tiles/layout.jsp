@@ -16,8 +16,6 @@
 <link href="${pageContext.request.contextPath}/resources/css/animate.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/css/responsive.css" rel="stylesheet">
-
-
 <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -32,7 +30,12 @@
 <link rel="apple-touch-icon-precomposed"
 	href="images/ico/apple-touch-icon-57-precomposed.png">
 	
+<<<<<<< HEAD
 	
+=======
+
+<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>	
+>>>>>>> branch 'master' of https://github.com/ljhlove100/CLB
 </head>
 
 <style>
@@ -54,7 +57,9 @@
       color: #303030;
       font-weight: 400;
       margin-bottom: 30px;
-  }  
+  }
+ 
+
 </style>
 <body>
 	<div class="container">

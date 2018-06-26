@@ -5,7 +5,7 @@ import java.util.List;
 public interface ProductService {
 	
 	//목록조회
-	public List<ProductVO> getProductList(ProductSearchVO searchVO);
+	public List<ProductVO> getProductList(ProductVO vo);
 	
 	//단건조회
 	public ProductVO getProduct(String p_no);

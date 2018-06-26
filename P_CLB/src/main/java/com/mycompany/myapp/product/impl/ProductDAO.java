@@ -16,8 +16,8 @@ public class ProductDAO {
 	   SqlSessionTemplate mybatis;
 	
 	//전체조회
-	public List<ProductVO> getProductList(ProductSearchVO searchVO){
-		return mybatis.selectList("com.mycompany.myapp.product.ProductDAO.getProductList");
+	public List<ProductVO> getProductList(ProductVO vo){
+		return mybatis.selectList("com.mycompany.myapp.product.ProductDAO.getProductList",vo);
 	};
 	
 	//단건조회

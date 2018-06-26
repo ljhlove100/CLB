@@ -13,7 +13,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
 <style>
  body {
        font: 400 15px Lato, sans-serif;
@@ -37,6 +36,7 @@
 </style>
 </head>
 <body>
+	
 	<h2 class="text-center">Come!&nbsp;&nbsp;Look!&nbsp;&nbsp;Buy!</h2>
 	<div style="text-align:right">
 	<a href="${pageContext.request.contextPath}/productInsert">
@@ -53,7 +53,6 @@
 								<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}">${product.image}</a><br>
 							</div>
 							<div class="panel-footer">
-								 ${product.pGroup}<br>
 								 ${product.pName}<br>
 								 ${product.pContents}<br> 
 								 ${product.price}원<br>
