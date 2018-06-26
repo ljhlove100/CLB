@@ -37,23 +37,23 @@
 </style>
 </head>
 <body>
-	<h2 class="text-center">CLB Product</h2>
+	<h2 class="text-center">Come!&nbsp;&nbsp;Look!&nbsp;&nbsp;Buy!</h2>
 	<div style="text-align:right">
 	<a href="${pageContext.request.contextPath}/productInsert">
 	<input type="button" value="상품추가"></a>
 	</div><br><br>
-	<div style="border: 3px solid black; padding: 30px; margin: 30px;">
 	<div id="pricing" class="container-fluid">
 		<div class="text-center"></div>
 		<div class="row ">
 			<c:forEach items="${productList}" var="product">
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<div style="display: inline-block">
 						<div class="panel panel-default text-center">
 							<div class="panel-heading">
 								<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}">${product.image}</a><br>
 							</div>
 							<div class="panel-footer">
+								 ${product.pGroup}<br>
 								 ${product.pName}<br>
 								 ${product.pContents}<br> 
 								 ${product.price}원<br>
@@ -65,7 +65,5 @@
 			</c:forEach>
 		</div>
 	</div>
-	</div>
-
 </body>
 </html>

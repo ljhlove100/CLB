@@ -7,7 +7,7 @@
  	<!-- 단건조회 -->
     
     <select id="getProduct" parameterType="string" resultType="com.mycompany.myapp.product.ProductVO">
-      SELECT P_NO, P_NAME, PRICE, P_CONTENTS, P_GROUP, IMAGE
+      SELECT P_NO, P_NAME, PRICE, P_CONTENTS, P_GROUP, IMAGE, DETAILIMAGE
         FROM PRODUCT
        WHERE P_NO = #{pNo}
     </select>

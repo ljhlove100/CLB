@@ -13,8 +13,16 @@ public class ProductVO {
 	private String updateday;
 	private String yn;
 	private String image;
+	private String detailimage;
 	
 	
+	
+	public String getDetailimage() {
+		return detailimage;
+	}
+	public void setDetailimage(String detailimage) {
+		this.detailimage = detailimage;
+	}
 	public int getpNo() {
 		return pNo;
 	}

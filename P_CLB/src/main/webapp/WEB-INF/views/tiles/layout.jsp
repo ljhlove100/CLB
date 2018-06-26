@@ -9,13 +9,15 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>CLB</title>
-<link href="./resources/css/bootstrap.min.css" rel="stylesheet">
-<link href="./resources/css/font-awesome.min.css" rel="stylesheet">
-<link href="./resources/css/prettyPhoto.css" rel="stylesheet">
-<link href="./resources/css/price-range.css" rel="stylesheet">
-<link href="./resources/css/animate.css" rel="stylesheet">
-<link href="./resources/css/main.css" rel="stylesheet">
-<link href="./resources/css/responsive.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/prettyPhoto.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/price-range.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/animate.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/responsive.css" rel="stylesheet">
+
+
 <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -30,6 +32,28 @@
 <link rel="apple-touch-icon-precomposed"
 	href="images/ico/apple-touch-icon-57-precomposed.png">
 </head>
+
+<style>
+ body {
+       font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+</style>
 <body>
 	<div class="container">
 		<header>

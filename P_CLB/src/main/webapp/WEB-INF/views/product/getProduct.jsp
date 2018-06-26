@@ -75,6 +75,7 @@
 	      }
 		
 	</script>
+	${product.detailimage}
 	<center>
 	<div>
 	<h3>상품 정보</h3>

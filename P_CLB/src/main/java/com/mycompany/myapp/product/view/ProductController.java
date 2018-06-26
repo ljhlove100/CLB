@@ -61,38 +61,6 @@ public class ProductController {
 	@RequestMapping("/getProduct/{p_no}")
 	public String getBoard(@PathVariable String p_no, Model model) {
 		model.addAttribute("product", productService.getProduct(p_no));
-		if(p_no.equals("1")) {
-	         return "product/detail/metalPframe";
-	      } else if(p_no.equals("2")) {
-	    	 return "product/detail/woodPframe";
-	      } else if(p_no.equals("3")) {
-		     return "product/detail/woodPframe";
-		  } else if(p_no.equals("4")) {
-			 return "product/detail/kakaoPB";
-		  } else if(p_no.equals("5")) {
-			 return "product/detail/facePB";
-		  } else if(p_no.equals("6")) {
-			 return "product/detail/instarPB";
-		  } else if(p_no.equals("7")) {
-			 return "product/detail/myPB";
-		  } else if(p_no.equals("8")) {
-			 return "product/detail/marblePframe";
-		  } else if(p_no.equals("9")) {
-			 return "product/detail/acrPframe";
-		  } else if(p_no.equals("10")) {
-			 return "product/detail/basicBanner";
-		  } else if(p_no.equals("11")) {
-			 return "product/detail/woodBanner";
-		  } else if(p_no.equals("12")) {
-			 return "product/detail/bigBanner";
-		  } else if(p_no.equals("13")) {
-			 return "product/detail/banBcard";
-		  } else if(p_no.equals("14")) {
-			 return "product/detail/snowBcard";
-		  } else if(p_no.equals("15")) {
-			 return "product/detail/dojangBcard";
-		  }
-		
 		return "product/getProduct";
 	}
 }
