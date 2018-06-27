@@ -87,6 +87,7 @@ $(function(){
 		상품코드 : ${ product_comments.p_no } <br>
 		등록자ID : ${ product_comments.insertid } <br>
 		등록일 : ${ product_comments.insertdate } <br>
+		첨부파일 : <a href="downloadProduct_comments?pc_no=${vo.pc_no}">${vo.uploadfile}</a><br>
 		
 		<a href="../updateProduct_comments">수정</a>
 </body>

@@ -15,6 +15,15 @@ public class Product_commentsVO {
 	private String searchKeyword;
 	private String searchCondition;
 	
+	private String uploadfile;
+	
+	public String getUploadfile() {
+		return uploadfile;
+	}
+	public void setUploadfile(String uploadfile) {
+		this.uploadfile = uploadfile;
+	}
+	
 	public String getPc_no() {
 		return pc_no;
 	}

@@ -5,26 +5,26 @@
 <mapper namespace="com.mycompany.myapp.product_comments.Product_commentsDAO">
 
 	<!-- 단건조회 -->
-	<select id="getBoard" parameterType="string" resultType="com.mycompany.myapp.product_comments.Product_commentsVO">
-		SELECT seq, title, writer, content, regdate, cnt, uploadfile 
-		FROM board
-		WHERE seq = #{seq}
+	<select id="getProduct_comments" parameterType="string" resultType="com.mycompany.myapp.product_comments.Product_commentsVO">
+		SELECT pc_no, c_title, c_name, c_contents, insertdate, uploadfile 
+		FROM product_comments
+		WHERE pc_no = #{pc_no}
 	</select>
 
-	<select id="getBoardList" resultType="map">
-		SELECT seq, title, writer, content, regdate, cnt 
-		 FROM board
+	<select id="getProduct_commentsList" resultType="map">
+		SELECT pc_no, c_title, c_name, c_contents, insertdate, 
+		 FROM product_comments
 	</select>
 
-	<insert id="insertBoard" parameterType="com.mycompany.myapp.product_comments.Product_commentsVO">
+	<insert id="insertProduct_comments" parameterType="com.mycompany.myapp.product_comments.Product_commentsVO">
 		<selectKey keyProperty="seq" resultType="string" order="BEFORE">
-			SELECT nvl(MAX(seq),0) + 1 FROM BOARD
+			SELECT nvl(MAX(pc_no),0) + 1 FROM PRODUCT_COMMENTS
 		</selectKey>
-		insert into board(seq, title, content, writer, regdate, cnt
+		insert into product_comments(pc_no, c_title, c_contents, c_name, insertdate
 		<if test="uploadfile != null and uploadfile != '' ">
 			, uploadfile
 		</if>
-		) values (#{seq}, #{title}, #{content}, #{writer}, trunc(sysdate), 0 
+		) values (#{pc_no}, #{c_title}, #{c_contents}, #{c_name}, trunc(sysdate)
 		<if test="uploadfile != null and uploadfile != '' ">
 			, #{uploadfile}
 		</if>
