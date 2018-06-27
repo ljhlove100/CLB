@@ -13,7 +13,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
 <style>
  body {
        font: 400 15px Lato, sans-serif;
@@ -37,13 +36,17 @@
 </style>
 </head>
 <body>
-	<h2 class="text-center">CLB Product</h2>
-	<a href="${pageContext.request.contextPath}/productInsert"><h3>상품추가</h3></a>
+	
+	<h2 class="text-center">Come!&nbsp;&nbsp;Look!&nbsp;&nbsp;Buy!</h2>
+	<div style="text-align:right">
+	<a href="${pageContext.request.contextPath}/productInsert">
+	<input type="button" value="상품추가"></a>
+	</div><br><br>
 	<div id="pricing" class="container-fluid">
 		<div class="text-center"></div>
 		<div class="row ">
 			<c:forEach items="${productList}" var="product">
-				<div class="col-lg-3">
+				<div class="col-lg-4">
 					<div style="display: inline-block">
 						<div class="panel panel-default text-center">
 							<div class="panel-heading">
@@ -61,6 +64,5 @@
 			</c:forEach>
 		</div>
 	</div>
-
 </body>
 </html>

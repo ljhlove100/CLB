@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 
 
@@ -36,63 +36,13 @@ th, td {
 </head>
 <body>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#"></a>
-			</div>
-			<ul class="nav navbar-nav">
-				<c:if test="${empty sessionScope.login_id}">
-					<li><a class="navbar-brand" data-toggle="modal"
-						data-target="#myModal">로그인</a></li>
-					<li><a class="navbar-brand" data-toggle="modal"
-						data-target="#myModal1">회원가입</a></li>
-				</c:if>
-				<c:if test="${!empty sessionScope.login_id}">
-					<li><a class="navbar-brand" data-toggle="modal"
-						data-target="#myModal">${sessionScope.login_id.name} 님 </a></li>
-					<li><a class="navbar-brand" data-toggle="modal"
-						href="../signUp/signUp_control.jsp?action=logout">로그아웃</a></li>
-					<li><a class="navbar-brand" data-toggle="modal"
-						href="../signUp/user.jsp">회원정보수정</a></li>
-				</c:if>
-			</ul>
-		</div>
-
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand"
-					href="${pageContext.request.contextPath}/product/product_control.jsp?action=list">ComeLookBuy</a>
-
-
-			</div>
-
-			<ul class="nav navbar-nav">
-				<li><a
-					href="${pageContext.request.contextPath}/product/product_control.jsp?action=list">HOME</a></li>
-				<li><a
-					href="${pageContext.request.contextPath}/product/product_control.jsp?action=list&p_group=A">액자</a></li>
-				<li><a
-					href="${pageContext.request.contextPath}/product/product_control.jsp?action=list&p_group=B">포토북</a></li>
-				<li><a
-					href="${pageContext.request.contextPath}/product/product_control.jsp?action=list&p_group=C">현수막</a></li>
-				<li><a
-					href="${pageContext.request.contextPath}/product/product_control.jsp?action=list&p_group=D">명함</a></li>
-
-
-			</ul>
-		</div>
-
-	</nav>
-
-
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
-					<img src="../images/home/Logo_1.png" align="center" alt="Avatar"
+					<img src="${pageContext.request.contextPath}/views/images/home/Logo_1.png" align="center" alt="Avatar"
 						class="avatar" width="500" height="300">
 					<!-- 	<button type="button" class="close" class="btn btn-dark" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">테스트</h4> -->
@@ -133,7 +83,7 @@ th, td {
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
-					<img src="../images/home/Logo_1.png" align="center" alt="Avatar"
+					<img src="${pageContext.request.contextPath}/images/home/Logo_1.png" align="center" alt="Avatar"
 						class="avatar" width="500" height="300">
 				</div>
 				<form method="post" action="../signUp/signUp_control.jsp">

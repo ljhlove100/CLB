@@ -12,7 +12,7 @@ public interface UsersService {
 
 		public List<UsersVO> getUserList(UsersVO vo);
 
-		// 단건저회
+		// 단건조회
 		public UsersVO getUsers(String u_id);
 
 		// 입력
