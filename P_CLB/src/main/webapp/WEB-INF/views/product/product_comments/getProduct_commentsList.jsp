@@ -6,7 +6,6 @@
 <title>Product_commnetsList.jsp</title>
 </head>
 <body>
-<a href="insertProduct_comments">게시글 등록</a>
 	<h3>게시판 목록</h3>
 	<form>
 		<select>
@@ -17,7 +16,7 @@
 		</select>
 		<input type = "submit" value="검색" />
 	</form>
-	<a href="insertProduct_commentsForm">게시글 등록하기</a>
+	<a href="insertProduct_comments">게시글 등록하기</a>
 	<c:forEach items = "${product_commentsList}" var="product_comments">
 		<div style = "border: 1px solid black;">
 			pc_no:<a href="updateBoardForm?pc_no=${product_comments.PC_NO}">${product_comments.PC_NO}</a><br>
