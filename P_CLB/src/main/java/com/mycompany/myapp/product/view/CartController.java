@@ -19,7 +19,7 @@ import com.mycompany.myapp.product.CartVO;
 @Controller
 @RequestMapping("/shop/cart/*")
 public class CartController {
-
+/*
     @Inject
     CartService cartService;
 
@@ -84,4 +84,4 @@ public class CartController {
 
         return "redirect:/shop/cart/list.do";
     }
-}
+*/}
