@@ -39,7 +39,8 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+							<a href="home"><img src="${pageContext.request.contextPath}/resources/images/home/Logo_1.png"
+							alt="" width="300px" height="75px"/></a>
 						</div>
 					
 					</div>
@@ -50,7 +51,7 @@
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Checkout</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Cart</a></li>
-								<li><a href="login.jsp"><i class="fa fa-lock"></i>Login</a></li>
+								<li><a href="Login"><i class="fa fa-lock"></i>Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -120,9 +121,8 @@
 										it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="images/home/girl1.jpg" class="girl img-responsive"
-										alt="" /> <img src="images/home/pricing.png" class="pricing"
-										alt="" />
+									<img src="${pageContext.request.contextPath}/resources/images/home/hot.jpg" 
+										alt="hot" width="270px" height="270px"/> 
 								</div>
 							</div>
 							<div class="item">
@@ -136,9 +136,8 @@
 										it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="images/home/girl2.jpg" class="girl img-responsive"
-										alt="" /> <img src="images/home/pricing.png" class="pricing"
-										alt="" />
+									<img src="${pageContext.request.contextPath}/resources/images/home/potobook.jpg" 
+										alt="" width="270px" height="270px"/> 
 								</div>
 							</div>
 
@@ -153,9 +152,8 @@
 										it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="images/home/girl3.jpg" class="girl img-responsive"
-										alt="" /> <img src="images/home/pricing.png" class="pricing"
-										alt="" />
+									<img src="${pageContext.request.contextPath}/resources/images/home/seacret.jpg" 
+										alt="" width="270px" height="270px"/> 
 								</div>
 							</div>
 

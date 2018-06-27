@@ -29,13 +29,9 @@
 	href="images/ico/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed"
 	href="images/ico/apple-touch-icon-57-precomposed.png">
-	
-<<<<<<< HEAD
-	
-=======
 
-<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>	
->>>>>>> branch 'master' of https://github.com/ljhlove100/CLB
+
+
 </head>
 
 <style>
@@ -64,7 +60,7 @@
 <body>
 	<div class="container">
 		<header>
-			<h1>CLB</h1>
+			
 		</header>
 		<nav>
 			<tiles:insertAttribute name="header" />
