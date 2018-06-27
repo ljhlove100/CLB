@@ -34,6 +34,7 @@ th, td {
 
 </style>
 </head>
+
 <body>
 
 	<!-- Modal -->

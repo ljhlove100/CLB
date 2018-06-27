@@ -2,7 +2,7 @@ package com.mycompany.myapp.users;
 
 public class UsersVO {
 
-	private String u_id;
+	private String uId;
 	private String pw;
 	private String name;
 	private String email;
@@ -10,16 +10,25 @@ public class UsersVO {
 	private String phone;
 	private String addr;
 	private String zipcode;
-	private String business_code;
+	private String businessCode;
 	private String power;
 	private String inserdate;
 	private String updateday;
 	private String yn;
-	public String getU_id() {
-		return u_id;
+	
+	
+	
+	public String getuId() {
+		return uId;
 	}
-	public void setU_id(String u_id) {
-		this.u_id = u_id;
+	public void setuId(String uId) {
+		this.uId = uId;
+	}
+	public String getBusinessCode() {
+		return businessCode;
+	}
+	public void setBusinessCode(String businessCode) {
+		this.businessCode = businessCode;
 	}
 	public String getPw() {
 		return pw;
@@ -63,12 +72,6 @@ public class UsersVO {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-	public String getBusiness_code() {
-		return business_code;
-	}
-	public void setBusiness_code(String business_code) {
-		this.business_code = business_code;
-	}
 	public String getPower() {
 		return power;
 	}
@@ -95,8 +98,8 @@ public class UsersVO {
 	}
 	@Override
 	public String toString() {
-		return "UsersVO [u_id=" + u_id + ", pw=" + pw + ", name=" + name + ", email=" + email + ", tel=" + tel
-				+ ", phone=" + phone + ", addr=" + addr + ", zipcode=" + zipcode + ", business_code=" + business_code
+		return "UsersVO [uId=" + uId + ", pw=" + pw + ", name=" + name + ", email=" + email + ", tel=" + tel
+				+ ", phone=" + phone + ", addr=" + addr + ", zipcode=" + zipcode + ", businessCode=" + businessCode
 				+ ", power=" + power + ", inserdate=" + inserdate + ", updateday=" + updateday + ", yn=" + yn + "]";
 	}
 	

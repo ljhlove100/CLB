@@ -25,13 +25,7 @@ public class UsersController {
 	@Autowired
 	UsersService UsersService;
 
-		
-	
-	
-	@RequestMapping("/layout")
-	public String indexForm(HttpServletRequest request) {
-		return "users/layout";
-	}
+			
 	
 	@RequestMapping(value = "/Login", method = RequestMethod.GET)
     public String Login(){
@@ -54,7 +48,7 @@ public class UsersController {
 	// 수정폼
 	@RequestMapping(value = "/UsersUpdate", method = RequestMethod.GET)
 	public String usersUpdateForm(Model model, UsersVO vo) {
-		model.addAttribute("users",UsersService.getUsers(vo.getU_id()));
+		model.addAttribute("users",UsersService.getUsers(vo.getuId()));
 		return "users/getUsersupdate";
 	}
 

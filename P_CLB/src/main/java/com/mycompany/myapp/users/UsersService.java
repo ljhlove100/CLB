@@ -23,5 +23,8 @@ public interface UsersService {
 
 		// 삭제
 		public void deleteUsers(String u_id);
+		
+		//로그인
+		public void Login(String Login);
 	}
 
