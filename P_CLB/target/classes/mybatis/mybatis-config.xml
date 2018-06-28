@@ -10,7 +10,10 @@
 
 	<typeAliases>
 		<typeAlias type="com.mycompany.myapp.product.ProductVO" alias="productVO"></typeAlias>
+		<!-- <typeAlias type="com.mycompany.myapp.users.usersVO" alias="usersVO"></typeAlias> -->
 	</typeAliases>
+	
+	
 
 
 </configuration>
