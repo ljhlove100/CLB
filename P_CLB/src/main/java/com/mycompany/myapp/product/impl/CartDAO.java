@@ -21,7 +21,7 @@ public class CartDAO {
 		return mybatis.selectList("com.mycompany.product.CartDAO.getCartList");
 		
 	};
-	
+	 
 	public List<CartVO> getCartList2(CartVO vo) {
 		System.out.println(vo);
 		return mybatis.selectList("com.mycompany.product.CartVO.getCartList2", vo);
