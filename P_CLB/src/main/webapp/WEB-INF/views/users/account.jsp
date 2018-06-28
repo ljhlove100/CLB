@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>Login V1</title>
+	<title>account</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -35,11 +35,11 @@
 
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
-						CLB Login
+						CLB Account
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" name=u_id placeholder="u_id">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -47,7 +47,15 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="pw" placeholder="pw">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="name" placeholder="name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -56,11 +64,11 @@
 					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Account
 						</button>
 					</div>
 
-					<div class="text-center p-t-12">
+					<!-- <div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
 						</span>
@@ -70,11 +78,11 @@
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="account">
+						<a class="txt2" href="#">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
-					</div>
+					</div> -->
 				</form>
 			</div>
 		</div>
