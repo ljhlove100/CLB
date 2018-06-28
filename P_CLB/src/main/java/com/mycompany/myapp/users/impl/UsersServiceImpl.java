@@ -20,43 +20,43 @@ public class UsersServiceImpl implements UsersService {
 	@Override
 	public List<Map<String, Object>> getUserList() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getUsersList();
 	}
 
 	@Override
 	public List<UsersVO> getUserList(UsersVO vo) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getUsersList(vo);
 	}
 
 	@Override
 	public UsersVO getUsers(String u_id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getUsers(u_id);
 	}
 
 	@Override
 	public void insertUsers(UsersVO vo) {
 		// TODO Auto-generated method stub
-		
+		dao.insertUsers(vo);
 	}
 
 	@Override
 	public void updateUsers(UsersVO vo) {
 		// TODO Auto-generated method stub
-		
+		dao.updateUsers(vo);
 	}
 
 	@Override
 	public void deleteUsers(String u_id) {
 		// TODO Auto-generated method stub
-		
+		dao.deleteUsers(u_id);
 	}
 
 	@Override
 	public void Login(String Login) {
 		// TODO Auto-generated method stub
-		
+		dao.Login(Login);
 	}
 
 

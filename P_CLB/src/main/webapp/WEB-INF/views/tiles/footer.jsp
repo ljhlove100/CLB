@@ -2,6 +2,12 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
+<br>
+<br>
+<br>
+<br>
+<br>
 	<!-- 밑바닥 -->
 	<footer id="footer">
 		<!--Footer-->
