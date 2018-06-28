@@ -4,14 +4,9 @@
 <html>
 <head>
 <title>Insert title here</title>
-<style>
-	div {border:1px solid blue; padding:20px; margin:5px;}
-	
-</style>
 </head>
 <body>
 	
-	<div style="width:50%; padding:110px; border:1px solid; margin:100px">
 	<h3>주문 / 결제</h3>
 	<div style="font-size:20px">
 		<div class="col-sm-6">상품정보</div>
@@ -28,19 +23,22 @@
 	
 	<h3>배송지 정보</h3><br>
 	<h4>배송지 선택</h4>
-	<label>기본배송지&nbsp;<input type="radio" name="radio1" checked="checked"></label>&nbsp;
-	<label>신규배송지&nbsp;<input type="radio" name="radio1"></label>&nbsp;
-	<label>직접입력&nbsp;<input type="text" name="text1"></label>&nbsp;
+	<label>기본배송지&nbsp;<input type="radio" name="radio1" checked="checked"></label><br>
+	<label>신규배송지&nbsp;<input type="radio" name="radio1"></label><br>
+	<label>직접입력&nbsp;<input type="text" name="text1"></label><br>
 	
 	<br><br>
 	<h4>고객정보</h4>
 	<div>
-		<label>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<input type="text" name="text1"></label>&nbsp;<br>
-		<label>Phone Number&nbsp;
-		<input type="text" name="text1"></label>&nbsp;<br>
-		<label>Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<input type="text" name="text1"></label>&nbsp;
+		<label>Name
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="text" name="name" size="15px;"></label>&nbsp;<br>
+		<label>Phone Number
+		&nbsp;
+		<input type="text" name="phonenum" size="30px;"></label>&nbsp;&nbsp;<br>
+		<label>Address
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="text" name="adress" size="70px;"></label>&nbsp;
 	</div><br>
 	<h4>택배 기사님에게 한마디</h4>
 	<form>
@@ -74,6 +72,6 @@
 	</div>
 	
 	
-
+<br><br>
 </body>
 </html>
