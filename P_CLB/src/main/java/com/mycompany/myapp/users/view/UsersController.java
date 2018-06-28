@@ -22,10 +22,29 @@ import com.mycompany.myapp.users.UsersVO;
 public class UsersController {
 
 	
+	
 	@Autowired
 	UsersService UsersService;
 
-			
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(){
+    	    		
+    	return "clb/index";
+    }
+	
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String home(){
+    	    		
+    	return "users/account";
+    }
+	
+	
+	@RequestMapping(value = "/account", method = RequestMethod.GET)
+    public String account(){
+    	    		
+    	return "users/account";
+    }	
 	
 	@RequestMapping(value = "/Login", method = RequestMethod.GET)
     public String Login(){
