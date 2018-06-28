@@ -46,6 +46,12 @@ public class Product_commentsController {
 		return conditionMap;
 	}
 	
+	@RequestMapping(value = "/Board", method = RequestMethod.GET)
+    public String Board(){
+    	    		
+    	return "product/getProduct_commentsList";
+    }
+	
 	@RequestMapping("/getProduct_commentsList")
 	public ModelAndView getProduct_commentsList(Product_commentsSearchVO vo, Paging paging) {
 		ModelAndView mv = new ModelAndView();
@@ -67,14 +73,14 @@ public class Product_commentsController {
 		mv.addObject("product_commentsList", product_commentsService.getProduct_commentsList(vo));
 		
 		//뷰페이지 지정
-		mv.setViewName("product_comments/getProduct_commentsList");
+		mv.setViewName("product/getProduct_commentsList");
 		return mv;
 	}
 	
 	//수정폼
 	@RequestMapping(value="/updateProduct_comments", method=RequestMethod.GET)
 	public String updateProduct_commentsForm() {
-		return "product_comments/updateProduct_comments";
+		return "product/updateProduct_comments";
 	}
 	
 	//수정처리
@@ -83,13 +89,13 @@ public class Product_commentsController {
 		System.out.println(vo);
 		//서비스 수정 처리
 		//product_commentsService.updateProduct_comments(vo);
-		return "product_comments/getProduct_comments";
+		return "product/getProduct_comments";
 	}
 	
 	//등록폼
 	@RequestMapping(value="/insertProduct_comments", method=RequestMethod.GET)
 	public String insertProduct_commentsForm() {
-		return "product_comments/insertProduct_comments";
+		return "product/insertProduct_comments";
 	}	
 	//등록처리
 	@RequestMapping(value="/insertProduct_comments", method=RequestMethod.POST)
@@ -111,7 +117,7 @@ public class Product_commentsController {
 		product_commentsService.insertProduct_comments(vo);
 		System.out.println(vo);
 		//return "redirect:/getProduct_commentsList";
-		return "product_comments/getProduct_comments";
+		return "product/getProduct_comments";
 	}
 	
 /*	@RequestMapping("/getProduct_comments")
@@ -125,7 +131,7 @@ public class Product_commentsController {
 	public String getBoard(@PathVariable String pc_no,  Model model) {
 		System.out.println("pc_no:" + pc_no);
 		model.addAttribute("product_comments", product_commentsService.getProduct_comments(pc_no));
-		return "product_comments/getProduct_comments";
+		return "product/getProduct_comments";
 	}
 	
 	@RequestMapping("/downloadProduct_comments")
