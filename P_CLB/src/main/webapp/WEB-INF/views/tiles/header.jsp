@@ -24,7 +24,7 @@
 								<li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
 								<li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-								<li><a href="https://plus.google.com/discover"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="https://plus.google.com/"><i class="fa fa-google-plus"></i></a></li>
 							</ul>
 						</div>
 					</div>
