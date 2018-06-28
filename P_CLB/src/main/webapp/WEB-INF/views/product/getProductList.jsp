@@ -64,7 +64,7 @@
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>${product.price}원</h2><br> 
-											<h2>${product.pName}</h2><br>
+											<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}"><h2>${product.pName}</h2></a><br>
 											<h5>${product.pContents}</h5><br> 
 											<a href="#"	class="btn btn-default add-to-cart">
 											<i class="fa fa-shopping-cart"></i>Add to cart</a> 
@@ -72,7 +72,7 @@
 									</div>
 								</div>
 								<div class="choose">
-									<h3>${product.pName}</h3><br>
+									<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}"><h3>${product.pName}</h3></a><br>
 									<h5>${product.pContents}</h5><br>
 									<a href="./productUpdate?pNo=${product.pNo}">수정</a>
 								</div>

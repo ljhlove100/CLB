@@ -12,6 +12,14 @@
 <div style="border: 1px double black; padding: 30px; margin: 30px;">
 <form name="boardForm" action="./productUpdate" method="post">
 ${product.image}<br><br>
+<h3>상품분류</h3>
+  <select name="pGroup">
+  		 <option>A(액자),&nbsp;B(포토북),&nbsp;C(현수막),&nbsp;D(명함)</option>
+         <option>A</option>
+         <option>B</option>
+         <option>C</option>
+         <option>D</option>
+  </select><br><br>
 상품명 : <input type="text" name="pName" size="8px;" value="${sessionScope.product.pName}"><br><br>
 상품설명 : <input type="text" name="pContents" size="30px;" value="${product.pContents}"><br><br>
 상품가격 : <input type="text" name="price" size="6px;" value="${product.price}">원<br><br>
