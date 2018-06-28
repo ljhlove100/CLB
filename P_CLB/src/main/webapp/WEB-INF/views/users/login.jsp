@@ -22,6 +22,11 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Login_v1/css/util.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Login_v1/css/main.css">
 <!--===============================================================================================-->
+
+<form action="loing.do" method="post">
+</form>
+
+
 </head>
 
 <body>
