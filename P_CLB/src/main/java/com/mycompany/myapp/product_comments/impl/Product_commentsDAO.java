@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.mycompany.myapp.product_comments.Product_commentsSearchVO;
 import com.mycompany.myapp.product_comments.Product_commentsVO;
 
 @Repository
@@ -16,9 +17,14 @@ public class Product_commentsDAO {
 	SqlSessionTemplate mybatis;
 	
 	//목록조회
-	public List<Map<String, Object>> getProduct_commentsList() {
+	public List<Map<String, Object>> getProduct_commentsList(Product_commentsSearchVO vo) {
 		return mybatis.selectList("com.mycompany.product_comments.Product_commentsDAO.getProduct_commentsList");
 		
+	};
+	
+	//전체 레코드 건수 조회
+	public int getCount(Product_commentsSearchVO vo) {
+		return mybatis.selectOne("com.mycompany.myapp.product_comments.Product_commentsDAO.getCount", vo);
 	};
 	
 	public List<Product_commentsVO> getProduct_commentsList2(Product_commentsVO vo) {

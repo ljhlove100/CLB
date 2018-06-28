@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mycompany.myapp.product_comments.Product_commentsSearchVO;
 import com.mycompany.myapp.product_comments.Product_commentsService;
 import com.mycompany.myapp.product_comments.Product_commentsVO;
 
@@ -16,9 +17,12 @@ public class Product_commentsServiceImpl implements Product_commentsService {
 	Product_commentsDAO dao;
 	
 	@Override
-	public List<Map<String, Object>> getProduct_commentsList() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Map<String, Object>> getProduct_commentsList(Product_commentsSearchVO vo) {
+		return dao.getProduct_commentsList(vo);
+	}
+	
+	public int getCount(Product_commentsSearchVO vo) {
+		return dao.getCount(vo);
 	}
 
 	@Override

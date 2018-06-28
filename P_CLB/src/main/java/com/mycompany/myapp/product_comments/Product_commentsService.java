@@ -6,7 +6,10 @@ import java.util.Map;
 public interface Product_commentsService {
 
 	//목록조회
-	public List<Map<String, Object>> getProduct_commentsList();
+	public List<Map<String, Object>> getProduct_commentsList(Product_commentsSearchVO vo);
+	
+	//게시글 전체건수 조회
+	public int getCount(Product_commentsSearchVO vo);
 	
 	public List<Product_commentsVO> getProduct_commentsList2(Product_commentsVO vo);
 	

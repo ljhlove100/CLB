@@ -24,7 +24,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.mycompany.myapp.Paging;
+import com.mycompany.myapp.product_comments.Product_commentsSearchVO;
 import com.mycompany.myapp.product_comments.Product_commentsService;
 import com.mycompany.myapp.product_comments.Product_commentsVO;
 
@@ -44,9 +47,28 @@ public class Product_commentsController {
 	}
 	
 	@RequestMapping("/getProduct_commentsList")
-	public String getProduct_commentsList(HttpServletRequest request, Product_commentsVO vo) {
-		request.setAttribute("product_commentsList", product_commentsService.getProduct_commentsList());
-		return "product/product_comments/getProduct_commentsList";
+	public ModelAndView getProduct_commentsList(Product_commentsSearchVO vo, Paging paging) {
+		ModelAndView mv = new ModelAndView();
+		
+		//페이지 번호 파라미터
+		if(paging.getPage() == null)
+			paging.setPage(1);
+		
+		//페이징을 하기위한 first, last 검색조건을 담는다
+		//paga 1 이면 1 ~ 10, page 2 이면 11 ~ 20
+		vo.setFirst(paging.getFirst());
+		vo.setLast(paging.getLast());
+		
+		//전체건수
+		paging.setTotalRecord(product_commentsService.getCount(vo));
+		
+		//결과를 모델에 저장
+		mv.addObject("paging", paging);
+		mv.addObject("product_commentsList", product_commentsService.getProduct_commentsList(vo));
+		
+		//뷰페이지 지정
+		mv.setViewName("product_comments/getProduct_commentsList");
+		return mv;
 	}
 	
 	//수정폼

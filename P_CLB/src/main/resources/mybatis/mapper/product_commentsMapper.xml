@@ -12,8 +12,15 @@
 	</select>
 
 	<select id="getProduct_commentsList" resultType="map">
+		select a.* from(select rownum rn, b.* from(
 		SELECT pc_no, c_title, c_name, c_contents, insertdate, 
 		 FROM product_comments
+		 ) b ) a
+		 where rn between #{first} and #{last}
+	</select>
+	
+	<select id="getCount" resultType="int">
+		select count(*) from board
 	</select>
 
 	<insert id="insertProduct_comments" parameterType="com.mycompany.myapp.product_comments.Product_commentsVO">

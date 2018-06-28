@@ -78,17 +78,24 @@ $(function(){
 </script>
 </head>
 <body>
-	등록 후 확인<br>
-	${ vo }
 	<hr>
 		제목 : ${ product_comments.c_title } <br>
 		작성자 : ${ product_comments.c_name } <br>
 		리뷰내용 : ${ product_comments.c_contents } <br>
-		상품코드 : ${ product_comments.p_no } <br>
+		상품번호 : ${ product_comments.p_no } <br>
 		등록자ID : ${ product_comments.insertid } <br>
 		등록일 : ${ product_comments.insertdate } <br>
 		첨부파일 : <a href="downloadProduct_comments?pc_no=${vo.pc_no}">${vo.uploadfile}</a><br>
 		
 		<a href="../updateProduct_comments">수정</a>
+		<hr>
+		<div style="border:1px solid green">
+		<form id="commentFrm">
+			<input name="name" size="10">
+			<input name="content" size="50">
+			<input type="button" id="btnCommentAdd" value="댓글등록"/>
+		</form>
+	</div>	
+	<div id="commentList"></div>
 </body>
 </html>
