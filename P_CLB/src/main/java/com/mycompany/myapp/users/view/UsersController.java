@@ -36,7 +36,7 @@ public class UsersController {
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
     public String home(){
     	    		
-    	return "users/account";
+    	return "users/login";
     }
 	
 	
@@ -93,4 +93,7 @@ public class UsersController {
 		model.addAttribute("users", UsersService.getUsers(u_id));
 		return "users/getUsers";
 	}
+	
+	//로그인
+
 }
