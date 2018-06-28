@@ -12,12 +12,19 @@
 	</select>
 
 	<select id="getProduct_commentsList" resultType="map">
-		SELECT pc_no, c_title, c_name, c_contents, insertdate, 
+		select a.* from(select rownum rn, b.* from(
+		SELECT pc_no, c_title, c_name, c_contents, insertdate
 		 FROM product_comments
+		 ) b ) a
+		 where rn between #{first} and #{last}
+	</select>
+	
+	<select id="getCount" resultType="int">
+		select count(*) from product_comments
 	</select>
 
 	<insert id="insertProduct_comments" parameterType="com.mycompany.myapp.product_comments.Product_commentsVO">
-		<selectKey keyProperty="seq" resultType="string" order="BEFORE">
+		<selectKey keyProperty="pc_no" resultType="string" order="BEFORE">
 			SELECT nvl(MAX(pc_no),0) + 1 FROM PRODUCT_COMMENTS
 		</selectKey>
 		insert into product_comments(pc_no, c_title, c_contents, c_name, insertdate

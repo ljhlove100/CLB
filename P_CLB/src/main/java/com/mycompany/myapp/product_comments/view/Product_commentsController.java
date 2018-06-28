@@ -24,7 +24,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.mycompany.myapp.Paging;
+import com.mycompany.myapp.product_comments.Product_commentsSearchVO;
 import com.mycompany.myapp.product_comments.Product_commentsService;
 import com.mycompany.myapp.product_comments.Product_commentsVO;
 
@@ -43,16 +46,41 @@ public class Product_commentsController {
 		return conditionMap;
 	}
 	
+	@RequestMapping(value = "/Board", method = RequestMethod.GET)
+    public String Board(){
+    	    		
+    	return "product/getProduct_commentsList";
+    }
+	
 	@RequestMapping("/getProduct_commentsList")
-	public String getProduct_commentsList(HttpServletRequest request, Product_commentsVO vo) {
-		request.setAttribute("product_commentsList", product_commentsService.getProduct_commentsList());
-		return "product/product_comments/getProduct_commentsList";
+	public ModelAndView getProduct_commentsList(Product_commentsSearchVO vo, Paging paging) {
+		ModelAndView mv = new ModelAndView();
+		
+		//페이지 번호 파라미터
+		if(paging.getPage() == null)
+			paging.setPage(1);
+		
+		//페이징을 하기위한 first, last 검색조건을 담는다
+		//paga 1 이면 1 ~ 10, page 2 이면 11 ~ 20
+		vo.setFirst(paging.getFirst());
+		vo.setLast(paging.getLast());
+		
+		//전체건수
+		paging.setTotalRecord(product_commentsService.getCount(vo));
+		
+		//결과를 모델에 저장
+		mv.addObject("paging", paging);
+		mv.addObject("product_commentsList", product_commentsService.getProduct_commentsList(vo));
+		
+		//뷰페이지 지정
+		mv.setViewName("product/getProduct_commentsList");
+		return mv;
 	}
 	
 	//수정폼
 	@RequestMapping(value="/updateProduct_comments", method=RequestMethod.GET)
 	public String updateProduct_commentsForm() {
-		return "product/product_comments/updateProduct_comments";
+		return "product/updateProduct_comments";
 	}
 	
 	//수정처리
@@ -61,13 +89,13 @@ public class Product_commentsController {
 		System.out.println(vo);
 		//서비스 수정 처리
 		//product_commentsService.updateProduct_comments(vo);
-		return "product/product_comments/getProduct_comments";
+		return "product/getProduct_comments";
 	}
 	
 	//등록폼
 	@RequestMapping(value="/insertProduct_comments", method=RequestMethod.GET)
 	public String insertProduct_commentsForm() {
-		return "product/product_comments/insertProduct_comments";
+		return "product/insertProduct_comments";
 	}	
 	//등록처리
 	@RequestMapping(value="/insertProduct_comments", method=RequestMethod.POST)
@@ -89,7 +117,7 @@ public class Product_commentsController {
 		product_commentsService.insertProduct_comments(vo);
 		System.out.println(vo);
 		//return "redirect:/getProduct_commentsList";
-		return "product_comments/getProduct_comments";
+		return "product/getProduct_comments";
 	}
 	
 /*	@RequestMapping("/getProduct_comments")
@@ -103,7 +131,7 @@ public class Product_commentsController {
 	public String getBoard(@PathVariable String pc_no,  Model model) {
 		System.out.println("pc_no:" + pc_no);
 		model.addAttribute("product_comments", product_commentsService.getProduct_comments(pc_no));
-		return "product_comments/getProduct_comments";
+		return "product/getProduct_comments";
 	}
 	
 	@RequestMapping("/downloadProduct_comments")

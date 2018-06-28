@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mycompany.myapp.payment.PaymentDAO">
+       
+ 	<!-- 단건조회 -->
+    
+     <select id="getPayment" parameterType="string" resultType="com.mycompany.myapp.payment.PaymentVO">
+       SELECT DISTINCT P_NAME, TOTAL_AMT, P_NO
+         FROM PAYMENT 
+           WHERE PAYMENT_ID = #{paymentId}
+    </select> 
+   
+   <!-- 추가 -->
+   	<insert id="paymentInsert" parameterType="com.mycompany.myapp.payment.PaymentVO">
+   		insert into payment(p_name,total_amt,p_no,payment_id)
+  		values(#{pName},
+  			   #{totalAmt},
+  			   #{pNo},
+  			   payment_id_seq.nextval)
+   	</insert>
+</mapper>

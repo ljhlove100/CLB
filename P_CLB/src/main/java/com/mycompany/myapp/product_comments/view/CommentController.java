@@ -17,6 +17,9 @@ public class CommentController {
 
 	@Autowired CommentsService commentService;
 
+	
+	
+	
 	//댓글추가
 	@RequestMapping("/insertComments")
 	@ResponseBody 
