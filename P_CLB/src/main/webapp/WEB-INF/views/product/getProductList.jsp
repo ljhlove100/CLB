@@ -36,33 +36,53 @@
 </style>
 </head>
 <body>
-	
+
 	<h2 class="text-center">Come!&nbsp;&nbsp;Look!&nbsp;&nbsp;Buy!</h2>
-	<div style="text-align:right">
-	<a href="${pageContext.request.contextPath}/productInsert">
-	<input type="button" value="상품추가"></a>
-	</div><br><br>
-	<div id="pricing" class="container-fluid">
+	<div style="text-align: right">
+		<a href="${pageContext.request.contextPath}/productInsert"> <input
+			type="button" value="상품추가"></a>
+	</div>
+	<br>
+	<br>
+	<div class="container">
 		<div class="text-center"></div>
-		<div class="row ">
-			<c:forEach items="${productList}" var="product">
-				<div class="col-lg-4">
-					<div style="display: inline-block">
-						<div class="panel panel-default text-center">
-							<div class="panel-heading">
-								<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}">${product.image}</a><br>
-							</div>
-							<div class="panel-footer">
-								 ${product.pName}<br>
-								 ${product.pContents}<br> 
-								 ${product.price}원<br>
-								 <a href="./productUpdate?pNo=${product.pNo}">수정</a>
+		<div class="row">
+			<div class="col-sm-12 padding-right">
+				<div class="features_items">
+					features_items
+					<h2 class="title text-center">Features Items</h2>
+					<c:forEach items="${productList}" var="product">
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}">${product.image}</a><br>
+										${product.price}원<br> 
+										<a href="#"	class="btn btn-default add-to-cart">
+										<i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>${product.price}원</h2><br> 
+											<h2>${product.pName}</h2><br>
+											<h5>${product.pContents}</h5><br> 
+											<a href="#"	class="btn btn-default add-to-cart">
+											<i class="fa fa-shopping-cart"></i>Add to cart</a> 
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<h3>${product.pName}</h3><br>
+									<h5>${product.pContents}</h5><br>
+									<a href="./productUpdate?pNo=${product.pNo}">수정</a>
+								</div>
 							</div>
 						</div>
-					</div>
+					</c:forEach>
 				</div>
-			</c:forEach>
+			</div>
 		</div>
 	</div>
+			
 </body>
 </html>

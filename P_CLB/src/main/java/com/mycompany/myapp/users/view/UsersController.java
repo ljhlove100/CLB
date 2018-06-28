@@ -22,10 +22,24 @@ import com.mycompany.myapp.users.UsersVO;
 public class UsersController {
 
 	
+	
 	@Autowired
 	UsersService UsersService;
 
-		
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(){
+    	    		
+    	return "clb/index";
+    }
+	
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String home(){
+    	    		
+    	return "users/login";
+    }
+	
+	
 	@RequestMapping(value = "/account", method = RequestMethod.GET)
     public String account(){
     	    		
@@ -79,4 +93,7 @@ public class UsersController {
 		model.addAttribute("users", UsersService.getUsers(u_id));
 		return "users/getUsers";
 	}
+	
+	//로그인
+
 }

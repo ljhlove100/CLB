@@ -7,7 +7,7 @@
 <title>getUsersList.jsp</title>
 </head>
 <body>
-	<h3>Users</h3>
+	<h3>XXX님 환영합니다.....<a href="logout.do">Log-out</h3>
 	
 </body>
 </html>

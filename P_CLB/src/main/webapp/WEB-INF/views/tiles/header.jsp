@@ -19,7 +19,7 @@
 					</div>
 					<div class="col-sm-6">
 						<div class="social-icons pull-right">
-							<ul class="nav navbar-nav">
+							<ul>
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -46,7 +46,7 @@
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">
+							<ul>
 								<li><a href="account"><i class="fa fa-user"></i> Account</a></li>
 								<li><a href="#"><i class="fa fa-star"></i>Board</a></li>
 								<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Checkout</a></li> -->
