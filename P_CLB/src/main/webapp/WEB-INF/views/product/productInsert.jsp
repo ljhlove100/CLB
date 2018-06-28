@@ -11,6 +11,7 @@
 <div style="background-color:black"><font color="white" size="20px">상품 추가 하기</font></div>
 <div style="border: 1px double black; padding: 30px; margin: 50px;">
 <form name="boardForm" action="./productInsert" method="post" enctype="multipart/form-data" onsubmit="return submitCheck()">
+상품분류 : <input type="text" name="pGroup" size="5px;">
 상품이름 : <input type="text" name="pName" size="10px;">
 상품설명 : <input type="text" name="pContents" size="40px;">
 상품가격 : <input type="text" name="price" size="10px;"><br><br>

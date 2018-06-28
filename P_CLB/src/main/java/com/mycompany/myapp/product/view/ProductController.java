@@ -16,7 +16,7 @@ import com.mycompany.myapp.product.ProductService;
 import com.mycompany.myapp.product.ProductVO;
 
 @Controller
-@SessionAttributes("product")
+//@SessionAttributes("product")
 public class ProductController {
 
 	@Autowired
