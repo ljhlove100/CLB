@@ -23,8 +23,6 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Login_v1/css/main.css">
 <!--===============================================================================================-->
 
-<form action="loing.do" method="post">
-</form>
 
 
 </head>
@@ -38,13 +36,13 @@
 					<img src="${pageContext.request.contextPath}/resources/images/home/Logo_1.png" alt="IMG" width="604" height="408">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="loginck" method="post">
 					<span class="login100-form-title">
 						CLB Login
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" name="u_id" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -52,7 +50,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="pw" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -60,7 +58,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" value="로그인">
+						<button type="submit" class="login100-form-btn" value="로그인" >
 							Login
 						</button>
 					</div>

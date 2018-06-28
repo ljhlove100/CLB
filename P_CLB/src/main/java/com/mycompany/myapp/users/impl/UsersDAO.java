@@ -1,5 +1,6 @@
 package com.mycompany.myapp.users.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -50,4 +51,8 @@ public class UsersDAO {
 	public void Login(String Login) {
 	}
 	
+	//로그인 체크
+	public int getLoginck(HashMap<String, String> hashMap) {
+		return mybatis.selectOne("com.mycompany.myapp.UsersDAO.deleteusers", hashMap);
+	}
 }

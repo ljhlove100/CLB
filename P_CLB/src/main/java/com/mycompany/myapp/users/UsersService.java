@@ -30,5 +30,8 @@ public interface UsersService {
 		
 		//로그인
 		public void Login(String Login);
+		
+		//로그인체크
+		public int getLoginck(String u_id, String pw);
 	}
 

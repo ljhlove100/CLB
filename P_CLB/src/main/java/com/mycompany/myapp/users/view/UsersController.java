@@ -94,6 +94,18 @@ public class UsersController {
 		return "users/getUsers";
 	}
 	
-	//로그인
+	// 로그인
+	@RequestMapping(value = "/loginck", method = RequestMethod.POST)
+	public String loginck(Model model,
+						  HttpServletRequest request) {
+		
+		String	u_id = request.getParameter("u_id");
+		String	pw = request.getParameter("pw");
+		
+		int cnt =  UsersService.getLoginck(u_id,pw);
+		
+		
+		return "users/login";
+	}
 
 }
