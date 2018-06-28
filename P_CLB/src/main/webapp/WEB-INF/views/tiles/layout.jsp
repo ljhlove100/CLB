@@ -54,7 +54,9 @@
       font-weight: 400;
       margin-bottom: 30px;
   }
- 
+ul li {
+           display:inline;
+}
 
 </style>
 <body>
