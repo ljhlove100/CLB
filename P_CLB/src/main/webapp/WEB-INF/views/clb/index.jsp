@@ -32,10 +32,10 @@
 <!--/head-->
 
 <body>
-	<header id="header">
-		<!--header-->
+<!-- 	<header id="header">
+		header
 		<div class="header_top">
-			<!--header_top-->
+			header_top
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
@@ -62,10 +62,10 @@
 				</div>
 			</div>
 		</div>
-		<!--/header_top-->
+		/header_top
 
 		<div class="header-middle">
-			<!--header-middle-->
+			header-middle
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-4">
@@ -115,10 +115,10 @@
 				</div>
 			</div>
 		</div>
-		<!--/header-middle-->
+		/header-middle
 
 		<div class="header-bottom">
-			<!--header-bottom-->
+			header-bottom
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-9">
@@ -161,14 +161,14 @@
 				</div>
 			</div>
 		</div>
-		<!--/header-bottom-->
+		/header-bottom
 	</header>
-	<!--/header-->
+	/header
 
 
-	<!-- 메인 메뉴판 -->
+	메인 메뉴판
 	<section id="slider">
-		<!--slider-->
+		slider
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
@@ -251,11 +251,11 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--/slider-->
 
-	<!-- 가운데 -->
-	<!-- <section>
+	가운데
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3">
@@ -944,13 +944,13 @@
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 
 
 
 	<!-- 밑바닥 -->
-	<footer id="footer">
-		<!--Footer-->
+<!-- 	<footer id="footer">
+		Footer
 		<div class="footer-top">
 
 			<div class="container">
@@ -1009,7 +1009,7 @@
 			</div>
 		</div>
 
-	</footer>
+	</footer> -->
 	<!--/Footer-->
 
 
