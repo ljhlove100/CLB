@@ -74,7 +74,7 @@ public class Product_commentsController {
 	//수정폼
 	@RequestMapping(value="/updateProduct_comments", method=RequestMethod.GET)
 	public String updateProduct_commentsForm() {
-		return "product/product_comments/updateProduct_comments";
+		return "product_comments/updateProduct_comments";
 	}
 	
 	//수정처리
@@ -83,13 +83,13 @@ public class Product_commentsController {
 		System.out.println(vo);
 		//서비스 수정 처리
 		//product_commentsService.updateProduct_comments(vo);
-		return "product/product_comments/getProduct_comments";
+		return "product_comments/getProduct_comments";
 	}
 	
 	//등록폼
 	@RequestMapping(value="/insertProduct_comments", method=RequestMethod.GET)
 	public String insertProduct_commentsForm() {
-		return "product/product_comments/insertProduct_comments";
+		return "product_comments/insertProduct_comments";
 	}	
 	//등록처리
 	@RequestMapping(value="/insertProduct_comments", method=RequestMethod.POST)

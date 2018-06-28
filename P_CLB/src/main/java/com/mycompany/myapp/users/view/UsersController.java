@@ -25,7 +25,12 @@ public class UsersController {
 	@Autowired
 	UsersService UsersService;
 
-			
+		
+	@RequestMapping(value = "/account", method = RequestMethod.GET)
+    public String account(){
+    	    		
+    	return "users/account";
+    }	
 	
 	@RequestMapping(value = "/Login", method = RequestMethod.GET)
     public String Login(){

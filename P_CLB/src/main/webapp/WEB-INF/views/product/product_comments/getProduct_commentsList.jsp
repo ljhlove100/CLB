@@ -8,6 +8,7 @@
 <title>Product_commnetsList.jsp</title>
 </head>
 <body>
+<a href="insertProduct_comments">게시글 등록하기</a>
 	<h3>게시판 목록</h3>
 	<form>
 		<select>
@@ -27,12 +28,11 @@
 		<th>상품번호</th>
 		<th>수정자</th>
 		<th>수정일</th>
-	<a href="insertProduct_comments">게시글 등록하기</a>
+	</tr>
 	<c:forEach items = "${product_commentsList}" var="product_comments">
-			pc_no:<a href="updateBoardForm?pc_no=">${product_comments.PC_NO}</a><br>
 			<tr>
 				<td>${product_comments.PC_NO}</td>
-				<td><a href="getProduct_comments/${product_comments.C_TITLE}">${product_comments.C_TITLE}</a></td>
+				<td><a href="getProduct_comments/${product_comments.PC_NO}">${product_comments.C_TITLE}</a></td>
 				<td>${product_comments.C_NAME}</td>
 				<td>${product_comments.C_CONTENTS}</td>
 				<td>${product_comments.P_NO}</td>

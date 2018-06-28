@@ -15,7 +15,6 @@
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	<mvc:resources mapping="/ckeditor_4/**" location="/ckeditor_4/" />
-	
 
 	<context:component-scan
 		base-package="com.mycompany.myapp"></context:component-scan>
@@ -67,6 +66,11 @@
 		<property name="definitions">
 			<value>/WEB-INF/tiles/tiles.xml</value>
 		</property>
+	</bean>
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1024000"></property>
+		<property name="maxInMemorySize" value="524000"></property>
 	</bean>
 
 </beans>
