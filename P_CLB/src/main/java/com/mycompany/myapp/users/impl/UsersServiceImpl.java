@@ -1,6 +1,7 @@
 package com.mycompany.myapp.users.impl;
  
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +17,16 @@ public class UsersServiceImpl implements UsersService {
 
 	@Autowired
 	UsersDAO dao;
+
+	@Override
+	public int getLoginck(String u_id, String pw) {
+		// TODO Auto-generated method stub
+		HashMap<String,String> hashMap = new HashMap<String,String>();
+    	hashMap.put("u_id", u_id);
+    	hashMap.put("pw", pw);
+    	
+    	return dao.getLoginck(hashMap);
+    }
 
 	@Override
 	public List<Map<String, Object>> getUserList() {
