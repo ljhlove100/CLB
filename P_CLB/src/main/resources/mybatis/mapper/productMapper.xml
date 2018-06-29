@@ -32,13 +32,21 @@
     
     <!-- 추가 -->
     <insert id="productInsert" parameterType="com.mycompany.myapp.product.ProductVO">
-	   INSERT INTO PRODUCT(P_NO,P_NAME,PRICE,P_CONTENTS,P_GROUP,IMAGE) 
-  		 values (#{pNo}, 
+    <selectKey keyProperty="pNo" resultType="int" order="BEFORE">
+      select max(p_no)+1 from product
+    </selectKey>
+	   INSERT INTO PRODUCT(P_NO,P_NAME,PRICE,P_GROUP,P_CONTENTS
+	   <if test="image != null and image != ''">
+   				, IMAGE
+   	   </if>
+   	   )  values (#{pNo}, 
    			  	 #{pName}, 
-   			  	 #{price}, 
+   			  	 #{price},
+   			  	 #{pGroup}, 
    			  	 #{pContents},
-   			  	 #{pGroup},
-   			  	 #{image}
+       <if test="image != null and image != ''">
+   				 #{image}
+   	   </if>
    			  	 )
    </insert>
    

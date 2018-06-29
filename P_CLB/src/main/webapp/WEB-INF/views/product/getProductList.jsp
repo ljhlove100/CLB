@@ -13,6 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
 <style>
  body {
        font: 400 15px Lato, sans-serif;
@@ -44,6 +45,7 @@
 	</div>
 	<br>
 	<br>
+	
 	<div class="container">
 		<div class="text-center"></div>
 		<div class="row">
@@ -55,7 +57,7 @@
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
-									<div class="productinfo text-center">
+									<div class="productinfo text-center" id="test">
 										<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}">${product.image}</a><br>
 										${product.price}원<br> 
 										<a href="#"	class="btn btn-default add-to-cart">
@@ -65,15 +67,13 @@
 										<div class="overlay-content">
 											<h2>${product.price}원</h2><br> 
 											<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}"><h2>${product.pName}</h2></a><br>
-											<h5>${product.pContents}</h5><br> 
 											<a href="#"	class="btn btn-default add-to-cart">
 											<i class="fa fa-shopping-cart"></i>Add to cart</a> 
 										</div>
 									</div>
 								</div>
 								<div class="choose">
-									<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}"><h3>${product.pName}</h3></a><br>
-									<h5>${product.pContents}</h5><br>
+									<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}" style="text-align: center;"><h3>${product.pName}</h3></a><br>
 									<a href="./productUpdate?pNo=${product.pNo}">수정</a>
 								</div>
 							</div>
@@ -83,6 +83,7 @@
 			</div>
 		</div>
 	</div>
-			
+
+
 </body>
 </html>
