@@ -61,9 +61,6 @@ ul li {
 </style>
 <body>
 	<div class="container">
-		<header>
-			
-		</header>
 		<nav>
 			<tiles:insertAttribute name="header" />
 		</nav>

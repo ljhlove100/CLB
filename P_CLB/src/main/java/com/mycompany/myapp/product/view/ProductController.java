@@ -48,7 +48,7 @@ public class ProductController {
 
 	// 수정처리
 	@RequestMapping(value = "/productUpdate", method = RequestMethod.POST)
-	public String updateBoard(@ModelAttribute("product") ProductVO vo) {
+	public String productUpdate(@ModelAttribute("product") ProductVO vo) {
 		productService.productUpdate(vo);
 		return "redirect:/getProductList";
 	}

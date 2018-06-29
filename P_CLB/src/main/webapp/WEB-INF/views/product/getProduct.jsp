@@ -107,6 +107,9 @@
 	      }
 		
 	</script>
+	
+	
+	<!-- 바디부분 -->
 	${product.detailimage}
 	<div>
 	<h3>상품 정보</h3>
