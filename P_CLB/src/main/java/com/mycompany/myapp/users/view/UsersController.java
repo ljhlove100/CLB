@@ -1,8 +1,14 @@
 package com.mycompany.myapp.users.view;
 
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +16,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.context.request.SessionScope;
 
 import com.mycompany.myapp.users.UsersSearchVO;
 import com.mycompany.myapp.users.UsersService;
@@ -39,14 +47,16 @@ public class UsersController {
     	return "users/login";
     }
 	
+		
+	@RequestMapping(value = "/LogOut", method = RequestMethod.GET)
+    public String Logout( HttpSession session){    	
+
+		session.invalidate();
+		
+    	return "redirect:/";
+    }
 	
-	@RequestMapping(value = "/account", method = RequestMethod.GET)
-    public String account(){
-    	    		
-    	return "users/account";
-    }	
-	
-	@RequestMapping(value = "/Login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
     public String Login(){
     	    		
     	return "users/login";
@@ -96,16 +106,48 @@ public class UsersController {
 	
 	// 로그인
 	@RequestMapping(value = "/loginck", method = RequestMethod.POST)
-	public String loginck(Model model,
-						  HttpServletRequest request) {
+	public String loginck(Model model,  HttpServletRequest request) {
 		
 		String	u_id = request.getParameter("u_id");
 		String	pw = request.getParameter("pw");
+		String 	ReturnUrl = "";
 		
-		int cnt =  UsersService.getLoginck(u_id,pw);
+		int loginck =  UsersService.getLoginck(u_id,pw);
 		
+		//users 정보가 있다면 1 없으면 0
+		if(loginck==1){
+			
+			Map<String, Object> map = new HashMap<String,Object>();
+			
+			String name  = UsersService.getUsersName(u_id);
+						
+			
+			request.getSession().setAttribute("u_id", u_id);
+			
+			ReturnUrl = "redirect:getProductList";
 		
-		return "users/login";
+		} else {
+			
+			model.addAttribute("message", "ID와PW를 확인해주세요");
+			ReturnUrl = "login";
+			
+		} return ReturnUrl;
 	}
+	
+	/*//회원가입
+		@RequestMapping(value = "/account", method = RequestMethod.GET)
+	    public String account(@RequestParam HashMap<String, Object> params){{
+	    	System.out.println(params);
+	    	UsersService.account(params);
+	    }
+			
+
+	    	    		
+	    	return "users/account";
+	    }	
+		
+		*/
+		
+		
 
 }

@@ -31,7 +31,21 @@ public interface UsersService {
 		//로그인
 		public void Login(String Login);
 		
-		//로그인체크
-		public int getLoginck(String u_id, String pw);
-	}
+	/**
+	 * @param users_id
+	 * @param users_pw
+	 * @return LoginCheck(usersinfo)
+	 */
+	// 로그인체크
+	public int getLoginck(String u_id, String pw);
+	
+	/**
+     * @return	UsersList
+     */
+	
+	public String getUsersName(String u_id);
+	
+	/////////////////////////////////////////////////
+	
+}
 
