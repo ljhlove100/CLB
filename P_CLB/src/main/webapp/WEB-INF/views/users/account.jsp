@@ -33,7 +33,7 @@
 					<img src="${pageContext.request.contextPath}/resources/images/home/Logo_1.png" alt="IMG" width="604" height="408">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="account">
 					<span class="login100-form-title">
 						CLB Account
 					</span>
@@ -55,34 +55,29 @@
 					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="name" placeholder="name">
+						<input class="input100" type="text" name="name" placeholder="name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
+							<i class="fa fa-star-o" aria-hidden="true"></i>
 						</span>
 					</div>
 					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="number" name="phone" placeholder="phone">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-fax" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="submit" class="login100-form-btn" value="회원가입">
 							Account
 						</button>
 					</div>
 
-					<!-- <div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-						<a class="txt2" href="#">
-							Username / Password?
-						</a>
-					</div>
-
-					<div class="text-center p-t-136">
-						<a class="txt2" href="#">
-							Create your Account
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div> -->
+				
 				</form>
 			</div>
 		</div>

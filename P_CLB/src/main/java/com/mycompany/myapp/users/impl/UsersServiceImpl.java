@@ -70,6 +70,16 @@ public class UsersServiceImpl implements UsersService {
 		dao.Login(Login);
 	}
 
+	@Override
+	public String getUsersName(String u_id) {
+		// TODO Auto-generated method stub
+
+		HashMap<String,String> hashMap = new HashMap<String,String>();
+    	hashMap.put("u_id", u_id);    	
+    	
+    	return dao.getUsersName(hashMap);
+    }    
+
 
 
 }

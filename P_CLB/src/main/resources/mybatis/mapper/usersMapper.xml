@@ -8,7 +8,7 @@
     
     <select id="getUsers" parameterType="string" resultType="com.mycompany.myapp.users.UsersVO">
 	SELECT U_ID, PW, NAME, INSERTDATE, UPDATEDAY
-	FROM USERS;
+	FROM USERS
 	WHERE USERS = #{u_id}
     </select>
     
@@ -16,7 +16,7 @@
 	<select id="getUserList"  parameterType="com.mycompany.myapp.users.UsersVO" resultType="com.mycompany.myapp.users.UsersVO">
 	SELECT PW, U_ID, NAME, EMAIL, TEL, PHONE, ADDR, ZIPCODE, BUSINESS_CODE,
 				POWER, INSERTDATE, UPDATEDAY, YN
-	FROM USERS;
+	FROM USERS
 	
     </select>
     
@@ -56,7 +56,31 @@
    	WHERE USERS = #{uId}
    </delete>
    
+   <!-- loginck -->
+   <select id="getLoginck"  resultType="int" parameterType="hashMap">
+   <![CDATA[
+		SELECT
+			count(*) 
+		FROM
+			users			
+		WHERE
+			u_id=#{u_id}
+		AND
+			pw=#{pw}
+ 		]]>
+	</select>
    
+   <!-- getusersName -->
+   <select id="getUsersName" resultType="string" parameterType="hashMap">
+		<![CDATA[
+		SELECT
+			name
+		FROM
+			users			
+		WHERE
+			u_id=#{u_id}
+ 		]]>
+	</select>
    
    
 </mapper>
@@ -67,18 +91,6 @@
 
 
 <!-- 
-<select id="UsersCheck" resultType="int" parameterType="hashMap">
-		<![CDATA[
-		SELECT
-			count(*) 
-		FROM
-			users			
-		WHERE
-			users_id=#{users_id}
-		AND
-			users_pw=#{users_pw}
- 		]]>
-	</select>
 	
     <select id="LoginInfo" resultType="com.spring.myapp.model.Users" parameterType="hashMap">
       <![CDATA[  

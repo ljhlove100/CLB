@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html>
 <header id="header">
 		<!--header-->
@@ -37,25 +38,34 @@
 			<!--header-middle-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-4">
-						<div class="logo pull-left">
-							<a href="home"><img src="${pageContext.request.contextPath}/resources/images/home/Logo_1.png"
-							alt="" width="300px" height="75px"/></a>
-						</div>
-					
+				<div class="col-sm-4">
+					<div class="logo pull-left">
+						<a href="home"><img
+							src="${pageContext.request.contextPath}/resources/images/home/Logo_1.png"
+							alt="" width="300px" height="75px" /></a>
 					</div>
-					<div class="col-sm-8">
-						<div class="shop-menu pull-right">
-							<ul>
-								<li><a href="account"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="Board"><i class="fa fa-star"></i>Board</a></li>
-								<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Checkout</a></li> -->
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Cart</a></li>
-								<li><a href="Login"><i class="fa fa-lock"></i>Login</a></li>
-							</ul>
-						</div>
+
+				</div>
+				<div class="col-sm-8">
+					<div class="shop-menu pull-right">
+						<ul>
+							<li><a href="account"><i class="fa fa-user"></i> Account</a></li>
+							<li><a href="Board"><i class="fa fa-star"></i>Board</a></li>
+							<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Checkout</a></li> -->
+							<li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Cart</a></li>
+							
+							<c:if test="${empty sessionScope.u_id }">
+							<li><a href="login"><i class="fa fa-lock"></i> Login</a></li>
+							</c:if>
+							
+							<c:if test="${!empty sessionScope.u_id}">
+								<li><a href="LogOut"><i class="fa fa-lock">${sessionScope.u_id}</i>님</a></li>
+							</c:if>
+
+						</ul>
 					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 		<!--/header-middle-->
