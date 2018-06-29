@@ -20,16 +20,17 @@
          <option>D</option>
   </select><br><br>
 상품이름 : <input type="text" name="pName" size="10px;">
-상품설명 : <input type="text" name="pContents" size="40px;">
-상품가격 : <input type="text" name="price" size="10px;"><br><br>
-상품사진 <textarea name="image" id="image"></textarea><br>
+상품가격 : <input type="text" name="price" size="10px;"><br>
+상품사진 : <input type="file" name="tempuploadfile"><br>
+상품설명 <textarea name="pContents" id="pContents"></textarea><br>
+
 <input type="submit" value="등록">
 </form>
 </div>
 </center>
 
 <script>
-	CKEDITOR.replace("image" , {
+	CKEDITOR.replace("pContents" , {
 		filebrowserUploadUrl : 
 				"${pageContext.request.contextPath}/fileUpload.jsp"
 	});
@@ -40,20 +41,15 @@
 			document.boardForm.pName.focus();
 			return false;
 		}
-		if(document.boardForm.pContents.value == ""){
-			alert("상품설명 등록하이소");
-			document.boardForm.pContents.focus();
-			return false;
-		}
 		if(document.boardForm.price.value == ""){
 			alert("가격 등록하이소");
 			document.boardForm.price.focus();
 			return false;
 		}
-		var editor_data = CKEDITOR.instances.image.getData();
+		var editor_data = CKEDITOR.instances.pContents.getData();
 		if(editor_data == ""){
-			alert("사진 등록하이소");
-			document.boardForm.image.focus();
+			alert("설명 등록하이소");
+			document.boardForm.pContents.focus();
 			return false;
 		}
 		return true;

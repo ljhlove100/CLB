@@ -9,8 +9,8 @@
 <head><title>업로드 정보</title></head>
 <body>
 <%
-String up_url = request.getContextPath()+"/resources/upload"; // 기본 업로드 URL
-String up_dir = request.getParameter("up_dir")!=null?request.getParameter("up_dir") :"/resources/upload";    // 기본 업로드 폴더
+String up_url = request.getContextPath()+"/resources/images"; // 기본 업로드 URL
+String up_dir = request.getParameter("up_dir")!=null?request.getParameter("up_dir") :"/resources/images";    // 기본 업로드 폴더
 String temp_dir = request.getParameter("temp_dir")!=null?request.getParameter("temp_dir") :"c:/Temp";  // 임시 업로드 폴더
 String save_url = "";
 String save_dir = "";

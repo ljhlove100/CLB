@@ -5,13 +5,45 @@
 
 <!DOCTYPE html>
 <html>
-<title>test</title>
 <head>
+<title>test</title>
+<meta charset="utf-8">
+<script src="../resources/script/jquery-3.2.1.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
 <style>
- div {display:inline-block;}
+ body {
+       font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+ 	 }
+  div {
+  		display:inline-block;
+  	}
+  
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+	 }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
 </style>
 </head>
-<script src="../resources/script/jquery-3.2.1.min.js"></script>
+<body>
 
 <body>
 	<script>
@@ -76,12 +108,10 @@
 		
 	</script>
 	${product.detailimage}
-	<center>
 	<div>
 	<h3>상품 정보</h3>
 	<h4>${product.pName}</h4><br>
 	<h5>${product.pContents}</h5><br>
-	${product.image}
 	
 	</div>
 	<div>
@@ -128,8 +158,7 @@
 				
 	</form>
 	</div>
-	</center>
-	
-	
+
+
 </body>
 </html>
