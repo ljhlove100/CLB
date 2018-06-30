@@ -78,8 +78,18 @@ public class UsersServiceImpl implements UsersService {
     	hashMap.put("u_id", u_id);    	
     	
     	return dao.getUsersName(hashMap);
-    }    
+    }
+	
+	@Override
+	public void account(String u_id, String pw, String name, String yn) {
+		// TODO Auto-generated method stub
 
-
-
+		HashMap<String,String> hashMap = new HashMap<String,String>();
+    	hashMap.put("u_id", u_id);  
+    	hashMap.put("pw", pw);
+    	hashMap.put("name", name);
+    	hashMap.put("yn", yn);
+    	
+    	dao.account(hashMap);
+    }
 }

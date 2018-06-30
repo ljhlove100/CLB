@@ -60,4 +60,8 @@ public class UsersDAO {
 	 public String getUsersName(HashMap<String, String> hashMap) {
 		return mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.getUsersName", hashMap);
 	}
+	 
+	 public void account(HashMap<String, String> hashMap) {
+			mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.insertUsers", hashMap);
+		}
 }

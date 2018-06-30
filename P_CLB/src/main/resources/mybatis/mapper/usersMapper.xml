@@ -22,22 +22,18 @@
     
       
     <!-- 추가 -->
-    <insert id="insertUsers" parameterType="com.mycompany.myapp.users.UsersVO">
-	  INSERT INTO USERS(U_ID, NAME, EMAIL, TEL, PHONE, ADDR, ZIPCODE, BUSINESS_CODE, POWER, INSERTDATE, UPDATEDAY, YN)
-	  VALUES (#{uId},
-	  			   #{pw},
-	  			   #{name},
-	  			   #{email},
-	  			   #{tel},
-	  			   #{phone},
-	  			   #{addr},
-	  			   #{zipcode},
-	  			   #{businessCode},
-	  			   #{power},
-	  			   #{inserdate},
-	  			   #{updateday},
-	  			   #{yn}   	
-   			  	 )
+    <insert id="insertUsers" parameterType="hashMap">
+    <![CDATA[
+	  INSERT INTO USERS(U_ID, PW, NAME, INSERTDATE, UPDATEDAY, YN)
+	  VALUES (
+				#{u_id},
+  			   	#{pw},
+  			   	#{name},
+  			   	sysdate,
+  			   	sysdate,
+  			  	#{yn}	
+	  		 )
+	]]>
    </insert>
    
    <!-- 수정 -->

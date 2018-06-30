@@ -34,6 +34,7 @@
 				</div>
 
 				<form class="login100-form validate-form" action="account">
+				<input type="hidden" name="cnt" value="2">
 					<span class="login100-form-title">
 						CLB Account
 					</span>

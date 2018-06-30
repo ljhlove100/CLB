@@ -134,20 +134,28 @@ public class UsersController {
 		} return ReturnUrl;
 	}
 	
-	/*//회원가입
+	//회원가입
 		@RequestMapping(value = "/account", method = RequestMethod.GET)
-	    public String account(@RequestParam HashMap<String, Object> params){{
-	    	System.out.println(params);
-	    	UsersService.account(params);
-	    }
-			
+	    public String account(Model model,  HttpServletRequest request,
+	    		@RequestParam(required=false, defaultValue="1") int cnt ) {
 
+			String Url = "";
+		
+			if(cnt == 1)
+			{
+				Url="users/account";
+			}
+			else {
+				String	u_id = request.getParameter("u_id");
+				String	pw = request.getParameter("pw");
+				String	name = request.getParameter("name");
+				String 	yn = "Y";
+				System.out.println(u_id + pw + name+yn);
+				UsersService.account(u_id, pw, name, yn);
+				
+				Url="redirect:/login";
+			}
 	    	    		
-	    	return "users/account";
+	    	return Url;
 	    }	
-		
-		*/
-		
-		
-
 }
