@@ -1,10 +1,13 @@
 package com.mycompany.myapp.users.view;
 
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -100,6 +103,7 @@ public class UsersController {
       return "users/UsersInsert";
    }
 
+<<<<<<< HEAD
    @RequestMapping("/getUsers/{u_id}")
    public String getUsers(@PathVariable String u_id, Model model) {
       model.addAttribute("users", UsersService.getUsers(u_id));
@@ -140,7 +144,58 @@ public class UsersController {
       @RequestMapping(value = "/account", method = RequestMethod.GET)
        public String account(Model model,  HttpServletRequest request,
              @RequestParam(required=false, defaultValue="1") int cnt ) {
+=======
+	@RequestMapping("/getUsers/{u_id}")
+	public String getUsers(@PathVariable String u_id, Model model) {
+		model.addAttribute("users", UsersService.getUsers(u_id));
+		return "users/getUsers";
+	}
+	
+	// 로그인
+	@RequestMapping(value = "/loginck", method = RequestMethod.POST)
+	public String loginck(Model model,  HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		String	u_id = request.getParameter("u_id");
+		String	pw = request.getParameter("pw");
+		String   	yn = request.getParameter("yn");
+		String 	ReturnUrl = "";
+		
+		int loginck =  UsersService.getLoginck(u_id,pw);
+		
+		//users 정보가 있다면 1 없으면 0
+		if(loginck==1){
+			
+			Map<String, Object> map = new HashMap<String,Object>();
+			
+			UsersVO name  = UsersService.getUsers(u_id);
+			
+			request.getSession().setAttribute("u_id", name);
+			
+			ReturnUrl = "redirect:getProductList";
+		
+		} else {
+			
+			//model.addAttribute("message", "ID와PW를 확인해주세요");
+			
+			PrintWriter out = response.getWriter();
+			
+			out.print("<script>");
+			out.print("alert('ID or password check plz'); ");
+			out.print("history.go(-1);");
+			out.print("</script>");
+			
+			//ReturnUrl = "redirect:/login";
+			
+		} return ReturnUrl;
+	}
+	
+	//회원가입
+		@RequestMapping(value = "/account", method = RequestMethod.GET)
+	    public String account(Model model,  HttpServletRequest request,
+	    		@RequestParam(required=false, defaultValue="1") int cnt ) {
+>>>>>>> branch 'master' of https://github.com/ljhlove100/CLB
 
+<<<<<<< HEAD
          String Url = "";
       
          if(cnt == 1)
@@ -174,4 +229,39 @@ public class UsersController {
       }*/
    
       
+=======
+			String Url = "";
+		
+			if(cnt == 1)
+			{
+				Url="users/account";
+			}
+			else {
+				String	u_id = request.getParameter("u_id");
+				String	pw = request.getParameter("pw");
+				String	name = request.getParameter("name");
+				String 	yn = "Y";
+				System.out.println(u_id + pw + name+yn);
+				UsersService.account(u_id, pw, name, yn);
+				
+				Url="redirect:/login";
+			}
+	    	    		
+	    	return Url;
+	    }
+		
+	//ID 중복체크
+		/*@ResponseBody
+		@RequestMapping(value = "/checkId", method = RequestMethod.POST)
+		public String checkId(Model model,  HttpServletRequest request) {
+			System.out.println("Controller.idCheck() 호출");
+	        int result=0;
+	        UsersDAO user=UsersService.getUser(vo);
+	        if(user!=null) result=1;
+	        else System.out.println("아이디사용가능");
+	        return result;
+		}*/
+	
+		
+>>>>>>> branch 'master' of https://github.com/ljhlove100/CLB
 }

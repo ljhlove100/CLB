@@ -42,6 +42,7 @@ public interface UsersService {
    /**
      * @return   UsersList
      */
+<<<<<<< HEAD
    
    public String getUsersName(String u_id);
    
@@ -49,4 +50,15 @@ public interface UsersService {
    
    /////////////////////////////////////////////////
    
+=======
+	
+	public String getUsersName(String u_id);
+	
+	public String getAdmin(String yn);
+	
+	public void account(String u_id, String pw, String name, String yn);
+	
+	/////////////////////////////////////////////////
+	
+>>>>>>> branch 'master' of https://github.com/ljhlove100/CLB
 }

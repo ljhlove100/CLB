@@ -47,6 +47,7 @@ public class UsersDAO {
       mybatis.delete("com.mycompany.myapp.users.UsersDAO.deleteusers", u_id);
    }
 
+<<<<<<< HEAD
    //로그인
    public void Login(String Login) {
    }
@@ -68,3 +69,28 @@ public class UsersDAO {
     //checkId
     
 }
+=======
+	//로그인
+	public void Login(String Login) {
+	}
+	
+	//로그인 체크
+	public int getLoginck(HashMap<String, String> hashMap) {
+		return mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.getLoginck", hashMap);
+	}
+	
+	//users List
+	 public String getUsersName(HashMap<String, String> hashMap) {
+		 		return mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.getUsersName", hashMap);
+	}
+	 
+	 public void account(HashMap<String, String> hashMap) {
+			mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.insertUsers", hashMap);
+		}
+	 
+	 //관리자권한
+	 public String getAdmin(HashMap<String, String> hashMap) {
+	 		return mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.getAdmin", hashMap);
+}
+}
+>>>>>>> branch 'master' of https://github.com/ljhlove100/CLB

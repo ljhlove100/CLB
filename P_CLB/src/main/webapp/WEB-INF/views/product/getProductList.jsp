@@ -116,8 +116,10 @@
 
 	<h2 class="text-center">Come!&nbsp;&nbsp;Look!&nbsp;&nbsp;Buy!</h2>
 	<div style="text-align: right">
+		<c:if test="${sessionScope.u_id.yn == 'Y'}">
 		<a href="${pageContext.request.contextPath}/productInsert"> <input
 			type="button" value="상품추가"></a>
+		</c:if>
 	</div>
 	<br>
 	<br>
@@ -150,7 +152,9 @@
 								</div>
 								<div class="choose">
 									<a href="${pageContext.request.contextPath}/getProduct/${product.pNo}" style="text-align: center;"><h3>${product.pName}</h3></a><br>
+									<c:if test="${sessionScope.u_id.yn == 'Y'}">
 									<a href="./productUpdate?pNo=${product.pNo}">수정</a>
+									</c:if>
 								</div>
 							</div>
 						</div>

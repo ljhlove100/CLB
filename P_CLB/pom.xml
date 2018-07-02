@@ -264,8 +264,12 @@
 			<version>1.0.16</version>
 		</dependency>
 
-
-
+	<!-- mail인증부분 -->
+	<dependency>
+		<groupId>javax.mail</groupId>
+		<artifactId>mail</artifactId>
+		<version>1.4</version>
+	</dependency>
 
 
 
