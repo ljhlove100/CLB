@@ -92,4 +92,13 @@ public class UsersServiceImpl implements UsersService {
     	
     	dao.account(hashMap);
     }
+
+	//관리자권한
+	@Override
+	public String getAdmin(String yn) {
+		HashMap<String,String> hashMap = new HashMap<String,String>();
+    	hashMap.put("yn", yn);
+    	
+    	return dao.getAdmin(hashMap);
+	}
 }

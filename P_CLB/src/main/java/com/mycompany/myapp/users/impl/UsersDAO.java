@@ -58,10 +58,15 @@ public class UsersDAO {
 	
 	//users List
 	 public String getUsersName(HashMap<String, String> hashMap) {
-		return mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.getUsersName", hashMap);
+		 		return mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.getUsersName", hashMap);
 	}
 	 
 	 public void account(HashMap<String, String> hashMap) {
 			mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.insertUsers", hashMap);
 		}
+	 
+	 //관리자권한
+	 public String getAdmin(HashMap<String, String> hashMap) {
+	 		return mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.getAdmin", hashMap);
+}
 }

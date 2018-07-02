@@ -17,12 +17,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.request.SessionScope;
 
 import com.mycompany.myapp.users.UsersSearchVO;
 import com.mycompany.myapp.users.UsersService;
 import com.mycompany.myapp.users.UsersVO;
+import com.mycompany.myapp.users.impl.UsersDAO;
 
  
 @Controller
@@ -110,6 +112,7 @@ public class UsersController {
 		
 		String	u_id = request.getParameter("u_id");
 		String	pw = request.getParameter("pw");
+		String   	yn = request.getParameter("yn");
 		String 	ReturnUrl = "";
 		
 		int loginck =  UsersService.getLoginck(u_id,pw);
@@ -119,10 +122,9 @@ public class UsersController {
 			
 			Map<String, Object> map = new HashMap<String,Object>();
 			
-			String name  = UsersService.getUsersName(u_id);
-						
+			UsersVO name  = UsersService.getUsers(u_id);
 			
-			request.getSession().setAttribute("u_id", u_id);
+			request.getSession().setAttribute("u_id", name);
 			
 			ReturnUrl = "redirect:getProductList";
 		
@@ -157,5 +159,19 @@ public class UsersController {
 			}
 	    	    		
 	    	return Url;
-	    }	
+	    }
+		
+	//ID 중복체크
+		/*@ResponseBody
+		@RequestMapping(value = "/checkId", method = RequestMethod.POST)
+		public String checkId(Model model,  HttpServletRequest request) {
+			System.out.println("Controller.idCheck() 호출");
+	        int result=0;
+	        UsersDAO user=UsersService.getUser(vo);
+	        if(user!=null) result=1;
+	        else System.out.println("아이디사용가능");
+	        return result;
+		}*/
+	
+		
 }

@@ -59,7 +59,7 @@
 							</c:if>
 							
 							<c:if test="${!empty sessionScope.u_id}">
-								<li><a href="LogOut"><i class="fa fa-lock">${sessionScope.u_id}</i>님</a></li>
+								<li><a href="LogOut"><i class="fa fa-lock">${sessionScope.u_id.name}</i>님</a></li>
 							</c:if>
 
 						</ul>
@@ -85,11 +85,13 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
+								
 								<li><a href="${pageContext.request.contextPath}/getProductList" class="active">Home</a></li>
 								<li><a href="${pageContext.request.contextPath}/getProductList?pGroup=D" >명함</a></li>
 								<li><a href="${pageContext.request.contextPath}/getProductList?pGroup=A">액자</a></li>
 								<li><a href="${pageContext.request.contextPath}/getProductList?pGroup=B" >포토북</a></li>
 								<li><a href="${pageContext.request.contextPath}/getProductList?pGroup=C" >현수막</a></li>
+								
 							</ul>
 						</div>
 					</div>

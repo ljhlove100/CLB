@@ -45,6 +45,8 @@ public interface UsersService {
 	
 	public String getUsersName(String u_id);
 	
+	public String getAdmin(String yn);
+	
 	public void account(String u_id, String pw, String name, String yn);
 	
 	/////////////////////////////////////////////////

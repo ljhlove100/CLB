@@ -22,6 +22,12 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Login_v1/css/util.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Login_v1/css/main.css">
 <!--===============================================================================================-->
+
+
+
+
+
+
 </head>
 
 <body>
@@ -47,6 +53,12 @@
 						</span>
 					</div>
 
+
+					<!-- <input type="hidden" id="idChk" value="N" />
+					<button type="submit" id="checkbtn" class="btn btn-default">중복확인</button> -->
+
+
+
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" type="password" name="pw" placeholder="pw">
 						<span class="focus-input100"></span>
@@ -63,13 +75,13 @@
 						</span>
 					</div>
 					
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
+					<!-- <div class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" type="number" name="phone" placeholder="phone">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-fax" aria-hidden="true"></i>
 						</span>
-					</div>
+					</div> -->
 					
 					
 					<div class="container-login100-form-btn">

@@ -7,9 +7,9 @@
  	<!-- 단건조회 -->
     
     <select id="getUsers" parameterType="string" resultType="com.mycompany.myapp.users.UsersVO">
-	SELECT U_ID, PW, NAME, INSERTDATE, UPDATEDAY
+	SELECT U_ID, PW, NAME, INSERTDATE, UPDATEDAY,YN
 	FROM USERS
-	WHERE USERS = #{u_id}
+	WHERE U_ID = #{u_id}
     </select>
     
 	<!-- 전체조회 -->
@@ -31,7 +31,7 @@
   			   	#{name},
   			   	sysdate,
   			   	sysdate,
-  			  	#{yn}	
+  			  	'N'	
 	  		 )
 	]]>
    </insert>
@@ -78,7 +78,17 @@
  		]]>
 	</select>
    
-   
+   <!-- getAdmin -->
+ <!--  <select id="getAdmin" resultType="string" parameterType="hashMap">
+		<![CDATA[
+		SELECT
+			nvl(yn, 'n')
+		FROM
+			users			
+		WHERE
+			u_id=#{u_id}
+ 		]]>
+	</select> -->
 </mapper>
 
 
