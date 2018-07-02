@@ -47,7 +47,7 @@ public class UsersDAO {
       mybatis.delete("com.mycompany.myapp.users.UsersDAO.deleteusers", u_id);
    }
 
-<<<<<<< HEAD
+
    //로그인
    public void Login(String Login) {
    }
@@ -69,7 +69,7 @@ public class UsersDAO {
     //checkId
     
 }
-=======
+
 	//로그인
 	public void Login(String Login) {
 	}
