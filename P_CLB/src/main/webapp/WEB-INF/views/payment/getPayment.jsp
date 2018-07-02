@@ -14,10 +14,10 @@
 		<div class="col-sm-3">주문금액</div>
 	</div>
 	<div>
-		<c:forEach items="${paymentList}" var="vo">
-			<div class="col-sm-6" style="font-size:15px">${vo.getP_name()}</div>
+		<c:forEach items="${payment}" var="vo">
+			<div class="col-sm-6" style="font-size:15px">${vo.getpName()}</div>
 			<div class="col-sm-3" style="font-size:15px">무료배송</div>
-			<div class="col-sm-3" style="font-size:30px">${vo.getTotal_amt()}</div>
+			<div class="col-sm-3" style="font-size:30px">${vo.gettotalAmt()}</div>
 		</c:forEach>
 	</div><br><br><br><br>
 	

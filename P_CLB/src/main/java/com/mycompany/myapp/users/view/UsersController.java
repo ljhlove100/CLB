@@ -1,10 +1,13 @@
 package com.mycompany.myapp.users.view;
 
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -108,7 +111,7 @@ public class UsersController {
 	
 	// 로그인
 	@RequestMapping(value = "/loginck", method = RequestMethod.POST)
-	public String loginck(Model model,  HttpServletRequest request) {
+	public String loginck(Model model,  HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		String	u_id = request.getParameter("u_id");
 		String	pw = request.getParameter("pw");
@@ -130,8 +133,16 @@ public class UsersController {
 		
 		} else {
 			
-			model.addAttribute("message", "ID와PW를 확인해주세요");
-			ReturnUrl = "login";
+			//model.addAttribute("message", "ID와PW를 확인해주세요");
+			
+			PrintWriter out = response.getWriter();
+			
+			out.print("<script>");
+			out.print("alert('ID or password check plz'); ");
+			out.print("history.go(-1);");
+			out.print("</script>");
+			
+			//ReturnUrl = "redirect:/login";
 			
 		} return ReturnUrl;
 	}
