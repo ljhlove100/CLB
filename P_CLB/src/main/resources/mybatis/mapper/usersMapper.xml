@@ -7,15 +7,9 @@
     <!-- 단건조회 -->
     
     <select id="getUsers" parameterType="string" resultType="com.mycompany.myapp.users.UsersVO">
-<<<<<<< HEAD
-   SELECT U_ID, PW, NAME, INSERTDATE, UPDATEDAY
+   SELECT U_ID, PW, NAME, INSERTDATE, UPDATEDAY,YN
    FROM USERS
-   WHERE USERS = #{u_id}
-=======
-	SELECT U_ID, PW, NAME, INSERTDATE, UPDATEDAY,YN
-	FROM USERS
-	WHERE U_ID = #{u_id}
->>>>>>> branch 'master' of https://github.com/ljhlove100/CLB
+   WHERE U_ID = #{u_id}
     </select>
     
    <!-- 전체조회 -->
@@ -30,7 +24,6 @@
     <!-- 추가 -->
     <insert id="insertUsers" parameterType="hashMap">
     <![CDATA[
-<<<<<<< HEAD
      INSERT INTO USERS(U_ID, PW, NAME, INSERTDATE, UPDATEDAY, YN)
      VALUES (
             #{u_id},
@@ -38,21 +31,9 @@
                  #{name},
                  sysdate,
                  sysdate,
-                #{yn}   
+                'N'   
             )
    ]]>
-=======
-	  INSERT INTO USERS(U_ID, PW, NAME, INSERTDATE, UPDATEDAY, YN)
-	  VALUES (
-				#{u_id},
-  			   	#{pw},
-  			   	#{name},
-  			   	sysdate,
-  			   	sysdate,
-  			  	'N'	
-	  		 )
-	]]>
->>>>>>> branch 'master' of https://github.com/ljhlove100/CLB
    </insert>
    
    <!-- 수정 -->
@@ -99,15 +80,15 @@
    
    <!-- getAdmin -->
  <!--  <select id="getAdmin" resultType="string" parameterType="hashMap">
-		<![CDATA[
-		SELECT
-			nvl(yn, 'n')
-		FROM
-			users			
-		WHERE
-			u_id=#{u_id}
- 		]]>
-	</select> -->
+      <![CDATA[
+      SELECT
+         nvl(yn, 'n')
+      FROM
+         users         
+      WHERE
+         u_id=#{u_id}
+       ]]>
+   </select> -->
 </mapper>
 
 
