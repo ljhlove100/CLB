@@ -56,6 +56,12 @@ public class UsersDAO {
 		return mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.getLoginck", hashMap);
 	}
 	
+	//비밀번호찾기 인증
+	public int findpw(HashMap<String, String> hashMap) {
+		return mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.findpw", hashMap);
+	}
+	
+	
 	//users List
 	 public String getUsersName(HashMap<String, String> hashMap) {
 		 		return mybatis.selectOne("com.mycompany.myapp.users.UsersDAO.getUsersName", hashMap);

@@ -7,7 +7,7 @@
  	<!-- 단건조회 -->
     
     <select id="getUsers" parameterType="string" resultType="com.mycompany.myapp.users.UsersVO">
-	SELECT U_ID, PW, NAME, INSERTDATE, UPDATEDAY,YN
+	SELECT U_ID, PW, NAME, EMAIL, INSERTDATE, UPDATEDAY,YN
 	FROM USERS
 	WHERE U_ID = #{u_id}
     </select>
@@ -78,7 +78,39 @@
  		]]>
 	</select>
    
-   <!-- getAdmin -->
+   <!-- findpw -->
+   <select id="findpw" resultType="int" parameterType="hashMap">
+ 	 	 <![CDATA[
+ 	 	 SELECT
+			count(*) 
+		FROM
+			users			
+		WHERE
+			u_id=#{u_id}
+		AND
+			name=#{name}
+   			]]>
+   </select>
+   
+   
+   
+ 
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- getAdmin -->
  <!--  <select id="getAdmin" resultType="string" parameterType="hashMap">
 		<![CDATA[
 		SELECT
@@ -89,11 +121,6 @@
 			u_id=#{u_id}
  		]]>
 	</select> -->
-</mapper>
-
-
-
-
 
 
 <!-- 

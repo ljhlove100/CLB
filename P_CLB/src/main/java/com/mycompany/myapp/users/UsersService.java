@@ -49,7 +49,8 @@ public interface UsersService {
 	
 	public void account(String u_id, String pw, String name, String yn);
 	
-	/////////////////////////////////////////////////
+	//비밀번호찾기 인증
+	public int findpw(String u_id, String name);
 	
 }
 
