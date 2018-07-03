@@ -23,9 +23,6 @@
       line-height: 1.8;
       color: #818181;
  	 }
-  div {
-  		display:inline-block;
-  	}
   
   h2 {
       font-size: 24px;
@@ -112,7 +109,6 @@
 	<!-- 바디부분 -->
 	${product.detailimage}
 	<div>
-	<h3>상품 정보</h3>
 	<h4>${product.pName}</h4><br>
 	<h5>${product.pContents}</h5><br>
 	

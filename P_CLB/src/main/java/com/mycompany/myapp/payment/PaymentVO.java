@@ -6,8 +6,22 @@ public class PaymentVO {
 	private String pName;
 	private String totalAmt;
 	private int pNo;
+	private String pCount;
+	private String pSum;
 	
 	
+	public String getpCount() {
+		return pCount;
+	}
+	public void setpCount(String pCount) {
+		this.pCount = pCount;
+	}
+	public String getpSum() {
+		return pSum;
+	}
+	public void setpSum(String pSum) {
+		this.pSum = pSum;
+	}
 	public int getPaymentId() {
 		return paymentId;
 	}

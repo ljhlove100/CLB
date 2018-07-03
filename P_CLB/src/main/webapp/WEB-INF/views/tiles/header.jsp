@@ -91,7 +91,9 @@
 								<li><a href="${pageContext.request.contextPath}/getProductList?pGroup=A">액자</a></li>
 								<li><a href="${pageContext.request.contextPath}/getProductList?pGroup=B" >포토북</a></li>
 								<li><a href="${pageContext.request.contextPath}/getProductList?pGroup=C" >현수막</a></li>
-								
+								<c:if test="${sessionScope.u_id.yn == 'Y'}">
+								<li><a href="${pageContext.request.contextPath}/getPaymentList" >주문상품 현황</a></li>
+								</c:if>
 							</ul>
 						</div>
 					</div>
