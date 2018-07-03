@@ -3,7 +3,21 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.mycompany.myapp.payment.PaymentDAO">
-       
+
+    <!-- 상품별 주문내역 -->
+    <select id="getPaymentList" resultType="com.mycompany.myapp.payment.PaymentVO">
+    SELECT COUNT(PAYMENT_ID) AS "pCount" ,P_NAME, SUM(TOTAL_AMT) AS "pSum"
+       FROM PAYMENT
+     	 GROUP BY P_NAME
+    </select>
+    
+    <!-- 주문 내역조회 -->
+    <select id="getPaymentList2" resultType="com.mycompany.myapp.payment.PaymentVO">
+    	SELECT DISTINCT PAYMENT_ID, P_NAME, TOTAL_AMT
+     	  FROM PAYMENT
+    		 ORDER BY PAYMENT_ID
+    </select>
+    
  	<!-- 단건조회 -->
     
      <select id="getPayment" parameterType="string" resultType="com.mycompany.myapp.payment.PaymentVO">
@@ -20,4 +34,11 @@
   			   #{pNo},
   			   payment_id_seq.nextval)
    	</insert>
+   	
+   	<!-- 상품별 판매 수 -->
+	<select id="getPayCnt" resultType="map">
+		SELECT COUNT(PAYMENT_ID) AS "pCount" ,P_NAME
+       		FROM PAYMENT
+      			GROUP BY P_NAME
+	</select>
 </mapper>

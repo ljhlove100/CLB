@@ -1,5 +1,10 @@
 package com.mycompany.myapp.payment.view;
 
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,9 +12,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mycompany.myapp.payment.PaymentService;
 import com.mycompany.myapp.payment.PaymentVO;
+import com.mycompany.myapp.product.ProductVO;
 
 @Controller
 public class PaymentController {
@@ -17,6 +24,22 @@ public class PaymentController {
 	@Autowired
 	PaymentService paymentService;
 	
+	//상품별 주문내역
+	@RequestMapping(value= "/getPaymentList", method = RequestMethod.GET)
+	public String getBoardList(PaymentVO vo, HttpServletRequest request) {
+		request.setAttribute("paymentList", paymentService.getPaymentList(vo));
+		return "payment/getPaymentList";
+	}
+	
+	
+	//주문 내역조회
+		@RequestMapping(value= "/getPaymentList2", method = RequestMethod.GET)
+		public String getBoardList2(PaymentVO vo, HttpServletRequest request) {
+			request.setAttribute("paymentList2", paymentService.getPaymentList2(vo));
+			return "payment/getPaymentList2";
+		}
+	
+	//단건
 	@RequestMapping(value = "/getPayment/{paymentId}", method = RequestMethod.GET)
 	public String getPayment(@PathVariable String paymentId, Model model) {
 		model.addAttribute("payment", paymentService.getPayment(paymentId));
@@ -36,5 +59,18 @@ public class PaymentController {
 			// 서비스이용하여 등록처리하고 목록페이지로 이동
 			paymentService.paymentInsert(vo);
 			return "payment/getPayment";
+		}
+		
+	// 차트페이지
+		@RequestMapping("payment/chart")
+		public void paymentInsert() {
+			
+		}
+
+	// 차트 데이터 ajax
+		@RequestMapping("payment/getPayCnt")
+		@ResponseBody
+		public List<Map<String, Object>> getPayCnt() {
+			return paymentService.getPayCnt();
 		}
 }
