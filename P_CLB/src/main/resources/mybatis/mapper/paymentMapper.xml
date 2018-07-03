@@ -13,11 +13,18 @@
     
     <!-- 주문 내역조회 -->
     <select id="getPaymentList2" resultType="com.mycompany.myapp.payment.PaymentVO">
+    select a.* from ( select rownum rn, b.* from (
     	SELECT DISTINCT PAYMENT_ID, P_NAME, TOTAL_AMT
      	  FROM PAYMENT
     		 ORDER BY PAYMENT_ID
+    ) b ) a where rn between #{first} and #{last}
     </select>
     
+    
+    <!-- 카운터 조회 -->
+    <select id="getCount" resultType="int">
+   		SELECT COUNT(*) FROM PAYMENT
+   </select>
  	<!-- 단건조회 -->
     
      <select id="getPayment" parameterType="string" resultType="com.mycompany.myapp.payment.PaymentVO">

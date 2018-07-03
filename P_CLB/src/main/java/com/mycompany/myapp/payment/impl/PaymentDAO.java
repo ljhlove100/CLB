@@ -7,8 +7,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.mycompany.myapp.payment.PaymentSearchVO;
 import com.mycompany.myapp.payment.PaymentVO;
-import com.mycompany.myapp.product.ProductVO;
 
 @Repository
 public class PaymentDAO {
@@ -24,6 +24,12 @@ public class PaymentDAO {
 	public List<PaymentVO> getPaymentList2(PaymentVO vo){
 		return mybatis.selectList("com.mycompany.myapp.payment.PaymentDAO.getPaymentList2",vo);
 	};
+	
+	//전체레코드 건수 조회
+    
+    public int getCount(PaymentSearchVO vo) {
+        return mybatis.selectOne("com.mycompany.myapp.payment.PaymentDAO.getCount", vo);
+     };
 	
 	//totalAmt (총가격)
 	public PaymentVO getPayment(String paymentId) {

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mycompany.myapp.payment.PaymentSearchVO;
 import com.mycompany.myapp.payment.PaymentService;
 import com.mycompany.myapp.payment.PaymentVO;
 
@@ -38,6 +39,11 @@ public class PaymentServiceImpl implements PaymentService{
 	@Override
 	public List<Map<String, Object>> getPayCnt() {
 		return dao.getPayCnt();
+	}
+
+	@Override
+	public int getCount(PaymentSearchVO vo) {
+		return dao.getCount(vo);
 	}
 
 }

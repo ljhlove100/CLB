@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.mycompany.myapp.Paging;
+import com.mycompany.myapp.payment.PaymentSearchVO;
 import com.mycompany.myapp.payment.PaymentService;
 import com.mycompany.myapp.payment.PaymentVO;
 import com.mycompany.myapp.product.ProductVO;
@@ -34,9 +37,28 @@ public class PaymentController {
 	
 	//주문 내역조회
 		@RequestMapping(value= "/getPaymentList2", method = RequestMethod.GET)
-		public String getBoardList2(PaymentVO vo, HttpServletRequest request) {
-			request.setAttribute("paymentList2", paymentService.getPaymentList2(vo));
-			return "payment/getPaymentList2";
+		public ModelAndView getBoardList2(PaymentSearchVO vo, Paging paging) {
+			ModelAndView mv = new ModelAndView();
+		      //페이지 번호 파라미터
+		      if(paging.getPage()==null)
+		         paging.setPage(1);
+			
+		    //페이징 first,last 검색조건
+		      //page 1 ==> 1~10 2=> 11~20
+		      vo.setFirst(paging.getFirst());
+		      vo.setLast(paging.getLast());
+		      
+		    //전체건수
+		      paging.setTotalRecord(paymentService.getCount(vo));
+		      
+		      //결과를 모델에 저장
+		      mv.addObject("paging",paging);
+		      mv.addObject("paymentList2", paymentService.getPaymentList2(vo));
+		      
+		      //뷰페이지 지정
+		      mv.setViewName("payment/paymentList2");
+		      return mv;
+			
 		}
 	
 	//단건

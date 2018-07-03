@@ -18,6 +18,9 @@ public interface PaymentService {
 	public void paymentInsert(PaymentVO vo);
 	
 	//상품별 주문수
-		public List<Map<String, Object>> getPayCnt();
+	public List<Map<String, Object>> getPayCnt();
+	
+	//카운트
+	public int getCount(PaymentSearchVO vo);
 	
 }
