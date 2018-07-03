@@ -101,4 +101,14 @@ public class UsersServiceImpl implements UsersService {
     	
     	return dao.getAdmin(hashMap);
 	}
+
+	//비밀번호인증
+	@Override
+	public int findpw(String u_id, String name) {
+		HashMap<String,String> hashMap = new HashMap<String,String>();
+		hashMap.put("u_id", u_id);
+		hashMap.put("name", name);
+		
+		return dao.findpw(hashMap);
+	}
 }

@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>Login V1</title>
+	<title>findpw</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -45,9 +45,9 @@
 					<img src="${pageContext.request.contextPath}/resources/images/home/Logo_1.png" alt="IMG" width="604" height="408">
 				</div>
 
-				<form class="login100-form validate-form" action="loginck" method="post">
+				<form class="login100-form validate-form" action="findpw" method="post">
 					<span class="login100-form-title">
-						CLB Login
+						CLB 비밀번호찾기
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
@@ -59,7 +59,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pw" placeholder="Password">
+						<input class="input100" type="name" name="name" placeholder="name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -67,28 +67,12 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button type="submit" class="login100-form-btn" value="로그인" >
-							Login
+						<button type="submit" class="login100-form-btn" value="비밀번호찾기" >
+							임시비밀번호전송
 						</button>
 					</div>
 
-					<div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-						<a class="txt2" href="findpw">
-							<!-- <button type="button" class="findpw-form-btn" value="비밀번호찾기"> -->
-							Username / Password?
-						<!-- </button>	 -->
-						</a>
-					</div>
-
-					<div class="text-center p-t-136">
-						<a class="txt2" href="account">
-							Create your Account
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
+			
 				</form>
 			</div>
 		</div>

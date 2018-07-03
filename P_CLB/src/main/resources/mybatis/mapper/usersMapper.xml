@@ -4,91 +4,97 @@
 
 <mapper namespace="com.mycompany.myapp.users.UsersDAO">
        
-    <!-- 단건조회 -->
+ 	<!-- 단건조회 -->
     
     <select id="getUsers" parameterType="string" resultType="com.mycompany.myapp.users.UsersVO">
-   SELECT U_ID, PW, NAME, INSERTDATE, UPDATEDAY,YN
-   FROM USERS
-   WHERE U_ID = #{u_id}
+	SELECT U_ID, PW, NAME, EMAIL, INSERTDATE, UPDATEDAY,YN
+	FROM USERS
+	WHERE U_ID = #{u_id}
     </select>
     
-   <!-- 전체조회 -->
-   <select id="getUserList"  parameterType="com.mycompany.myapp.users.UsersVO" resultType="com.mycompany.myapp.users.UsersVO">
-   SELECT PW, U_ID, NAME, EMAIL, TEL, PHONE, ADDR, ZIPCODE, BUSINESS_CODE,
-            POWER, INSERTDATE, UPDATEDAY, YN
-   FROM USERS
-   
+	<!-- 전체조회 -->
+	<select id="getUserList"  parameterType="com.mycompany.myapp.users.UsersVO" resultType="com.mycompany.myapp.users.UsersVO">
+	SELECT PW, U_ID, NAME, EMAIL, TEL, PHONE, ADDR, ZIPCODE, BUSINESS_CODE,
+				POWER, INSERTDATE, UPDATEDAY, YN
+	FROM USERS
+	
     </select>
     
       
     <!-- 추가 -->
     <insert id="insertUsers" parameterType="hashMap">
     <![CDATA[
-     INSERT INTO USERS(U_ID, PW, NAME, INSERTDATE, UPDATEDAY, YN)
-     VALUES (
-            #{u_id},
-                 #{pw},
-                 #{name},
-                 sysdate,
-                 sysdate,
-                'N'   
-            )
-   ]]>
+	  INSERT INTO USERS(U_ID, PW, NAME, INSERTDATE, UPDATEDAY, YN)
+	  VALUES (
+				#{u_id},
+  			   	#{pw},
+  			   	#{name},
+  			   	sysdate,
+  			   	sysdate,
+  			  	'N'	
+	  		 )
+	]]>
    </insert>
    
    <!-- 수정 -->
    <update id="updateUsers" parameterType="com.mycompany.myapp.users.UsersVO">
-         UPDATE USERS
-         SET U_ID = #{uId},
-              PW = #{pw},
-              NAME=#{name}
-            
-        WHERE USERS = #{uId}
+   		UPDATE USERS
+   		SET U_ID = #{uId},
+   			  PW = #{pw},
+   			  NAME=#{name}
+   			
+   	  WHERE USERS = #{uId}
    </update>
    
    <!-- 삭제 -->
    <delete id="deleteUsers" parameterType="com.mycompany.myapp.users.UsersVO">
-      DELETE USERS
-      WHERE USERS = #{uId}
+   	DELETE USERS
+   	WHERE USERS = #{uId}
    </delete>
    
    <!-- loginck -->
    <select id="getLoginck"  resultType="int" parameterType="hashMap">
    <![CDATA[
-      SELECT
-         count(*) 
-      FROM
-         users         
-      WHERE
-         u_id=#{u_id}
-      AND
-         pw=#{pw}
-       ]]>
-   </select>
+		SELECT
+			count(*) 
+		FROM
+			users			
+		WHERE
+			u_id=#{u_id}
+		AND
+			pw=#{pw}
+ 		]]>
+	</select>
    
    <!-- getusersName -->
    <select id="getUsersName" resultType="string" parameterType="hashMap">
-      <![CDATA[
-      SELECT
-         name
-      FROM
-         users         
-      WHERE
-         u_id=#{u_id}
-       ]]>
+		<![CDATA[
+		SELECT
+			name
+		FROM
+			users			
+		WHERE
+			u_id=#{u_id}
+ 		]]>
+	</select>
+   
+   <!-- findpw -->
+   <select id="findpw" resultType="int" parameterType="hashMap">
+ 	 	 <![CDATA[
+ 	 	 SELECT
+			count(*) 
+		FROM
+			users			
+		WHERE
+			u_id=#{u_id}
+		AND
+			name=#{name}
+   			]]>
    </select>
    
-   <!-- getAdmin -->
- <!--  <select id="getAdmin" resultType="string" parameterType="hashMap">
-      <![CDATA[
-      SELECT
-         nvl(yn, 'n')
-      FROM
-         users         
-      WHERE
-         u_id=#{u_id}
-       ]]>
-   </select> -->
+   
+   
+ 
 </mapper>
 
 
@@ -96,157 +102,178 @@
 
 
 
+
+
+
+
+
+
+
+
+  <!-- getAdmin -->
+ <!--  <select id="getAdmin" resultType="string" parameterType="hashMap">
+		<![CDATA[
+		SELECT
+			nvl(yn, 'n')
+		FROM
+			users			
+		WHERE
+			u_id=#{u_id}
+ 		]]>
+	</select> -->
+
+
 <!-- 
-   
+	
     <select id="LoginInfo" resultType="com.spring.myapp.model.Users" parameterType="hashMap">
       <![CDATA[  
         SELECT
-         users_no,
-         users_id,
-         users_pw,
-         users_name,
-         users_power,
-         update_date,
-         insert_date
-      FROM
-         users
-      WHERE
-         users_id=#{users_id}
-      AND
-         users_pw=#{users_pw}   
-      ]]>
+			users_no,
+			users_id,
+			users_pw,
+			users_name,
+			users_power,
+			update_date,
+			insert_date
+		FROM
+			users
+		WHERE
+			users_id=#{users_id}
+		AND
+			users_pw=#{users_pw}	
+		]]>
     </select> 
     
     <select id="getUsersList" resultType="com.spring.myapp.model.Users">
       <![CDATA[  
         SELECT
-         users_no,
-         users_id,
-         users_pw,
-         users_name,
-         users_power,
-         update_date,
-         insert_date
-      FROM
-         users
-      ]]>
+			users_no,
+			users_id,
+			users_pw,
+			users_name,
+			users_power,
+			update_date,
+			insert_date
+		FROM
+			users
+		]]>
     </select>     
     
     <select id="getTotalUsersCnt" resultType="int" parameterType="hashMap" >       
-      SELECT count(*) as count
-      FROM users      
-      <where>
-          <if test="word != null and search == 'all'">
-              users_id like concat('%', #{word}, '%') OR users_name like concat('%', #{word}, '%')
-          </if>                
-          <if test="word != null and search == 'users_id'">
-              users_id like concat('%', #{word}, '%') 
-          </if>
-          <if test="word != null and search == 'users_name'">
-              users_name like concat('%', #{word}, '%')
-          </if>
-      </where>            
-   </select>
-   
+		SELECT count(*) as count
+		FROM users		
+		<where>
+		    <if test="word != null and search == 'all'">
+		        users_id like concat('%', #{word}, '%') OR users_name like concat('%', #{word}, '%')
+		    </if>	   		    
+		    <if test="word != null and search == 'users_id'">
+		        users_id like concat('%', #{word}, '%') 
+		    </if>
+		    <if test="word != null and search == 'users_name'">
+		        users_name like concat('%', #{word}, '%')
+		    </if>
+		</where>				
+	</select>
+	
      <select id="getAllUsers" resultType="com.spring.myapp.model.Users" parameterType="hashMap" >       
-      SELECT
-         users_no,
-         users_id,
-         users_pw,
-         users_name,
-         users_power,
-         update_date,
-         insert_date
-      FROM
-         users   
-      <where>
-          <if test="word != null and search == 'all'">
-              (users_id like concat('%', #{word}, '%') OR users_name like concat('%', #{word}, '%')) AND ROWNUM BETWEEN ((#{curPage}-1) * 10) + 1 and #{curPage}*10
-          </if>
-          <if test="word != null and search == 'users_id'">
-              users_id like concat('%', #{word}, '%') AND ROWNUM BETWEEN ((#{curPage}-1) * 10) + 1 and #{curPage}*10
-          </if>
-          <if test="word != null and search == 'users_name'">
-              users_name like concat('%', #{word}, '%') AND ROWNUM BETWEEN ((#{curPage}-1) * 10) + 1 and #{curPage}*10
-          </if>
-          <if test="word == null">
-              ROWNUM BETWEEN ((#{curPage}-1) * 10) + 1 and #{curPage}*10
-          </if>
-      </where>
-   </select>
-   
+		SELECT
+			users_no,
+			users_id,
+			users_pw,
+			users_name,
+			users_power,
+			update_date,
+			insert_date
+		FROM
+			users	
+		<where>
+		    <if test="word != null and search == 'all'">
+		        (users_id like concat('%', #{word}, '%') OR users_name like concat('%', #{word}, '%')) AND ROWNUM BETWEEN ((#{curPage}-1) * 10) + 1 and #{curPage}*10
+		    </if>
+		    <if test="word != null and search == 'users_id'">
+		        users_id like concat('%', #{word}, '%') AND ROWNUM BETWEEN ((#{curPage}-1) * 10) + 1 and #{curPage}*10
+		    </if>
+		    <if test="word != null and search == 'users_name'">
+		        users_name like concat('%', #{word}, '%') AND ROWNUM BETWEEN ((#{curPage}-1) * 10) + 1 and #{curPage}*10
+		    </if>
+		    <if test="word == null">
+		        ROWNUM BETWEEN ((#{curPage}-1) * 10) + 1 and #{curPage}*10
+		    </if>
+		</where>
+	</select>
+	
      <select id="getUsersInfo" resultType="com.spring.myapp.model.Users" parameterType="hashMap">
       <![CDATA[  
         SELECT
-         users_no,
-         users_id,
-         users_name,
-         update_date,
-         write_date
-      FROM
-         users
-      WHERE
-         users_id=#{users_id}      
-      ]]>
+			users_no,
+			users_id,
+			users_name,
+			update_date,
+			write_date
+		FROM
+			users
+		WHERE
+			users_id=#{users_id}		
+		]]>
     </select>  
     
      
      
      
      <select id="getUsersName" resultType="string" parameterType="hashMap">
-      <![CDATA[
-      SELECT
-         users_name
-      FROM
-         users         
-      WHERE
-         users_id=#{users_id}
-       ]]>
-   </select>
-   
+		<![CDATA[
+		SELECT
+			users_name
+		FROM
+			users			
+		WHERE
+			users_id=#{users_id}
+ 		]]>
+	</select>
+	
      <select id="getUsersDepartment" resultType="string" parameterType="hashMap">
-      <![CDATA[
-      SELECT
-         department
-      FROM
-         users         
-      WHERE
-         users_id=#{users_id}      
-       ]]>
-   </select>
-   
+		<![CDATA[
+		SELECT
+			department
+		FROM
+			users			
+		WHERE
+			users_id=#{users_id}		
+ 		]]>
+	</select>
+	
      <select id="getUsersCompany" resultType="string" parameterType="hashMap">
-      <![CDATA[
-      SELECT
-         company
-      FROM
-         users         
-      WHERE
-         users_id=#{users_id}      
-       ]]>
-   </select>
-   
+		<![CDATA[
+		SELECT
+			company
+		FROM
+			users			
+		WHERE
+			users_id=#{users_id}		
+ 		]]>
+	</select>
+	
      <select id="getUsersTeam" resultType="string" parameterType="hashMap">
-      <![CDATA[
-      SELECT
-         team 
-      FROM
-         users         
-      WHERE
-         users_id=#{users_id}      
-       ]]>
-   </select>
-   
+		<![CDATA[
+		SELECT
+			team 
+		FROM
+			users			
+		WHERE
+			users_id=#{users_id}		
+ 		]]>
+	</select>
+	
      <select id="getUsersPosition" resultType="string" parameterType="hashMap">
-      <![CDATA[
-      SELECT
-         position
-      FROM
-         users         
-      WHERE
-         users_id=#{users_id}      
-       ]]>
-   </select>
+		<![CDATA[
+		SELECT
+			position
+		FROM
+			users			
+		WHERE
+			users_id=#{users_id}		
+ 		]]>
+	</select>
     
 </mapper>
  -->

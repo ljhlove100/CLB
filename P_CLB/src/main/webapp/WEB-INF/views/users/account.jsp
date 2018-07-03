@@ -23,7 +23,46 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Login_v1/css/main.css">
 <!--===============================================================================================-->
 
-
+<script>
+	function inputCheck() {
+		var name = document.frm.name.value;
+		if (name == "") {
+			alert("이름을 입력하세요.");
+			return false;
+		}
+		var id = document.frm.id.value;
+		if (id == "") {
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+		var password = document.frm.password.value;
+		if (password == "") {
+			alert("비밀번호를 입력하세요.");
+			return false;
+		}
+		var pwdcheck = document.frm.pwdcheck.value;
+		if (pwdcheck == "") {
+			alert("비밀번호 확인을 입력하세요.");
+			return false;
+		}
+		var phonenumber = document.frm.phonenumber.value;
+		if (phonenumber == "") {
+			alert("전화번호를 입력하세요.");
+			return false;
+		}
+		var emailid = document.frm.emailid.value;
+		if (emailid == "") {
+			alert("이메일을 입력하세요.");
+			return false;
+		}
+		var emailaddr = document.frm.emailaddr.value;
+		if (emailaddr == "") {
+			alert("이메일을 입력하세요.");
+			return false;
+		}
+		return true;
+	}
+</script>
 
 
 
@@ -95,7 +134,6 @@
 			</div>
 		</div>
 	</div>
-	
 	
 
 	

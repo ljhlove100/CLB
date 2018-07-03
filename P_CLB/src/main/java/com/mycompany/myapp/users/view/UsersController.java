@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.request.SessionScope;
 
+import com.mycompany.myapp.users.MailService;
+import com.mycompany.myapp.users.MailVO;
 import com.mycompany.myapp.users.UsersSearchVO;
 import com.mycompany.myapp.users.UsersService;
 import com.mycompany.myapp.users.UsersVO;
@@ -39,6 +41,14 @@ public class UsersController {
 	@Autowired
 	UsersService UsersService;
 
+	@RequestMapping(value = "/findpw", method = RequestMethod.GET)
+    public String findpw(){
+    	    		
+    	return "users/findpw";
+    }
+	
+	
+	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(){
     	    		
@@ -133,7 +143,7 @@ public class UsersController {
 		
 		} else {
 			
-			//model.addAttribute("message", "ID와PW를 확인해주세요");
+		/*	model.addAttribute("message", "ID와PW를 확인해주세요");*/
 			
 			PrintWriter out = response.getWriter();
 			
@@ -142,7 +152,7 @@ public class UsersController {
 			out.print("history.go(-1);");
 			out.print("</script>");
 			
-			//ReturnUrl = "redirect:/login";
+		/*	ReturnUrl = "redirect:/login";*/
 			
 		} return ReturnUrl;
 	}
@@ -172,17 +182,56 @@ public class UsersController {
 	    	return Url;
 	    }
 		
-	//ID 중복체크
-		/*@ResponseBody
-		@RequestMapping(value = "/checkId", method = RequestMethod.POST)
-		public String checkId(Model model,  HttpServletRequest request) {
-			System.out.println("Controller.idCheck() 호출");
-	        int result=0;
-	        UsersDAO user=UsersService.getUser(vo);
-	        if(user!=null) result=1;
-	        else System.out.println("아이디사용가능");
-	        return result;
-		}*/
-	
+		// 비밀번호찾기 인증
+		@RequestMapping(value = "/findpw", method = RequestMethod.POST)
+		public String findpw(Model model, MailVO vo, HttpServletRequest request, HttpServletResponse response) throws IOException {
+			
+			String	u_id = request.getParameter("u_id");
+			String   	name = request.getParameter("name");
+			String 	ReturnUrl = "";
+			
+			int findpw =  UsersService.findpw(u_id, name);
+			
+			//users 정보가 있다면 1 없으면 0
+			if(findpw==1){
+				
+				Map<String, Object> map = new HashMap<String,Object>();
+				
+				UsersVO Fpw   = UsersService.getUsers(u_id);
+				
+				
+				//Fpw.getPw();
+				
+				
+				vo.setFrom("ljhlove100@gmail.com");
+				vo.setTo(Fpw.getEmail());
+				vo.setUsername("ljhlove100");
+				vo.setPassword("vrvobfgaprnldpnq");
+				vo.setSubject(Fpw.getName()+"님의 비밀번호입니다");
+				vo.setText("CLB"+Fpw.getName()+"비밀번호는"+Fpw.getPw()+"입니다");
+				
+				MailService.mailsend(vo);
+						
+				PrintWriter out = response.getWriter();
+				out.print("<script>alert('send success');</script>");
+				
+				//ReturnUrl = "redirect:findpw";
+			
+			} else {
+				
+				
+				PrintWriter out = response.getWriter();
+				
+				out.print("<script>");
+				out.print("alert('ID or password check plz'); ");
+				out.print("history.go(-1);");
+				out.print("</script>");
+				
+			/*	ReturnUrl = "redirect:/login";*/
+				
+			} return ReturnUrl;
+		}
+		
+		
 		
 }
