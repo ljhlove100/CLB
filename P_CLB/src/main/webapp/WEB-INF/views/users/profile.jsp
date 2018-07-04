@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>account</title>
+	<title>profile</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -23,49 +23,6 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/Login_v1/css/main.css">
 <!--===============================================================================================-->
 
-<!-- <script>
-	function inputCheck() {
-		var name = document.frm.name.value;
-		if (name == "") {
-			alert("이름을 입력하세요.");
-			return false;
-		}
-		var id = document.frm.id.value;
-		if (id == "") {
-			alert("아이디를 입력하세요.");
-			return false;
-		}
-		var password = document.frm.password.value;
-		if (password == "") {
-			alert("비밀번호를 입력하세요.");
-			return false;
-		}
-		var pwdcheck = document.frm.pwdcheck.value;
-		if (pwdcheck == "") {
-			alert("비밀번호 확인을 입력하세요.");
-			return false;
-		}
-		var phonenumber = document.frm.phonenumber.value;
-		if (phonenumber == "") {
-			alert("전화번호를 입력하세요.");
-			return false;
-		}
-		var emailid = document.frm.emailid.value;
-		if (emailid == "") {
-			alert("이메일을 입력하세요.");
-			return false;
-		}
-		var emailaddr = document.frm.emailaddr.value;
-		if (emailaddr == "") {
-			alert("이메일을 입력하세요.");
-			return false;
-		}
-		return true;
-	}
-</script> -->
-
-
-
 
 </head>
 
@@ -78,10 +35,10 @@
 					<img src="${pageContext.request.contextPath}/resources/images/home/Logo_1.png" alt="IMG" width="604" height="408">
 				</div>
 
-				<form class="login100-form validate-form" action="account">
+				<form class="login100-form validate-form" action="profile">
 				<input type="hidden" name="cnt" value="2">
 					<span class="login100-form-title">
-						CLB Account
+						CLB 회원정보수정
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
@@ -106,7 +63,7 @@
 						</span>
 					</div>
 					
-					<div class="wrap-input100 validate-input" data-validate="user name">
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" type="text" name="name" placeholder="name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -114,18 +71,11 @@
 						</span>
 					</div>
 					
-					<div class="wrap-input100 validate-input" data-validate="user addr">
-						<input class="input100" type="text" name="addr" placeholder="addr">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-star-o" aria-hidden="true"></i>
-						</span>
-					</div>
-					
+								
 					
 					<div class="container-login100-form-btn">
-						<button type="submit" class="login100-form-btn" value="회원가입">
-							Account
+						<button type="submit" class="login100-form-btn" value="회원정보수정">
+							회원정보수정
 						</button>
 					</div>
 
