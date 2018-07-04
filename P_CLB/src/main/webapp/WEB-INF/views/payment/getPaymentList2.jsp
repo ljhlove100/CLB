@@ -6,10 +6,38 @@
 <html>
 <head>
 <title>Insert title here</title>
+<style>
+ body {
+       font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+ 	 }
+  
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+	 }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .center{
+  	margin:auto;
+  	width:50%;
+  	border: 3px;
+  	padding: 150px;
+  }
+</style>
 </head>
 <body>
-<div style="background-color:black; text-align: center;"><font color="white" size="10px;">상품별 주문 내역</font></div>
-	<div style="text-align: center; padding: 50px;">
+<div style="background-color:black; text-align: center;"><font color="white" size="10px;">주문내역 상세보기</font></div>
+	<div style="text-align: center;" class= "center" >
 	<table border="1">
 		<thead>
 			<th>주문 ID</th>
@@ -23,8 +51,8 @@
 			<td>${payment2.totalAmt}원</td>
 		</tr>
 	</c:forEach>
-	</table>
-	</div>
+	</table><br><br>
+	
 	
 	<!-- 페이징 -->
    <my:paging paging="${paging}"/>
@@ -33,6 +61,6 @@
    			location.href="./getPaymentList2?page=" + page
    		}
    </script>
-	
+	</div>
 </body>
 </html>

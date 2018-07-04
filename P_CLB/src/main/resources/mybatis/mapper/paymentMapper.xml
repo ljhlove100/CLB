@@ -35,10 +35,11 @@
    
    <!-- 추가 -->
    	<insert id="paymentInsert" parameterType="com.mycompany.myapp.payment.PaymentVO">
-   		insert into payment(p_name,total_amt,p_no,payment_id)
+   		insert into payment(p_name,total_amt,p_no,paymentdate,payment_id)
   		values(#{pName},
   			   #{totalAmt},
   			   #{pNo},
+  			   sysdate,
   			   payment_id_seq.nextval)
    	</insert>
    	

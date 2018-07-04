@@ -80,6 +80,5 @@
 	<script src="${pageContext.request.contextPath}/resources/js/price-range.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/jquery.prettyPhoto.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/script/jquery-3.2.1.min.js"></script>
 </body>
 </html>

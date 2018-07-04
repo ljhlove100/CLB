@@ -56,7 +56,7 @@ public class PaymentController {
 		      mv.addObject("paymentList2", paymentService.getPaymentList2(vo));
 		      
 		      //뷰페이지 지정
-		      mv.setViewName("payment/paymentList2");
+		      mv.setViewName("payment/getPaymentList2");
 		      return mv;
 			
 		}
