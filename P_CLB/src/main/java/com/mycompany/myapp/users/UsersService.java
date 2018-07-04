@@ -52,5 +52,7 @@ public interface UsersService {
 	//비밀번호찾기 인증
 	public int findpw(String u_id, String name);
 	
+	//회원정보수정
+	public int profile(String u_id, String name);
 }
 

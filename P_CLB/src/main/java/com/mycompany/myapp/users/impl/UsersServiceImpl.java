@@ -111,4 +111,11 @@ public class UsersServiceImpl implements UsersService {
 		
 		return dao.findpw(hashMap);
 	}
+
+	//회원정보수정
+	@Override
+	public int profile(String u_id, String name) {
+		
+		return 0;
+	}
 }
