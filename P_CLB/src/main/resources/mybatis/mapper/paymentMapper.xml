@@ -22,16 +22,22 @@
     
     <!-- 월별 매출현황 조회 -->
     <select id="getPaymentList3" resultType="com.mycompany.myapp.payment.PaymentVO">
-		select to_char(sysdate,'yyyy-mm') as "month",count(*) as "pCount",to_char(sum(total_amt) ,'L9,999,999') as "pSum"
+		select to_char(paymentdate,'mm') as "pMonth", count(*) as "pCount" ,to_char(sum(total_amt) ,'L9,999,999') as "pSum"
 			from payment
-				group by to_char(sysdate,'yyyy-mm')
+				where to_char(paymentdate,'yyyymm')
+				between '201801' and '201812'
+				group by to_char(paymentdate,'mm')
+				order by to_char(paymentdate,'mm') asc
 	</select>
 	
 	<!-- 일별 매출현황 조회 -->
 	<select id="getPaymentList4" resultType="com.mycompany.myapp.payment.PaymentVO">
-		select to_char(sysdate,'yyyy-mm-dd') as "day",count(*) as "pCount", to_char(sum(total_amt) ,'L9,999,999') as "pSum"
+		select to_char(paymentdate,'dd') as "pDay", count(*) as "pCount", to_char(sum(total_amt) ,'L9,999,999') as "pSum" 
 			from payment
-				group by to_char(sysdate,'yyyy-mm-dd')
+				where to_char(paymentdate,'yyyymmdd')
+				between '20180701' and '20180730'
+				group by to_char(paymentdate,'dd')
+				order by to_char(paymentdate,'dd') asc
 	</select>
     
     <!-- 카운터 조회 -->
@@ -56,10 +62,30 @@
   			   payment_id_seq.nextval)
    	</insert>
    	
+   	<insert id="paymentInsert2" parameterType="com.mycompany.myapp.payment.PaymentVO">
+   		insert into payment(p_name,total_amt,p_no,paymentdate,payment_id)
+  		values(#{pName},
+  			   #{totalAmt},
+  			   #{pNo},
+  			   sysdate,
+  			   payment_id_seq.nextval)
+   	</insert>
+  
+   	
    	<!-- 상품별 판매 수 -->
 	<select id="getPayCnt" resultType="map">
 		SELECT COUNT(PAYMENT_ID) AS "pCount" ,P_NAME
        		FROM PAYMENT
       			GROUP BY P_NAME
+	</select>
+	
+		<!-- 월별 판매 수 -->
+	<select id="getPayCnt2" resultType="map">
+		select to_char(paymentdate,'mm') as "pMonth", sum(total_amt) as "pSum"
+			from payment
+				where to_char(paymentdate,'yyyymm')
+				between '201801' and '201812'
+				group by to_char(paymentdate,'mm')
+				order by to_char(paymentdate,'mm') asc
 	</select>
 </mapper>
