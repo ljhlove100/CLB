@@ -91,6 +91,11 @@
 	</form>
 	<center>
 	<a href="${pageContext.request.contextPath}/getPaymentList2">
-	<button>주문내역 상세 보기</button>	</a></center>
+	<button>주문내역 상세 보기</button>	</a>
+	<a href="${pageContext.request.contextPath}/getPaymentList3">
+	<button>월별</button>	</a>
+	<a href="${pageContext.request.contextPath}/getPaymentList4">
+	<button>일별</button>	</a>
+	</center>
 </body>
 </html>

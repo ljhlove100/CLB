@@ -46,4 +46,14 @@ public class PaymentServiceImpl implements PaymentService{
 		return dao.getCount(vo);
 	}
 
+	@Override
+	public List<PaymentVO> getPaymentList3(PaymentVO vo) {
+		return dao.getPaymentList3(vo);
+	}
+
+	@Override
+	public List<PaymentVO> getPaymentList4(PaymentVO vo) {
+		return dao.getPaymentList4(vo);
+	}
+
 }

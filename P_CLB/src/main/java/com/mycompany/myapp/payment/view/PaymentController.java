@@ -60,6 +60,21 @@ public class PaymentController {
 		      return mv;
 			
 		}
+		
+		//상품별 주문내역
+		@RequestMapping(value= "/getPaymentList3", method = RequestMethod.GET)
+		public String getBoardList3(PaymentVO vo, HttpServletRequest request) {
+			request.setAttribute("paymentList3", paymentService.getPaymentList3(vo));
+			return "payment/getPaymentList3";
+		}
+		
+		//상품별 주문내역
+		@RequestMapping(value= "/getPaymentList4", method = RequestMethod.GET)
+		public String getBoardList4(PaymentVO vo, HttpServletRequest request) {
+			request.setAttribute("paymentList4", paymentService.getPaymentList4(vo));
+			return "payment/getPaymentList4";
+		}
+		
 	
 	//단건
 	@RequestMapping(value = "/getPayment/{paymentId}", method = RequestMethod.GET)

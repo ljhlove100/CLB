@@ -45,7 +45,7 @@
 			<th>주문 상품가격</th>
 		</thead>
 	<c:forEach items="${paymentList2}" var="payment2">
-			<tr>
+		<tr>
 			<td>${payment2.paymentId}</td>
 			<td>${payment2.pName}</td>
 			<td>${payment2.totalAmt}원</td>

@@ -25,6 +25,13 @@ public class PaymentDAO {
 		return mybatis.selectList("com.mycompany.myapp.payment.PaymentDAO.getPaymentList2",vo);
 	};
 	
+	public List<PaymentVO> getPaymentList3(PaymentVO vo){
+		return mybatis.selectList("com.mycompany.myapp.payment.PaymentDAO.getPaymentList3",vo);
+	};
+	
+	public List<PaymentVO> getPaymentList4(PaymentVO vo){
+		return mybatis.selectList("com.mycompany.myapp.payment.PaymentDAO.getPaymentList4",vo);
+	};
 	//전체레코드 건수 조회
     
     public int getCount(PaymentSearchVO vo) {
