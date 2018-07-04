@@ -53,9 +53,9 @@ function onKeyDown()
 				<div class="row">
 				<div class="col-sm-4">
 					<div class="logo pull-left">
-						<a href="home"><img
-							src="${pageContext.request.contextPath}/resources/images/home/Logo_1.png"
-							alt="" width="300px" height="75px" /></a>
+						<a href="home">
+						<img src="${pageContext.request.contextPath}/resources/images/home/clb-logo.png"
+								 alt="" width="300px" height="75px" /></a>
 					</div>
 
 				</div>
@@ -73,6 +73,7 @@ function onKeyDown()
 							
 							<c:if test="${!empty sessionScope.u_id}">
 								<li><a href="LogOut"><i class="fa fa-lock">${sessionScope.u_id.name}</i>님</a></li>
+								<li><a href="profile"><i class="fa fa-heart-o">회원정보수정</i></a>
 							</c:if>
 
 						</ul>

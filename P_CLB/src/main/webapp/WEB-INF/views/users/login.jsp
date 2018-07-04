@@ -42,12 +42,12 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt="">
-					<img src="${pageContext.request.contextPath}/resources/images/home/Logo_1.png" alt="IMG" width="604" height="408">
+					<img src="${pageContext.request.contextPath}/resources/images/home/clb-logo.png" alt="IMG" width="604" height="408">
 				</div>
 
 				<form class="login100-form validate-form" action="loginck" method="post">
 					<span class="login100-form-title">
-						CLB Login
+						CLB 로그인
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
