@@ -70,6 +70,15 @@
   			   sysdate,
   			   payment_id_seq.nextval)
    	</insert>
+   	
+   	<insert id="paymentInsert3" parameterType="com.mycompany.myapp.payment.PaymentVO">
+   		insert into payment(p_name,total_amt,p_no,paymentdate,payment_id)
+  		values(#{pName},
+  			   #{totalAmt},
+  			   #{pNo},
+  			   sysdate,
+  			   payment_id_seq.nextval)
+   	</insert>
   
    	
    	<!-- 상품별 판매 수 -->
@@ -87,5 +96,15 @@
 				between '201801' and '201812'
 				group by to_char(paymentdate,'mm')
 				order by to_char(paymentdate,'mm') asc
+	</select>
+	
+		<!-- 일별 판매 수 -->
+	<select id="getPayCnt3" resultType="map">
+		select to_char(paymentdate,'dd') as "pDay", sum(total_amt) as "pSum" 
+			from payment
+				where to_char(paymentdate,'yyyymmdd')
+				between '20180701' and '20180730'
+				group by to_char(paymentdate,'dd')
+				order by to_char(paymentdate,'dd') asc
 	</select>
 </mapper>

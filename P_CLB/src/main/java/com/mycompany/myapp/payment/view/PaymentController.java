@@ -124,4 +124,17 @@ public class PaymentController {
 		public List<Map<String, Object>> getPayCnt2() {
 					return paymentService.getPayCnt2();
 		}
+		
+	// 일별 매출 차트페이지
+				@RequestMapping("payment/chart3")
+				public void paymentInsert3() {
+					
+				}
+				
+	// 일별 매출 차트 데이터 ajax
+				@RequestMapping("payment/getPayCnt3")
+				@ResponseBody
+				public List<Map<String, Object>> getPayCnt3() {
+							return paymentService.getPayCnt3();
+				}
 }
