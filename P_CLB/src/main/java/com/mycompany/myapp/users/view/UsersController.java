@@ -208,14 +208,14 @@ public class UsersController {
 				vo.setUsername("ljhlove100");
 				vo.setPassword("vrvobfgaprnldpnq");
 				vo.setSubject(Fpw.getName()+"님의 비밀번호입니다");
-				vo.setText("CLB"+Fpw.getName()+"비밀번호는"+Fpw.getPw()+"입니다");
+				vo.setText(Fpw.getName()+"비밀번호는"+Fpw.getPw()+"입니다");
 				
 				MailService.mailsend(vo);
 						
 				PrintWriter out = response.getWriter();
 				out.print("<script>alert('send success');</script>");
 				
-				//ReturnUrl = "redirect:findpw";
+				ReturnUrl = "redirect:/login";
 			
 			} else {
 				
@@ -228,6 +228,7 @@ public class UsersController {
 				out.print("</script>");
 				
 			/*	ReturnUrl = "redirect:/login";*/
+				
 				
 			} return ReturnUrl;
 		}
