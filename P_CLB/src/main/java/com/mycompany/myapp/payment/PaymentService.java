@@ -1,5 +1,6 @@
 package com.mycompany.myapp.payment;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -23,8 +24,13 @@ public interface PaymentService {
 	//추가
 	public void paymentInsert(PaymentVO vo);
 	
-	//상품별 주문수
+	public void paymentInsert2(PaymentVO vo);
+	
+	//상품별 주문수 chart
 	public List<Map<String, Object>> getPayCnt();
+	
+	//월 일별 매출 chart
+	public List<Map<String, Object>> getPayCnt2();
 	
 	//카운트
 	public int getCount(PaymentSearchVO vo);

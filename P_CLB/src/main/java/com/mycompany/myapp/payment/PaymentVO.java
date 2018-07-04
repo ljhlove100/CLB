@@ -8,21 +8,22 @@ public class PaymentVO {
 	private int pNo;
 	private String pCount;
 	private String pSum;
-	private String month;
-	private String day;
+	private String pMonth;
+	private String pDay;
 	
 	
-	public String getMonth() {
-		return month;
+	
+	public String getpMonth() {
+		return pMonth;
 	}
-	public void setMonth(String month) {
-		this.month = month;
+	public void setpMonth(String pMonth) {
+		this.pMonth = pMonth;
 	}
-	public String getDay() {
-		return day;
+	public String getpDay() {
+		return pDay;
 	}
-	public void setDay(String day) {
-		this.day = day;
+	public void setpDay(String pDay) {
+		this.pDay = pDay;
 	}
 	public String getpCount() {
 		return pCount;

@@ -1,5 +1,6 @@
 package com.mycompany.myapp.payment.impl;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -48,8 +49,17 @@ public class PaymentDAO {
 		mybatis.insert("com.mycompany.myapp.payment.PaymentDAO.paymentInsert", vo);
 	}
 	
-	//상품별 판매수
+	public void paymentInsert2(PaymentVO vo) {
+		mybatis.insert("com.mycompany.myapp.payment.PaymentDAO.paymentInsert2", vo);
+	}
+	
+	//상품별 판매수 chart
 		public List<Map<String, Object>> getPayCnt(){
 			return mybatis.selectList("com.mycompany.myapp.payment.PaymentDAO.getPayCnt");
-		}
+	}
+	
+	//월 일별 매출 chart
+		public List<Map<String, Object>> getPayCnt2(){
+			return mybatis.selectList("com.mycompany.myapp.payment.PaymentDAO.getPayCnt2");
+	}
 }

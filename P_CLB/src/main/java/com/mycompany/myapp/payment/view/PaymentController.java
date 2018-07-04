@@ -1,5 +1,6 @@
 package com.mycompany.myapp.payment.view;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -98,16 +99,29 @@ public class PaymentController {
 			return "payment/getPayment";
 		}
 		
-	// 차트페이지
+	// 판매수 차트페이지
 		@RequestMapping("payment/chart")
 		public void paymentInsert() {
 			
 		}
 
-	// 차트 데이터 ajax
+	// 판매수 차트 데이터 ajax
 		@RequestMapping("payment/getPayCnt")
 		@ResponseBody
 		public List<Map<String, Object>> getPayCnt() {
 			return paymentService.getPayCnt();
+		}
+		
+	//월 일별 매출 차트페이지
+		@RequestMapping("payment/chart2")
+		public void paymentInsert2() {
+			
+		}
+		
+	// 월 일별 매출 차트 데이터 ajax
+		@RequestMapping("payment/getPayCnt2")
+		@ResponseBody
+		public List<Map<String, Object>> getPayCnt2() {
+					return paymentService.getPayCnt2();
 		}
 }
