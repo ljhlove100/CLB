@@ -14,6 +14,12 @@ public interface PaymentService {
 	//totalAmt (총가격)
 	public PaymentVO getPayment(String paymentId);
 	
+	//월별 매출현황
+	public List<PaymentVO> getPaymentList3(PaymentVO vo);
+	
+	//일별 매출현황
+	public List<PaymentVO> getPaymentList4(PaymentVO vo);
+	
 	//추가
 	public void paymentInsert(PaymentVO vo);
 	

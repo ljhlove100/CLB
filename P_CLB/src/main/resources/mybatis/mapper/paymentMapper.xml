@@ -20,6 +20,19 @@
     ) b ) a where rn between #{first} and #{last}
     </select>
     
+    <!-- 월별 매출현황 조회 -->
+    <select id="getPaymentList3" resultType="com.mycompany.myapp.payment.PaymentVO">
+		select to_char(sysdate,'yyyy-mm') as "month",count(*) as "pCount",to_char(sum(total_amt) ,'L9,999,999') as "pSum"
+			from payment
+				group by to_char(sysdate,'yyyy-mm')
+	</select>
+	
+	<!-- 일별 매출현황 조회 -->
+	<select id="getPaymentList4" resultType="com.mycompany.myapp.payment.PaymentVO">
+		select to_char(sysdate,'yyyy-mm-dd') as "day",count(*) as "pCount", to_char(sum(total_amt) ,'L9,999,999') as "pSum"
+			from payment
+				group by to_char(sysdate,'yyyy-mm-dd')
+	</select>
     
     <!-- 카운터 조회 -->
     <select id="getCount" resultType="int">
