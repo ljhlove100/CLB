@@ -2,6 +2,19 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html>
+
+<script>
+function onKeyDown()
+{
+     if(event.keyCode == 13)
+     {
+    	 search_box();//TODO : 실행시킬 코드
+     }
+}
+
+</script>
+
+
 <header id="header">
 		<!--header-->
 		<div class="header_top">
@@ -99,7 +112,7 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
-							<input type="text" placeholder="Search" />
+							<input type="text"  onkeydown="onkeydown()" placeholder="Search" />
 						</div>
 					</div>
 				</div>
