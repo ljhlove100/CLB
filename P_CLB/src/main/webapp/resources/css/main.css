@@ -6,6 +6,13 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
+
+.container{
+	width: 70%;
+	
+}
+
+
 body {
   font-family: 'Roboto', sans-serif;
   background:;
@@ -68,7 +75,7 @@ a#scrollUp i{
 **************************/
 
 .header_top {
-  background: none repeat scroll 0 0 #F0F0E9;
+  background: none repeat scroll 0 0 #FAECC5;
 }
 
 .contactinfo ul li:first-child{
@@ -346,7 +353,7 @@ ul.sub-menu {
 **************************/
 
 #footer {
-  background: #F0F0E9;
+  background: #FAECC5;
 }
 
 
@@ -545,7 +552,7 @@ ul.sub-menu {
 }
 
 .footer-bottom {
-  background: #D6D6D0;
+  background: #FFFFFF;
   padding-top: 10px;
 }
 

@@ -212,7 +212,7 @@ public class UsersController {
 			PrintWriter out = response.getWriter();
 
 			out.print("<script>");
-			out.print("alert('ID or password check plz'); ");
+			out.print("alert('ID or name check plz'); ");
 			out.print("history.go(-1);");
 			out.print("</script>");
 

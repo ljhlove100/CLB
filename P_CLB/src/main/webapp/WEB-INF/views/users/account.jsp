@@ -74,11 +74,7 @@
 
 <!-- daum addr api -->
 
-<input type="text" name="sample4_postcode" id="sample4_postcode" placeholder="우편번호">
-<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" name="sample4_roadAddress" id="sample4_roadAddress" placeholder="도로명주소">
-<input type="text" name="sample4_jibunAddress" id="sample4_jibunAddress" placeholder="지번주소">
- <span id="guide" style="color:#999"></span>
+
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
@@ -174,6 +170,11 @@
 								   class="input100" id="sample4_postcode"
 							type="text" name="addr" placeholder="addr"> <span
 							class="focus-input100"></span> <span class="symbol-input100">
+							<input type="text" name="sample4_postcode" id="sample4_postcode" placeholder="우편번호">
+							<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+							<input type="text" name="sample4_roadAddress" id="sample4_roadAddress" placeholder="도로명주소">
+							<input type="text" name="sample4_jibunAddress" id="sample4_jibunAddress" placeholder="지번주소">
+ 							<span id="guide" style="color:#999"></span>
 							<i class="fa fa-star-o" aria-hidden="true"></i>
 					</div>
 
