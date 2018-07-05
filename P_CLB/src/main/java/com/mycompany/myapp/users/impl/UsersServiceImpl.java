@@ -81,7 +81,7 @@ public class UsersServiceImpl implements UsersService {
     }
 	
 	@Override
-	public void account(String u_id, String pw, String name, String yn) {
+	public void account(String u_id, String pw, String name, String yn, String addr, String zipcode) {
 		// TODO Auto-generated method stub
 
 		HashMap<String,String> hashMap = new HashMap<String,String>();
@@ -89,6 +89,8 @@ public class UsersServiceImpl implements UsersService {
     	hashMap.put("pw", pw);
     	hashMap.put("name", name);
     	hashMap.put("yn", yn);
+    	hashMap.put("addr", addr);
+    	hashMap.put("zipcode", zipcode);
     	
     	dao.account(hashMap);
     }

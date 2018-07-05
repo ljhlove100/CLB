@@ -119,6 +119,23 @@
 					}
 				}).open();
 	}
+	
+	function test() {
+		$.ajax({
+			type : "POST",
+			//dataType: "json",
+			dataType : 'text',
+			data : {
+				id : document.getElementById('u_id').value
+			},
+			url : "test",
+			success : function(data) {
+				if(data == 0){
+					alert("아이디가 중복됩니다.");
+				}
+			}
+		});
+	}
 </script>
 
 
@@ -141,8 +158,7 @@
 
 					<div  class="wrap-input100 validate-input"
 							 data-validate="Valid email is required: ex@abc.xyz">
-						<button type="submit" id="checkbtn" class="btn btn-default">중복확인</button>
-						<input class="input100" type="text" name=u_id placeholder="u_id">
+						<input class="input100" type="text" name=u_id id="u_id" placeholder="u_id" onchange="test()">
 						<span class="focus-input100"></span> <span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
@@ -165,17 +181,24 @@
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="user addr">
-						<input onclick="sample4_execDaumPostcode()" 
-								   class="input100" id="sample4_postcode"
-							type="text" name="addr" placeholder="addr"> <span
-							class="focus-input100"></span> <span class="symbol-input100">
-							<input type="text" name="sample4_postcode" id="sample4_postcode" placeholder="우편번호">
-							<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-							<input type="text" name="sample4_roadAddress" id="sample4_roadAddress" placeholder="도로명주소">
-							<input type="text" name="sample4_jibunAddress" id="sample4_jibunAddress" placeholder="지번주소">
- 							<span id="guide" style="color:#999"></span>
+					
+					<div class="wrap-input100 validate-input" data-validate="user name">
+						<input class="input100" type="text" name="sample4_postcode" id="sample4_postcode" placeholder="우편번호" onclick="sample4_execDaumPostcode()">
+						<span class="focus-input100"></span> <span class="symbol-input100">
 							<i class="fa fa-star-o" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="user name">
+						<input class="input100" type="text" name="sample4_roadAddress" id="sample4_roadAddress" placeholder="도로명주소" onclick="sample4_execDaumPostcode()">
+						<span class="focus-input100"></span> <span class="symbol-input100">
+							<i class="fa fa-star-o" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="user name">
+						<input class="input100" type="text" name="sample4_jibunAddress" id="sample4_jibunAddress" placeholder="지번주소" onclick="sample4_execDaumPostcode()">
+						<span class="focus-input100"></span> <span class="symbol-input100">
+							<i class="fa fa-star-o" aria-hidden="true"></i>
+						</span>
 					</div>
 
 

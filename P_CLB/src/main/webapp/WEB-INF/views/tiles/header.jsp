@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html>
 
-<script>
+<!-- <script>
 function onKeyDown()
 {
      if(event.keyCode == 13)
@@ -12,7 +12,7 @@ function onKeyDown()
      }
 }
 
-</script>
+</script> -->
 
 
 <header id="header">
@@ -114,7 +114,7 @@ function onKeyDown()
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
-							<input type="text"  onkeydown="onkeydown()" placeholder="Search" />
+							<input type="text"  placeholder="Search" />
 						</div>
 					</div>
 				</div>

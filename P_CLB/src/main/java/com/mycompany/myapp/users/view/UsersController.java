@@ -163,9 +163,11 @@ public class UsersController {
 			String u_id = request.getParameter("u_id");
 			String pw = request.getParameter("pw");
 			String name = request.getParameter("name");
+			String addr = request.getParameter("sample4_roadAddress");
+			String zipcode = request.getParameter("sample4_postcode");
 			String yn = "Y";
-			System.out.println(u_id + pw + name + yn);
-			UsersService.account(u_id, pw, name, yn);
+			System.out.println(addr+"       "+zipcode);
+			UsersService.account(u_id, pw, name, yn, addr, zipcode);
 
 			Url = "redirect:/login";
 		}
@@ -253,4 +255,21 @@ public class UsersController {
 
 		return "users/profile";
 	}
+	
+	
+	@RequestMapping("/test")
+	@ResponseBody
+	public String ajax(HttpServletRequest request) throws Exception {
+		
+		String id = request.getParameter("id");
+		
+		// DB 접속 아이디 체크
+		
+		
+		String flag = "1";
+		
+		return flag;	
+	}
+	
+	
 }
