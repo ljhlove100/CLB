@@ -6,13 +6,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
-
-.container{
-	width: 70%;
-	
-}
-
-
 body {
   font-family: 'Roboto', sans-serif;
   background:;
@@ -74,13 +67,8 @@ a#scrollUp i{
 *******Header CSS******
 **************************/
 
-<<<<<<< HEAD
-.header_top {
-  background: none repeat scroll 0 0 #FAECC5;
-=======
 .header_top {	
   background: none repeat scroll 0 0 #F0F0E9;
->>>>>>> branch 'master' of https://github.com/ljhlove100/CLB
 }
 
 .contactinfo ul li:first-child{
@@ -358,7 +346,7 @@ ul.sub-menu {
 **************************/
 
 #footer {
-  background: #FAECC5;
+  background: #F0F0E9;
 }
 
 
@@ -557,7 +545,7 @@ ul.sub-menu {
 }
 
 .footer-bottom {
-  background: #FFFFFF;
+  background: #D6D6D0;
   padding-top: 10px;
 }
 
