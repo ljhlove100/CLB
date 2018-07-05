@@ -74,8 +74,13 @@ a#scrollUp i{
 *******Header CSS******
 **************************/
 
+<<<<<<< HEAD
 .header_top {
   background: none repeat scroll 0 0 #FAECC5;
+=======
+.header_top {	
+  background: none repeat scroll 0 0 #F0F0E9;
+>>>>>>> branch 'master' of https://github.com/ljhlove100/CLB
 }
 
 .contactinfo ul li:first-child{

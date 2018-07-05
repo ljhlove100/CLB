@@ -26,11 +26,15 @@ public interface PaymentService {
 	
 	public void paymentInsert2(PaymentVO vo);
 	
+	public void paymentInsert3(PaymentVO vo);
+	
 	//상품별 주문수 chart
 	public List<Map<String, Object>> getPayCnt();
 	
 	//월 일별 매출 chart
 	public List<Map<String, Object>> getPayCnt2();
+	
+	public List<Map<String, Object>> getPayCnt3();
 	
 	//카운트
 	public int getCount(PaymentSearchVO vo);

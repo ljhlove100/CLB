@@ -68,4 +68,14 @@ public class PaymentServiceImpl implements PaymentService{
 		dao.paymentInsert2(vo);
 	}
 
+	@Override
+	public void paymentInsert3(PaymentVO vo) {
+		dao.paymentInsert3(vo);
+	}
+
+	@Override
+	public List<Map<String, Object>> getPayCnt3() {
+		return dao.getPayCnt3();
+	}
+
 }

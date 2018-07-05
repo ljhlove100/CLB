@@ -64,11 +64,9 @@ ul li {
 		<nav>
 			<tiles:insertAttribute name="header" />
 		</nav>
-		
 		<article>
 			<tiles:insertAttribute name="content" />
 		</article>
-		
 		<footer>
 			<tiles:insertAttribute name="footer" />
 		</footer>

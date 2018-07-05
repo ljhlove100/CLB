@@ -53,6 +53,10 @@ public class PaymentDAO {
 		mybatis.insert("com.mycompany.myapp.payment.PaymentDAO.paymentInsert2", vo);
 	}
 	
+	public void paymentInsert3(PaymentVO vo) {
+		mybatis.insert("com.mycompany.myapp.payment.PaymentDAO.paymentInsert3", vo);
+	}
+	
 	//상품별 판매수 chart
 		public List<Map<String, Object>> getPayCnt(){
 			return mybatis.selectList("com.mycompany.myapp.payment.PaymentDAO.getPayCnt");
@@ -62,4 +66,9 @@ public class PaymentDAO {
 		public List<Map<String, Object>> getPayCnt2(){
 			return mybatis.selectList("com.mycompany.myapp.payment.PaymentDAO.getPayCnt2");
 	}
+	
+	//일별 매출 chart
+				public List<Map<String, Object>> getPayCnt3(){
+					return mybatis.selectList("com.mycompany.myapp.payment.PaymentDAO.getPayCnt3");
+			}
 }
