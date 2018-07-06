@@ -46,6 +46,7 @@ public class UsersServiceImpl implements UsersService {
 		return dao.getUsers(u_id);
 	}
 
+	//회원추가
 	@Override
 	public void insertUsers(UsersVO vo) {
 		// TODO Auto-generated method stub
