@@ -87,7 +87,7 @@
 	</div><br><br><br>
 	<form name = "frm" action="${pageContext.request.contextPath}/cartDelete2">
 	<c:forEach items="${getPayment}" var="payment">
-			${payment.sumAmt}원
+			결제 하실 총금액은 ${payment.sumAmt}원 입니다. 
 			<input type="hidden" name="uId" value="${sessionScope.u_id}">
 			<br><br>
 		</c:forEach>
