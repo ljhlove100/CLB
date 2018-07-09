@@ -19,6 +19,7 @@
 
 <style>
  body {
+ 	text-align: center;
        font: 400 15px Lato, sans-serif;
       line-height: 1.8;
       color: #818181;
