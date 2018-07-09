@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div style="background-color:black; text-align: center;"><font color="white" size="10px;">결제</font></div><br><br>
+<div style="background-color:red; text-align: center;"><font color="white" size="10px;">결제</font></div><br><br>
 
 	<h3>주문 / 결제</h3>
 	<div style="font-size:20px">

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div style="background-color:black; text-align: center;"><font color="white" size="10px;">장바구니</font></div><br><br>
+<div style="background-color:red; text-align: center;"><font color="white" size="10px;">장바구니</font></div><br><br>
 <form name = "frm" action="${pageContext.request.contextPath}/paymentInsert" method="post">
 
 				

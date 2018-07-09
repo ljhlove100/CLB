@@ -40,9 +40,9 @@
 					<span class="login100-form-title">
 						CLB 회원정보수정
 					</span>
-
+<!-- disabled="disabled" -->
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name=u_id placeholder="u_id" disabled="disabled">
+						<input class="input100" type="text" name=u_id placeholder="u_id" >
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -64,7 +64,7 @@
 					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="text" name="name" placeholder="name" disabled="disabled">
+						<input class="input100" type="text" name="name" placeholder="name" >
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-star-o" aria-hidden="true"></i>

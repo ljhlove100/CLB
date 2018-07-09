@@ -36,7 +36,7 @@
 </style>
 </head>
 <body>
-<div style="background-color:black; text-align: center;"><font color="white" size="10px;">주문내역 상세보기</font></div>
+<div style="background-color:red; text-align: center;"><font color="white" size="10px;">주문내역 상세보기</font></div>
 	<div style="text-align: center; padding: 110px;" class= "center" >
 	<table border="1">
 		<thead>

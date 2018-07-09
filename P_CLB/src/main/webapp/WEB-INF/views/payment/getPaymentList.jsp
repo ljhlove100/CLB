@@ -69,7 +69,7 @@
 
 <body>
 <form>
-<div style="background-color:black; text-align: center;"><font color="white" size="10px;">상품별 주문 내역</font></div>
+<div style="background-color:red; text-align: center;"><font color="white" size="10px;">상품별 주문 내역</font></div>
 	<div style="text-align: center; padding: 80px;" class="col-sm-5">
 	<table border="1">
 		<thead>
