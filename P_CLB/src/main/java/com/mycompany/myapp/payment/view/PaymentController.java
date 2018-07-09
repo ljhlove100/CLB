@@ -1,18 +1,17 @@
 package com.mycompany.myapp.payment.view;
 
-import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,7 +19,7 @@ import com.mycompany.myapp.Paging;
 import com.mycompany.myapp.payment.PaymentSearchVO;
 import com.mycompany.myapp.payment.PaymentService;
 import com.mycompany.myapp.payment.PaymentVO;
-import com.mycompany.myapp.product.ProductVO;
+import com.mycompany.myapp.users.UsersVO;
 
 @Controller
 public class PaymentController {
@@ -77,12 +76,12 @@ public class PaymentController {
 		}
 		
 	
-	//단건
-	@RequestMapping(value = "/getPayment/{paymentId}", method = RequestMethod.GET)
-	public String getPayment(@PathVariable String paymentId, Model model) {
-		model.addAttribute("payment", paymentService.getPayment(paymentId));
-		return "payment/getPayment";
-	}
+	//amt 총가격(단건)
+		@RequestMapping(value= "/getPayment", method = RequestMethod.GET)
+		public String getPayment(PaymentVO vo, HttpServletRequest request) {
+			request.setAttribute("getPayment", paymentService.getPayment(vo));
+			return "payment/getPayment";
+		}
 	
 	// 등록폼
 		@RequestMapping(value = "/paymentInsert", method = RequestMethod.GET)
@@ -92,10 +91,12 @@ public class PaymentController {
 	
 	// 등록처리
 		@RequestMapping(value = "/paymentInsert", method = RequestMethod.POST)
-		public String insertPayment(@ModelAttribute("payment") PaymentVO vo) {
+		public String insertPayment(@ModelAttribute("payment") PaymentVO vo, HttpServletRequest request) {
+			vo.setuId(((UsersVO) (request.getSession().getAttribute("u_id"))).getuId());
+
 			System.out.println(vo);
-			// 서비스이용하여 등록처리하고 목록페이지로 이동
 			paymentService.paymentInsert(vo);
+			request.setAttribute("getPayment", paymentService.getPayment(vo));
 			return "payment/getPayment";
 		}
 		
@@ -126,15 +127,23 @@ public class PaymentController {
 		}
 		
 	// 일별 매출 차트페이지
-				@RequestMapping("payment/chart3")
-				public void paymentInsert3() {
+		@RequestMapping("payment/chart3")
+		public void paymentInsert3() {
 					
-				}
+		}
 				
 	// 일별 매출 차트 데이터 ajax
-				@RequestMapping("payment/getPayCnt3")
-				@ResponseBody
-				public List<Map<String, Object>> getPayCnt3() {
+		@RequestMapping("payment/getPayCnt3")
+		@ResponseBody
+		public List<Map<String, Object>> getPayCnt3() {
 							return paymentService.getPayCnt3();
-				}
+		}
+				
+	//주문내역 삭제
+		@RequestMapping(value="/paymentDelete", method = RequestMethod.GET)
+		public String paymentDelete(@RequestParam(value="paymentId") int paymentId) {
+			paymentService.paymentDelete(paymentId);
+			return "redirect:getPaymentList2";
+		}
+				
 }

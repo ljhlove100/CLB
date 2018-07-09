@@ -37,18 +37,20 @@
 </head>
 <body>
 <div style="background-color:black; text-align: center;"><font color="white" size="10px;">주문내역 상세보기</font></div>
-	<div style="text-align: center;" class= "center" >
+	<div style="text-align: center; padding: 110px;" class= "center" >
 	<table border="1">
 		<thead>
-			<th>주문 ID</th>
+			<th>주문번호</th>
 			<th>주문 상품명</th>
 			<th>주문 상품가격</th>
+			<th>주문취소</th>
 		</thead>
 	<c:forEach items="${paymentList2}" var="payment2">
 		<tr>
 			<td>${payment2.paymentId}</td>
 			<td>${payment2.pName}</td>
 			<td>${payment2.totalAmt}원</td>
+			<td><button type="button" onclick="location.href='paymentDelete?paymentId=${payment2.paymentId}'">삭제</button></td>
 		</tr>
 	</c:forEach>
 	</table><br><br>

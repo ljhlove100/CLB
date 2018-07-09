@@ -10,9 +10,30 @@ public class PaymentVO {
 	private String pSum;
 	private String pMonth;
 	private String pDay;
+	private String sumAmt;
+	private String cartId;
+	private String uId;
 	
 	
 	
+	public String getCartId() {
+		return cartId;
+	}
+	public void setCartId(String cartId) {
+		this.cartId = cartId;
+	}
+	public String getuId() {
+		return uId;
+	}
+	public void setuId(String uId) {
+		this.uId = uId;
+	}
+	public String getSumAmt() {
+		return sumAmt;
+	}
+	public void setSumAmt(String sumAmt) {
+		this.sumAmt = sumAmt;
+	}
 	public String getpMonth() {
 		return pMonth;
 	}

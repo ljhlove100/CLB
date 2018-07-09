@@ -1,7 +1,6 @@
 package com.mycompany.myapp.product.impl;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,62 +8,32 @@ import org.springframework.stereotype.Service;
 import com.mycompany.myapp.product.CartService;
 import com.mycompany.myapp.product.CartVO;
 
-@Service("CartService")
+@Service("cartService")
 public class CartServiceImpl implements CartService {
 
 	@Autowired
 	CartDAO dao;
-	
-	@Override
-	public List<Map<String, Object>> getCartList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<CartVO> getCartList2(CartVO vo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void insertCart(CartVO vo) {
-		
-		
+		dao.insertCart(vo);
 	}
 
 	@Override
-	public void updateCart(CartVO vo) {
-		// TODO Auto-generated method stub
-		
+	public List<CartVO> listCart(CartVO vo) {
+		return dao.listCart(vo);
 	}
 
 	@Override
-	public void deleteCart(String s_no) {
-		// TODO Auto-generated method stub
-		
+	public void cartDelete(String cartId) {
+		dao.cartDelete(cartId);
 	}
 
 	@Override
-	public int sumMoney(String id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void cartDelete2(String uId) {
+		dao.cartDelete2(uId);
 	}
 
-
-	@Override
-	public void modifyCart(CartVO vo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int countCart(int i, String id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
-	//==================
 	
 
     

@@ -1,19 +1,18 @@
 package com.mycompany.myapp.payment;
 
-import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
 public interface PaymentService {
 
+	//totalAmt (총가격)
+	public List<PaymentVO> getPayment(PaymentVO vo);
+	
 	//상품별 주문내역
 	public List<PaymentVO> getPaymentList(PaymentVO vo);
 	
 	//주문 내역조회
 	public List<PaymentVO> getPaymentList2(PaymentVO vo);
-	
-	//totalAmt (총가격)
-	public PaymentVO getPayment(String paymentId);
 	
 	//월별 매출현황
 	public List<PaymentVO> getPaymentList3(PaymentVO vo);
@@ -38,5 +37,8 @@ public interface PaymentService {
 	
 	//카운트
 	public int getCount(PaymentSearchVO vo);
+	
+	//삭제
+	public void paymentDelete(int paymentId);
 	
 }

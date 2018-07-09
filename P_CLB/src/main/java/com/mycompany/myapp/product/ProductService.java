@@ -18,4 +18,5 @@ public interface ProductService {
 	
 	//수정
 	public void productUpdate(ProductVO vo);
+	
 }

@@ -2,6 +2,7 @@ package com.mycompany.myapp.product;
 
 public class ProductVO {
 	private int pNo;
+	private String uId;
 	private String pName;
 	private String price;
 	private String pContents;
@@ -17,6 +18,12 @@ public class ProductVO {
 	
 	
 	
+	public String getuId() {
+		return uId;
+	}
+	public void setuId(String uId) {
+		this.uId = uId;
+	}
 	public String getDetailimage() {
 		return detailimage;
 	}

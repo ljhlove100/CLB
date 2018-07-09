@@ -11,6 +11,16 @@
      	 GROUP BY P_NAME
     </select>
     
+    <!-- 주문상품 결제금액 조회 -->
+    <select id="getPayment" resultType="com.mycompany.myapp.payment.PaymentVO">
+    	SELECT SUM(TOTAL_AMT) as "sumAmt"
+			FROM (SELECT P_NO, P_NAME, PRICE, U_ID, TOTAL_AMT, CART_ID, IMAGE
+        			FROM SHOPPING_LIST 
+						WHERE U_ID = #{uId}
+      						group by p_no,p_name,price,u_id,total_amt,cart_id,image
+      	 						ORDER BY CART_ID)
+    </select>
+    
     <!-- 주문 내역조회 -->
     <select id="getPaymentList2" resultType="com.mycompany.myapp.payment.PaymentVO">
     select a.* from ( select rownum rn, b.* from (
@@ -44,21 +54,16 @@
     <select id="getCount" resultType="int">
    		SELECT COUNT(*) FROM PAYMENT
    </select>
- 	<!-- 단건조회 -->
     
-     <select id="getPayment" parameterType="string" resultType="com.mycompany.myapp.payment.PaymentVO">
-       SELECT DISTINCT P_NAME, TOTAL_AMT, P_NO
-         FROM PAYMENT 
-           WHERE PAYMENT_ID = #{paymentId}
-    </select> 
    
    <!-- 추가 -->
    	<insert id="paymentInsert" parameterType="com.mycompany.myapp.payment.PaymentVO">
-   		insert into payment(p_name,total_amt,p_no,paymentdate,payment_id)
-  		values(#{pName},
+   		INSERT INTO PAYMENT(P_NAME,TOTAL_AMT,P_NO,PAYMENTDATE,U_ID,PAYMENT_ID)
+  		VALUES(#{pName},
   			   #{totalAmt},
   			   #{pNo},
   			   sysdate,
+  			   #{uId},
   			   payment_id_seq.nextval)
    	</insert>
    	
@@ -107,4 +112,11 @@
 				group by to_char(paymentdate,'dd')
 				order by to_char(paymentdate,'dd') asc
 	</select>
+	
+	<!-- 결제 취소 -->
+   <delete id="paymentDelete" parameterType="com.mycompany.myapp.payment.PaymentVO">
+   	DELETE PAYMENT
+   	WHERE PAYMENT_ID = #{paymentId}
+   </delete>
+   
 </mapper>

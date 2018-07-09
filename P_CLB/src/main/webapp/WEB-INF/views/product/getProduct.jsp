@@ -70,7 +70,7 @@
 			
 						
 			document.frm.total_amtt.value = fncComma(eval(value1)+eval(value2)+eval(value3));
-			document.frm.total_amt.value = eval(value1)+eval(value2)+eval(value3);
+			document.frm.totalAmt.value = eval(value1)+eval(value2)+eval(value3);
 		}
 		
 		// 3자리마다 콤마찍기
@@ -114,7 +114,7 @@
 	
 	</div>
 	<div>
-	<form name = "frm">
+	<form name = "frm" action="${pageContext.request.contextPath}/insertCart" method="post">
 	
 				<h4>Size</h4>
 				<label>size - 1<input type="radio" name="radio1" value=3000 onclick="goo()"> <span class="checkmark"></span>
@@ -146,14 +146,16 @@
 				<label>style - 4<input type="radio" name="radio3" value=7500 onclick="goo()"> <span class="checkmark"></span>
 				</label>
 				<br> <br>
-				<input TYPE="hidden" name="p_no" value="${p_no}">
-				<input type="hidden" name="p_name" value="${p_name}">
-				
-				<input TYPE="hidden" name="total_amt" style="border:0" readonly>
+				<input TYPE="hidden" name="pNo" value="${p_no}">
+				<input type="hidden" name="pName" value="${product.pName}">
+				<input type="hidden" name="uId" value="${sessionScope.u_id}">
+				<input type="hidden" name="image" value="${product.image}">
+				<input TYPE="hidden" name="totalAmt" style="border:0" readonly>
 				합계 : <input TYPE="text" name="total_amtt" style="border:0" readonly>
 					  <input type="hidden" name="action" value="payment">
 				<br>
-				<button type="submit">구매하기</button>
+				
+				<button type="submit">장바구니 담기</button>
 				
 	</form>
 	</div>
