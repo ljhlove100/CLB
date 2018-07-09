@@ -54,8 +54,8 @@ public class CartController {
 			@RequestMapping(value="/cartDelete2", method = RequestMethod.GET)
 			public String cartDelete2(@RequestParam(value="uId") String uId, HttpServletRequest request, CartVO vo) {
 				vo.setuId(((UsersVO) (request.getSession().getAttribute("u_id"))).getuId());
-				cartService.cartDelete2(uId);
+				cartService.cartDelete2(vo.getuId());
 				request.setAttribute("cartList", cartService.listCart(vo));
-				return "product/getProductList";
+				return "redirect:/getProductList";
 			}
 }
