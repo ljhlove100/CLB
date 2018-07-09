@@ -2,7 +2,14 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<hard>
+<script>
 
+
+</script>
+
+</hard>
+<body>
 <br>
 <br>
 <br>
