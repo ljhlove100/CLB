@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.mycompany.myapp.payment.PaymentVO;
 import com.mycompany.myapp.product.CartService;
 import com.mycompany.myapp.product.CartVO;
 import com.mycompany.myapp.users.UsersVO;
@@ -22,6 +21,8 @@ public class CartController {
 
 	@RequestMapping(value= "/listCart", method = RequestMethod.GET)
 	public String listCart(CartVO vo, HttpServletRequest request) {
+		vo.setuId(((UsersVO) (request.getSession().getAttribute("u_id"))).getuId());
+		cartService.listCart(vo);
 		request.setAttribute("cartList", cartService.listCart(vo));
 		return "cart/listCart";
 	}
@@ -58,4 +59,8 @@ public class CartController {
 				request.setAttribute("cartList", cartService.listCart(vo));
 				return "redirect:/getProductList";
 			}
+			
+	
+			
 }
+

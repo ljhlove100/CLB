@@ -29,6 +29,8 @@ public class ProductController {
 
 	@RequestMapping(value= "/getProductList", method = RequestMethod.GET)
 	public String getBoardList(ProductVO vo, HttpServletRequest request, HttpSession session) {
+		vo.setuId(((UsersVO) (request.getSession().getAttribute("u_id"))).getuId());
+		productService.getProductList(vo);
 		request.setAttribute("productList", productService.getProductList(vo));
 		
 		System.out.println(session.getAttribute("uId"));

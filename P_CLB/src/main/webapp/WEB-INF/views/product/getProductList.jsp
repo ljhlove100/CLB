@@ -132,6 +132,7 @@
 					features_items
 					<h2 class="title text-center">Features Items</h2>
 					<c:forEach items="${productList}" var="product">
+					<input type="hidden" value="${sessionScope.u_id}">
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -163,7 +164,6 @@
 			</div>
 		</div>
 	</div>
- 	
 
 </body>
 </html>
