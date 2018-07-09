@@ -1,9 +1,7 @@
 package com.mycompany.myapp.product.impl;
 
 import java.util.List;
-import java.util.Map;
 
-import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,39 +14,24 @@ public class CartDAO {
 	@Autowired
 	SqlSessionTemplate mybatis;
 	
-	//목록조회
-	public List<Map<String, Object>> getCartList() {
-		return mybatis.selectList("com.mycompany.product.CartDAO.getCartList");
-		
-	};
+	//전체목록
+		public List<CartVO> listCart(CartVO vo){
+			return mybatis.selectList("com.mycompany.myapp.product.CartDAO.listCart",vo);
+		};
 	 
-	public List<CartVO> getCartList2(CartVO vo) {
-		System.out.println(vo);
-		return mybatis.selectList("com.mycompany.product.CartVO.getCartList2", vo);
-	};
-	
 	//담기
-	public void insertCart(CartVO vo) {
-		mybatis.insert("com.mycompany.product.CartDAO.insertCart", vo);
+		public void insertCart(CartVO vo) {
+			mybatis.insert("com.mycompany.myapp.product.CartDAO.insertCart", vo);
 		
-	}
-	
-	//수량변경
-	public void updateCart(CartVO vo) {
-		mybatis.update("com.mycompany.product.CartDAO.updateCart", vo);
-		
-	}
+	};
 	
 	//삭제
-	public void deleteCart(String s_no) {
-		mybatis.delete("com.mycompany.product.CartDAO.deleteCart", s_no);
+		public void cartDelete(String cartId) {
+			mybatis.delete("com.mycompany.myapp.product.CartDAO.cartDelete", cartId);
+	};
 		
-	}
-	
-	//금액합계
-	
-	
-	//상품확인
-	
-	//수정
+	//결제 후 장바구니 삭제
+		public void cartDelete2(String uId) {
+			mybatis.delete("com.mycompany.myapp.product.CartDAO.cartDelete2", uId);
+	};
 }

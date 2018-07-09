@@ -2,22 +2,30 @@ package com.mycompany.myapp.product;
 
 public class CartVO {
 
-	private String s_no;
-	private int p_no;
+	private String cartId;
+	private int pNo;
 	private String ea;
 	private String price;
-	private String id;
+	private String uId;
 	private String insertdate;
 	private String updatedate;
 	private String state;
-	private String p_name;
-	private String total_amt;
+	private String pName;
+	private String totalAmt;
+	private int amount;
+	private String image;
 	
 	private String searchKeyword;
 	private String searchCondidtion;
 	
 	
 	
+	public int getAmount() {
+		return amount;
+	}
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
 	public String getSearchKeyword() {
 		return searchKeyword;
 	}
@@ -31,17 +39,11 @@ public class CartVO {
 		this.searchCondidtion = searchCondidtion;
 	}
 	
-	public String getS_no() {
-		return s_no;
+	public String getCartId() {
+		return cartId;
 	}
-	public void setS_no(String s_no) {
-		this.s_no = s_no;
-	}
-	public int getP_no() {
-		return p_no;
-	}
-	public void setP_no(int p_no) {
-		this.p_no = p_no;
+	public void setCartId(String cartId) {
+		this.cartId = cartId;
 	}
 	public String getEa() {
 		return ea;
@@ -54,12 +56,6 @@ public class CartVO {
 	}
 	public void setPrice(String price) {
 		this.price = price;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
 	}
 	public String getInsertdate() {
 		return insertdate;
@@ -79,23 +75,42 @@ public class CartVO {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public String getP_name() {
-		return p_name;
+	public int getpNo() {
+		return pNo;
 	}
-	public void setP_name(String p_name) {
-		this.p_name = p_name;
+	public void setpNo(int pNo) {
+		this.pNo = pNo;
 	}
-	public String getTotal_amt() {
-		return total_amt;
+	public String getuId() {
+		return uId;
 	}
-	public void setTotal_amt(String total_amt) {
-		this.total_amt = total_amt;
+	public void setuId(String uId) {
+		this.uId = uId;
+	}
+	public String getpName() {
+		return pName;
+	}
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
+	public String getTotalAmt() {
+		return totalAmt;
+	}
+	public void setTotalAmt(String totalAmt) {
+		this.totalAmt = totalAmt;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 	@Override
 	public String toString() {
-		return "CartVO [s_no=" + s_no + ", p_no=" + p_no + ", ea=" + ea + ", price=" + price + ", id=" + id
-				+ ", insertdate=" + insertdate + ", updatedate=" + updatedate + ", state=" + state + ", p_name="
-				+ p_name + ", total_amt=" + total_amt + "]";
+		return "CartVO [cartId=" + cartId + ", pNo=" + pNo + ", ea=" + ea + ", price=" + price + ", uId=" + uId
+				+ ", insertdate=" + insertdate + ", updatedate=" + updatedate + ", state=" + state + ", pName=" + pName
+				+ ", totalAmt=" + totalAmt + ", amount=" + amount + ", image=" + image + ", searchKeyword="
+				+ searchKeyword + ", searchCondidtion=" + searchCondidtion + "]";
 	}
 	
 	

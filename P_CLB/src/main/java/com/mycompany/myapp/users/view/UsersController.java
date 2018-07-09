@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,14 +19,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.context.request.SessionScope;
 
 import com.mycompany.myapp.users.MailService;
 import com.mycompany.myapp.users.MailVO;
 import com.mycompany.myapp.users.UsersSearchVO;
 import com.mycompany.myapp.users.UsersService;
 import com.mycompany.myapp.users.UsersVO;
-import com.mycompany.myapp.users.impl.UsersDAO;
 
 @Controller
 @SessionAttributes("users")
@@ -114,7 +110,6 @@ public class UsersController {
 	// 로그인
 	@RequestMapping(value = "/loginck", method = RequestMethod.POST)
 	public String loginck(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
-
 		String u_id = request.getParameter("u_id");
 		String pw = request.getParameter("pw");
 		String yn = request.getParameter("yn");

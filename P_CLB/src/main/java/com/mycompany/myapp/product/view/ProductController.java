@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,13 +13,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.mycompany.myapp.product.ProductSearchVO;
 import com.mycompany.myapp.product.ProductService;
 import com.mycompany.myapp.product.ProductVO;
+import com.mycompany.myapp.users.UsersVO;
 
 @Controller
 //@SessionAttributes("product")
@@ -28,8 +28,10 @@ public class ProductController {
 	ProductService productService;
 
 	@RequestMapping(value= "/getProductList", method = RequestMethod.GET)
-	public String getBoardList(ProductVO vo, HttpServletRequest request) {
+	public String getBoardList(ProductVO vo, HttpServletRequest request, HttpSession session) {
 		request.setAttribute("productList", productService.getProductList(vo));
+		
+		System.out.println(session.getAttribute("uId"));
 		return "product/getProductList";
 	}
 
@@ -50,7 +52,7 @@ public class ProductController {
 	@RequestMapping(value = "/productUpdate", method = RequestMethod.POST)
 	public String productUpdate(@ModelAttribute("product") ProductVO vo) {
 		productService.productUpdate(vo);
-		return "redirect:/getProductList";
+		return "product/getProductList";
 	}
 
 	// 등록처리
@@ -73,8 +75,10 @@ public class ProductController {
 	}
 
 	@RequestMapping("/getProduct/{p_no}")
-	public String getBoard(@PathVariable String p_no, Model model) {
+	public String getBoard(@PathVariable String p_no, Model model, HttpSession session,ProductVO vo, HttpServletRequest request) {
 		model.addAttribute("product", productService.getProduct(p_no));
+		vo.setuId(((UsersVO) (request.getSession().getAttribute("u_id"))).getuId());
+		System.out.println(session.getAttribute("uId"));
 		return "product/getProduct";
 	}
 	

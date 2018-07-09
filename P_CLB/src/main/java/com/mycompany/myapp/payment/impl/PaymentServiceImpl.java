@@ -1,6 +1,5 @@
 package com.mycompany.myapp.payment.impl;
 
-import java.sql.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -17,10 +16,6 @@ public class PaymentServiceImpl implements PaymentService{
 	@Autowired
 		PaymentDAO dao;
 	
-	@Override
-	public PaymentVO getPayment(String paymentId) {
-		return dao.getPayment(paymentId);
-	}
 
 	@Override
 	public void paymentInsert(PaymentVO vo) {
@@ -76,6 +71,17 @@ public class PaymentServiceImpl implements PaymentService{
 	@Override
 	public List<Map<String, Object>> getPayCnt3() {
 		return dao.getPayCnt3();
+	}
+
+	@Override
+	public void paymentDelete(int paymentId) {
+		dao.paymentDelete(paymentId);
+	}
+
+
+	@Override
+	public List<PaymentVO> getPayment(PaymentVO vo) {
+		return dao.getPayment(vo);
 	}
 
 }
