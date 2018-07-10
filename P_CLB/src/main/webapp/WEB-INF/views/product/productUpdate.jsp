@@ -8,7 +8,7 @@
 </head>
 <body>
 <center>
-<div style="background-color:black"><font color="white" size="20px">상품 수정 하기</font></div>
+<div style="background-color:red"><font color="white" size="20px">상품 수정 하기</font></div>
 <div style="border: 1px double black; padding: 30px; margin: 30px;">
 <form name="boardForm" action="./productUpdate" method="post">
 <input type="hidden" name="pNo" value="${product.pNo}">

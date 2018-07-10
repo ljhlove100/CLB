@@ -8,7 +8,7 @@
 </head>
 <body>
 <center>
-<div style="background-color:black"><font color="white" size="20px">상품 추가 하기</font></div>
+<div style="background-color:red"><font color="white" size="20px">상품 추가 하기</font></div>
 <div style="border: 1px double black; padding: 30px; margin: 50px;">
 <form name="boardForm" action="./productInsert" method="post" enctype="multipart/form-data" onsubmit="return submitCheck()">
 <h3>상품분류</h3>
