@@ -322,7 +322,7 @@
 					<compilerArgument>-Xlint:all</compilerArgument>
 					<showWarnings>true</showWarnings>
 					<showDeprecation>true</showDeprecation>
-					<encodiong>UTF-8</encodiong>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
