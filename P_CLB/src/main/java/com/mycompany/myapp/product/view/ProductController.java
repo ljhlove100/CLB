@@ -54,7 +54,7 @@ public class ProductController {
 	@RequestMapping(value = "/productUpdate", method = RequestMethod.POST)
 	public String productUpdate(@ModelAttribute("product") ProductVO vo) {
 		productService.productUpdate(vo);
-		return "product/getProductList";
+		return "redirect:/getProductList";
 	}
 
 	// 등록처리
@@ -73,7 +73,7 @@ public class ProductController {
 	      }
 		// 서비스이용하여 등록처리하고 목록페이지로 이동
 		productService.productInsert(vo);
-		return "product/getProductList";
+		return "redirect:/getProductList";
 	}
 
 	@RequestMapping("/getProduct/{p_no}")
