@@ -24,9 +24,10 @@
     <!-- 추가 -->
     <insert id="insertUsers" parameterType="hashMap">
     <![CDATA[
-	  INSERT INTO USERS(U_ID, PW, NAME, INSERTDATE, UPDATEDAY, YN, ADDR, ZIPCODE)
+	  INSERT INTO USERS(U_ID, EMAIL, PW, NAME, INSERTDATE, UPDATEDAY, YN, ADDR, ZIPCODE)
 	  VALUES (
 				#{u_id},
+				#{email},
   			   	#{pw},
   			   	#{name},
   			   	sysdate,

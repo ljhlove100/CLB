@@ -156,13 +156,14 @@ public class UsersController {
 			Url = "users/account";
 		} else {
 			String u_id = request.getParameter("u_id");
+			String email = request.getParameter("email");
 			String pw = request.getParameter("pw");
 			String name = request.getParameter("name");
 			String addr = request.getParameter("sample4_roadAddress");
 			String zipcode = request.getParameter("sample4_postcode");
 			String yn = "Y";
 			System.out.println(addr+"       "+zipcode);
-			UsersService.account(u_id, pw, name, yn, addr, zipcode);
+			UsersService.account(u_id, email,pw, name, yn, addr, zipcode);
 
 			Url = "redirect:/login";
 		}

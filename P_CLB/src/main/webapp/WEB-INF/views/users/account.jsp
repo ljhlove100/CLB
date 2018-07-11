@@ -163,6 +163,13 @@
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
 					</div>
+					
+					<div  class="wrap-input100 validate-input"	>
+						<input class="input100" type="text" name=email  value="email" placeholder="email" >
+						<span class="focus-input100"></span> <span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
 
 
 

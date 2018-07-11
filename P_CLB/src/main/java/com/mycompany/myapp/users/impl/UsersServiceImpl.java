@@ -82,11 +82,12 @@ public class UsersServiceImpl implements UsersService {
     }
 	
 	@Override
-	public void account(String u_id, String pw, String name, String yn, String addr, String zipcode) {
+	public void account(String u_id, String email, String pw, String name, String yn, String addr, String zipcode) {
 		// TODO Auto-generated method stub
 
 		HashMap<String,String> hashMap = new HashMap<String,String>();
-    	hashMap.put("u_id", u_id);  
+    	hashMap.put("u_id", u_id); 
+    	hashMap.put("email", email);
     	hashMap.put("pw", pw);
     	hashMap.put("name", name);
     	hashMap.put("yn", yn);
