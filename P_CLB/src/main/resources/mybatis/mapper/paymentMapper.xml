@@ -26,7 +26,7 @@
     select a.* from ( select rownum rn, b.* from (
     	SELECT DISTINCT PAYMENT_ID, P_NAME, TOTAL_AMT
      	  FROM PAYMENT
-    		 ORDER BY PAYMENT_ID
+    		 ORDER BY PAYMENT_ID desc
     ) b ) a where rn between #{first} and #{last}
     </select>
     
