@@ -23,7 +23,7 @@ ${product.image}<br><br>
   </select><br><br>
 상품명 : <input type="text" name="pName" size="8px;" value="${product.pName}"><br><br>
 상품가격 : <input type="text" name="price" size="6px;" value="${product.price}">원<br><br>
-상품설명 <textarea name="pContents" id="pContents"></textarea><br>
+상품설명 <textarea name="pContents" id="pContents" >${product.pContents}</textarea><br>
 <input type="submit" value="수정">
 </form>
 </div>

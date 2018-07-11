@@ -60,14 +60,6 @@
             <button type="button" id="lotte6" class="btn btn-default"> 하나카드</button>
             <button type="button" id="lotte7" class="btn btn-default"> 외환카드</button>
             <button type="button" id="lotte8" class="btn btn-default"> 우리BC카드</button><br><br>
-            <select type="button" id="bankaccount" name="bankaccount" fw-filter="" fw-label="무통장 입금은행" fw-msg="">
-               <option value="-1"> 그외 카드선택</option>
-               <option value="bc_card">BC카드</option>
-               <option value="city_card">씨티카드</option>
-               <option value="nh_card">NH카드</option>
-               <option value="jb_card">전북카드</option>
-               <option value="gj_card">광주카드</option>
-            </select>
             </div><br>
   	
   	
